@@ -1,0 +1,1393 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script>function neighbourhoodHighlight(params) {
+  // console.log("in nieghbourhoodhighlight");
+  allNodes = nodes.get({ returnType: "Object" });
+  // originalNodes = JSON.parse(JSON.stringify(allNodes));
+  // if something is selected:
+  if (params.nodes.length > 0) {
+    highlightActive = true;
+    var i, j;
+    var selectedNode = params.nodes[0];
+    var degrees = 2;
+
+    // mark all nodes as hard to read.
+    for (let nodeId in allNodes) {
+      // nodeColors[nodeId] = allNodes[nodeId].color;
+      allNodes[nodeId].color = "rgba(200,200,200,0.5)";
+      if (allNodes[nodeId].hiddenLabel === undefined) {
+        allNodes[nodeId].hiddenLabel = allNodes[nodeId].label;
+        allNodes[nodeId].label = undefined;
+      }
+    }
+    var connectedNodes = network.getConnectedNodes(selectedNode);
+    var allConnectedNodes = [];
+
+    // get the second degree nodes
+    for (i = 1; i < degrees; i++) {
+      for (j = 0; j < connectedNodes.length; j++) {
+        allConnectedNodes = allConnectedNodes.concat(
+          network.getConnectedNodes(connectedNodes[j])
+        );
+      }
+    }
+
+    // all second degree nodes get a different color and their label back
+    for (i = 0; i < allConnectedNodes.length; i++) {
+      // allNodes[allConnectedNodes[i]].color = "pink";
+      allNodes[allConnectedNodes[i]].color = "rgba(150,150,150,0.75)";
+      if (allNodes[allConnectedNodes[i]].hiddenLabel !== undefined) {
+        allNodes[allConnectedNodes[i]].label =
+          allNodes[allConnectedNodes[i]].hiddenLabel;
+        allNodes[allConnectedNodes[i]].hiddenLabel = undefined;
+      }
+    }
+
+    // all first degree nodes get their own color and their label back
+    for (i = 0; i < connectedNodes.length; i++) {
+      // allNodes[connectedNodes[i]].color = undefined;
+      allNodes[connectedNodes[i]].color = nodeColors[connectedNodes[i]];
+      if (allNodes[connectedNodes[i]].hiddenLabel !== undefined) {
+        allNodes[connectedNodes[i]].label =
+          allNodes[connectedNodes[i]].hiddenLabel;
+        allNodes[connectedNodes[i]].hiddenLabel = undefined;
+      }
+    }
+
+    // the main node gets its own color and its label back.
+    // allNodes[selectedNode].color = undefined;
+    allNodes[selectedNode].color = nodeColors[selectedNode];
+    if (allNodes[selectedNode].hiddenLabel !== undefined) {
+      allNodes[selectedNode].label = allNodes[selectedNode].hiddenLabel;
+      allNodes[selectedNode].hiddenLabel = undefined;
+    }
+  } else if (highlightActive === true) {
+    // console.log("highlightActive was true");
+    // reset all nodes
+    for (let nodeId in allNodes) {
+      // allNodes[nodeId].color = "purple";
+      allNodes[nodeId].color = nodeColors[nodeId];
+      // delete allNodes[nodeId].color;
+      if (allNodes[nodeId].hiddenLabel !== undefined) {
+        allNodes[nodeId].label = allNodes[nodeId].hiddenLabel;
+        allNodes[nodeId].hiddenLabel = undefined;
+      }
+    }
+    highlightActive = false;
+  }
+
+  // transform the object into an array
+  var updateArray = [];
+  if (params.nodes.length > 0) {
+    for (let nodeId in allNodes) {
+      if (allNodes.hasOwnProperty(nodeId)) {
+        // console.log(allNodes[nodeId]);
+        updateArray.push(allNodes[nodeId]);
+      }
+    }
+    nodes.update(updateArray);
+  } else {
+    // console.log("Nothing was selected");
+    for (let nodeId in allNodes) {
+      if (allNodes.hasOwnProperty(nodeId)) {
+        // console.log(allNodes[nodeId]);
+        // allNodes[nodeId].color = {};
+        updateArray.push(allNodes[nodeId]);
+      }
+    }
+    nodes.update(updateArray);
+  }
+}
+
+function filterHighlight(params) {
+  allNodes = nodes.get({ returnType: "Object" });
+  // if something is selected:
+  if (params.nodes.length > 0) {
+    filterActive = true;
+    let selectedNodes = params.nodes;
+
+    // hiding all nodes and saving the label
+    for (let nodeId in allNodes) {
+      allNodes[nodeId].hidden = true;
+      if (allNodes[nodeId].savedLabel === undefined) {
+        allNodes[nodeId].savedLabel = allNodes[nodeId].label;
+        allNodes[nodeId].label = undefined;
+      }
+    }
+
+    for (let i=0; i < selectedNodes.length; i++) {
+      allNodes[selectedNodes[i]].hidden = false;
+      if (allNodes[selectedNodes[i]].savedLabel !== undefined) {
+        allNodes[selectedNodes[i]].label = allNodes[selectedNodes[i]].savedLabel;
+        allNodes[selectedNodes[i]].savedLabel = undefined;
+      }
+    }
+
+  } else if (filterActive === true) {
+    // reset all nodes
+    for (let nodeId in allNodes) {
+      allNodes[nodeId].hidden = false;
+      if (allNodes[nodeId].savedLabel !== undefined) {
+        allNodes[nodeId].label = allNodes[nodeId].savedLabel;
+        allNodes[nodeId].savedLabel = undefined;
+      }
+    }
+    filterActive = false;
+  }
+
+  // transform the object into an array
+  var updateArray = [];
+  if (params.nodes.length > 0) {
+    for (let nodeId in allNodes) {
+      if (allNodes.hasOwnProperty(nodeId)) {
+        updateArray.push(allNodes[nodeId]);
+      }
+    }
+    nodes.update(updateArray);
+  } else {
+    for (let nodeId in allNodes) {
+      if (allNodes.hasOwnProperty(nodeId)) {
+        updateArray.push(allNodes[nodeId]);
+      }
+    }
+    nodes.update(updateArray);
+  }
+}
+
+function selectNode(nodes) {
+  network.selectNodes(nodes);
+  neighbourhoodHighlight({ nodes: nodes });
+  return nodes;
+}
+
+function selectNodes(nodes) {
+  network.selectNodes(nodes);
+  filterHighlight({nodes: nodes});
+  return nodes;
+}
+
+function highlightFilter(filter) {
+  let selectedNodes = []
+  let selectedProp = filter['property']
+  if (filter['item'] === 'node') {
+    let allNodes = nodes.get({ returnType: "Object" });
+    for (let nodeId in allNodes) {
+      if (allNodes[nodeId][selectedProp] && filter['value'].includes((allNodes[nodeId][selectedProp]).toString())) {
+        selectedNodes.push(nodeId)
+      }
+    }
+  }
+  else if (filter['item'] === 'edge'){
+    let allEdges = edges.get({returnType: 'object'});
+    // check if the selected property exists for selected edge and select the nodes connected to the edge
+    for (let edge in allEdges) {
+      if (allEdges[edge][selectedProp] && filter['value'].includes((allEdges[edge][selectedProp]).toString())) {
+        selectedNodes.push(allEdges[edge]['from'])
+        selectedNodes.push(allEdges[edge]['to'])
+      }
+    }
+  }
+  selectNodes(selectedNodes)
+}</script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+            
+            
+            
+            
+            
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tom-select/2.0.0-rc.4/css/tom-select.min.css" integrity="sha512-43fHB3GLgZfz8QXl1RPQ8O66oIgv3po9cJ5erMt1c4QISq9dYb195T3vr5ImnJPXuVroKcGBPXBFKETW8jrPNQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/tom-select/2.0.0-rc.4/js/tom-select.complete.js" integrity="sha512-jeF9CfnvzDiw9G9xiksVjxR2lib44Gnovvkv+3CgCG6NXCD4gqlA5nDAVW5WjpA+i+/zKsUWV5xNEbW1X/HH0Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 600px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+             #loadingBar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width: 100%;
+                 height: 600px;
+                 background-color:rgba(200,200,200,0.8);
+                 -webkit-transition: all 0.5s ease;
+                 -moz-transition: all 0.5s ease;
+                 -ms-transition: all 0.5s ease;
+                 -o-transition: all 0.5s ease;
+                 transition: all 0.5s ease;
+                 opacity:1;
+             }
+
+             #bar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width:20px;
+                 height:20px;
+                 margin:auto auto auto auto;
+                 border-radius:11px;
+                 border:2px solid rgba(30,30,30,0.05);
+                 background: rgb(0, 173, 246); /* Old browsers */
+                 box-shadow: 2px 0px 4px rgba(0,0,0,0.4);
+             }
+
+             #border {
+                 position:absolute;
+                 top:10px;
+                 left:10px;
+                 width:500px;
+                 height:23px;
+                 margin:auto auto auto auto;
+                 box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+                 border-radius:10px;
+             }
+
+             #text {
+                 position:absolute;
+                 top:8px;
+                 left:530px;
+                 width:30px;
+                 height:50px;
+                 margin:auto auto auto auto;
+                 font-size:22px;
+                 color: #000000;
+             }
+
+             div.outerBorder {
+                 position:relative;
+                 top:400px;
+                 width:600px;
+                 height:44px;
+                 margin:auto auto auto auto;
+                 border:8px solid rgba(0,0,0,0.1);
+                 background: rgb(252,252,252); /* Old browsers */
+                 background: -moz-linear-gradient(top,  rgba(252,252,252,1) 0%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+                 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,252,252,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+                 background: -webkit-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+                 background: -o-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
+                 background: -ms-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* IE10+ */
+                 background: linear-gradient(to bottom,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* W3C */
+                 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+                 border-radius:72px;
+                 box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+             }
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+                <div id="select-menu" class="card-header">
+                    <div class="row no-gutters">
+                        <div class="col-10 pb-2">
+                            <select
+                            class="form-select"
+                            aria-label="Default select example"
+                            onchange="selectNode([value]);"
+                            id="select-node"
+                            placeholder="Select node..."
+                            >
+                                <option selected>Select a Node by ID</option>
+                                
+                                    <option value="Kuczera, Andreas">Kuczera, Andreas</option>
+                                
+                                    <option value="Steyer, Timo">Steyer, Timo</option>
+                                
+                                    <option value="Blumtritt, Jonathan">Blumtritt, Jonathan</option>
+                                
+                                    <option value="Jannidis, Fotis">Jannidis, Fotis</option>
+                                
+                                    <option value="Gius, Evelyn">Gius, Evelyn</option>
+                                
+                                    <option value="Müller, Andreas">Müller, Andreas</option>
+                                
+                                    <option value="Mehler, Alexander">Mehler, Alexander</option>
+                                
+                                    <option value="Diehr, Franziska">Diehr, Franziska</option>
+                                
+                                    <option value="Burghardt, Manuel">Burghardt, Manuel</option>
+                                
+                                    <option value="Fricke-Steyer, Henrike">Fricke-Steyer, Henrike</option>
+                                
+                                    <option value="Klaffki, Lisa">Klaffki, Lisa</option>
+                                
+                                    <option value="Reul, Christian">Reul, Christian</option>
+                                
+                                    <option value="Puppe, Frank">Puppe, Frank</option>
+                                
+                                    <option value="Schneider, Stefanie">Schneider, Stefanie</option>
+                                
+                                    <option value="Schmidt, Thomas">Schmidt, Thomas</option>
+                                
+                                    <option value="Hedeland, Hanna">Hedeland, Hanna</option>
+                                
+                                    <option value="Rau, Felix">Rau, Felix</option>
+                                
+                                    <option value="Brunner, Annelen">Brunner, Annelen</option>
+                                
+                                    <option value="Tu, Ngoc Duyen Tanja">Tu, Ngoc Duyen Tanja</option>
+                                
+                                    <option value="Krug, Markus">Krug, Markus</option>
+                                
+                                    <option value="Horstmann, Jan">Horstmann, Jan</option>
+                                
+                                    <option value="Schumacher, Mareike">Schumacher, Mareike</option>
+                                
+                                    <option value="Trilcke, Peer">Trilcke, Peer</option>
+                                
+                                    <option value="Prager, Christian">Prager, Christian</option>
+                                
+                                    <option value="Konle, Leonard">Konle, Leonard</option>
+                                
+                                    <option value="Mathiak, Brigitte">Mathiak, Brigitte</option>
+                                
+                                    <option value="Andorfer, Peter">Andorfer, Peter</option>
+                                
+                                    <option value="Kesselheim, Wolfgang">Kesselheim, Wolfgang</option>
+                                
+                                    <option value="Uslu, Tolga">Uslu, Tolga</option>
+                                
+                                    <option value="Brodhun, Maximilian">Brodhun, Maximilian</option>
+                                
+                                    <option value="Proisl, Thomas">Proisl, Thomas</option>
+                                
+                                    <option value="Franken, Lina">Franken, Lina</option>
+                                
+                                    <option value="Vauth, Michael">Vauth, Michael</option>
+                                
+                                    <option value="Götzelmann, Germaine">Götzelmann, Germaine</option>
+                                
+                                    <option value="Pohl, Oliver">Pohl, Oliver</option>
+                                
+                                    <option value="Schnöpf, Markus">Schnöpf, Markus</option>
+                                
+                                    <option value="König, Mareike">König, Mareike</option>
+                                
+                                    <option value="Müller-Laackman, Jonas">Müller-Laackman, Jonas</option>
+                                
+                                    <option value="Hartel, Rita">Hartel, Rita</option>
+                                
+                                    <option value="Abrami, Giuseppe">Abrami, Giuseppe</option>
+                                
+                                    <option value="Dumont, Stefan">Dumont, Stefan</option>
+                                
+                                    <option value="Sporleder, Caroline">Sporleder, Caroline</option>
+                                
+                                    <option value="Ziehe, Stefan">Ziehe, Stefan</option>
+                                
+                                    <option value="Wettlaufer, Jörg">Wettlaufer, Jörg</option>
+                                
+                                    <option value="Krautter, Benjamin">Krautter, Benjamin</option>
+                                
+                                    <option value="Vogeler, Georg">Vogeler, Georg</option>
+                                
+                                    <option value="Scholger, Martina">Scholger, Martina</option>
+                                
+                                    <option value="Schlögl, Matthias">Schlögl, Matthias</option>
+                                
+                                    <option value="Martin, Fechner">Martin, Fechner</option>
+                                
+                                    <option value="Kleymann, Rabea">Kleymann, Rabea</option>
+                                
+                                    <option value="Seemann, Nina">Seemann, Nina</option>
+                                
+                                    <option value="Merten, Marie-Luis">Merten, Marie-Luis</option>
+                                
+                                    <option value="Hodel, Tobias">Hodel, Tobias</option>
+                                
+                                    <option value="Diem, Markus">Diem, Markus</option>
+                                
+                                    <option value="Oliveira Ares, Sofia">Oliveira Ares, Sofia</option>
+                                
+                                    <option value="Weidemann, Max">Weidemann, Max</option>
+                                
+                                    <option value="Wehrheim, Lino">Wehrheim, Lino</option>
+                                
+                                    <option value="Neumann, Katrin">Neumann, Katrin</option>
+                                
+                                    <option value="Seltmann, Melanie">Seltmann, Melanie</option>
+                                
+                                    <option value="Walter, Scholger">Walter, Scholger</option>
+                                
+                                    <option value="Bäumer, Frederik Simon">Bäumer, Frederik Simon</option>
+                                
+                                    <option value="Buff, Bianca">Buff, Bianca</option>
+                                
+                                    <option value="Geierhos, Michaela">Geierhos, Michaela</option>
+                                
+                                    <option value="Helm, Wiebke">Helm, Wiebke</option>
+                                
+                                    <option value="Im, Chanjong">Im, Chanjong</option>
+                                
+                                    <option value="Mandl, Thomas">Mandl, Thomas</option>
+                                
+                                    <option value="Schmideler, Sebastian">Schmideler, Sebastian</option>
+                                
+                                    <option value="Calvo Tello, José">Calvo Tello, José</option>
+                                
+                                    <option value="Wuttke, Ulrike">Wuttke, Ulrike</option>
+                                
+                                    <option value="Neuroth, Heike">Neuroth, Heike</option>
+                                
+                                    <option value="Schaßan, Torsten">Schaßan, Torsten</option>
+                                
+                                    <option value="Baumgarten, Marcus">Baumgarten, Marcus</option>
+                                
+                                    <option value="Iglesia, Martin de la">Iglesia, Martin de la</option>
+                                
+                                    <option value="Kampkaspar, Dario">Kampkaspar, Dario</option>
+                                
+                                    <option value="Parlitz, Dietrich">Parlitz, Dietrich</option>
+                                
+                                    <option value="Springmann, Uwe">Springmann, Uwe</option>
+                                
+                                    <option value="Wick, Christoph">Wick, Christoph</option>
+                                
+                                    <option value="Kohle, Hubertus">Kohle, Hubertus</option>
+                                
+                                    <option value="Burg, Severin">Burg, Severin</option>
+                                
+                                    <option value="Küchenhoff, Helmut">Küchenhoff, Helmut</option>
+                                
+                                    <option value="Meyer, Nils">Meyer, Nils</option>
+                                
+                                    <option value="Rössel, Julia">Rössel, Julia</option>
+                                
+                                    <option value="Maus, David">Maus, David</option>
+                                
+                                    <option value="Bald, Markus">Bald, Markus</option>
+                                
+                                    <option value="Damiani, Vincenzo">Damiani, Vincenzo</option>
+                                
+                                    <option value="Essler, Holger">Essler, Holger</option>
+                                
+                                    <option value="Eyeselein, Björn">Eyeselein, Björn</option>
+                                
+                                    <option value="Hall, Mark">Hall, Mark</option>
+                                
+                                    <option value="Howanitz, Gernot">Howanitz, Gernot</option>
+                                
+                                    <option value="Radisch, Erik">Radisch, Erik</option>
+                                
+                                    <option value="Decker, Jan-Oliver">Decker, Jan-Oliver</option>
+                                
+                                    <option value="Rehbein, Malte">Rehbein, Malte</option>
+                                
+                                    <option value="Gorisch, Jan">Gorisch, Jan</option>
+                                
+                                    <option value="Wörner, Kai">Wörner, Kai</option>
+                                
+                                    <option value="Batinic, Josip">Batinic, Josip</option>
+                                
+                                    <option value="Frick, Elena">Frick, Elena</option>
+                                
+                                    <option value="Gasch, Joachim">Gasch, Joachim</option>
+                                
+                                    <option value="Weimer, Lukas">Weimer, Lukas</option>
+                                
+                                    <option value="Engelberg, Stefan">Engelberg, Stefan</option>
+                                
+                                    <option value="Geelhaar, Tim">Geelhaar, Tim</option>
+                                
+                                    <option value="Zimmer, Sebastian">Zimmer, Sebastian</option>
+                                
+                                    <option value="Gödel, Martina">Gödel, Martina</option>
+                                
+                                    <option value="Persch, Dana">Persch, Dana</option>
+                                
+                                    <option value="Donig, Simon">Donig, Simon</option>
+                                
+                                    <option value="Christoforaki, Maria">Christoforaki, Maria</option>
+                                
+                                    <option value="Bermeitinger, Bernhard">Bermeitinger, Bernhard</option>
+                                
+                                    <option value="Handschuh, Siegfried">Handschuh, Siegfried</option>
+                                
+                                    <option value="Meister, Jan Christoph">Meister, Jan Christoph</option>
+                                
+                                    <option value="Petris, Marco">Petris, Marco</option>
+                                
+                                    <option value="Hoenen, Armin">Hoenen, Armin</option>
+                                
+                                    <option value="Rittershaus, David">Rittershaus, David</option>
+                                
+                                    <option value="Kuroczyński, Piotr">Kuroczyński, Piotr</option>
+                                
+                                    <option value="Brandt, Julia">Brandt, Julia</option>
+                                
+                                    <option value="Jara, Karolina">Jara, Karolina</option>
+                                
+                                    <option value="Grosse, Peggy">Grosse, Peggy</option>
+                                
+                                    <option value="Klaus, Carsten">Klaus, Carsten</option>
+                                
+                                    <option value="Fankhauser, Peter">Fankhauser, Peter</option>
+                                
+                                    <option value="Klakow, Dietrich">Klakow, Dietrich</option>
+                                
+                                    <option value="Kempf, Sebastian">Kempf, Sebastian</option>
+                                
+                                    <option value="David, Schmidt">David, Schmidt</option>
+                                
+                                    <option value="Lukas, Weimer">Lukas, Weimer</option>
+                                
+                                    <option value="Frank, Puppe">Frank, Puppe</option>
+                                
+                                    <option value="Fischer, Frank">Fischer, Frank</option>
+                                
+                                    <option value="Börner, Ingo">Börner, Ingo</option>
+                                
+                                    <option value="Göbel, Mathias">Göbel, Mathias</option>
+                                
+                                    <option value="Hechtl, Angelika">Hechtl, Angelika</option>
+                                
+                                    <option value="Kittel, Christopher">Kittel, Christopher</option>
+                                
+                                    <option value="Milling, Carsten">Milling, Carsten</option>
+                                
+                                    <option value="Willand, Marcus">Willand, Marcus</option>
+                                
+                                    <option value="Reiter, Nils">Reiter, Nils</option>
+                                
+                                    <option value="Meißner, Cordula">Meißner, Cordula</option>
+                                
+                                    <option value="Wallner, Franziska">Wallner, Franziska</option>
+                                
+                                    <option value="Toschka, Patrick">Toschka, Patrick</option>
+                                
+                                    <option value="Laubrock, Jochen">Laubrock, Jochen</option>
+                                
+                                    <option value="Dubray, David">Dubray, David</option>
+                                
+                                    <option value="Pattee, Aaron">Pattee, Aaron</option>
+                                
+                                    <option value="Volkmann, Armin">Volkmann, Armin</option>
+                                
+                                    <option value="Mara, Hubert">Mara, Hubert</option>
+                                
+                                    <option value="Bogacz, Bartosz">Bogacz, Bartosz</option>
+                                
+                                    <option value="Feldmann, Felix">Feldmann, Felix</option>
+                                
+                                    <option value="Messemer, Heike">Messemer, Heike</option>
+                                
+                                    <option value="Baillot, Anne">Baillot, Anne</option>
+                                
+                                    <option value="Wottawa, Jane">Wottawa, Jane</option>
+                                
+                                    <option value="Barrault, Loïc">Barrault, Loïc</option>
+                                
+                                    <option value="Bougares, Fethi">Bougares, Fethi</option>
+                                
+                                    <option value="Dewitz, Leyla">Dewitz, Leyla</option>
+                                
+                                    <option value="Münster, Sander">Münster, Sander</option>
+                                
+                                    <option value="Niebling, Florian">Niebling, Florian</option>
+                                
+                                    <option value="Prell, Martin">Prell, Martin</option>
+                                
+                                    <option value="Althof, Daniel">Althof, Daniel</option>
+                                
+                                    <option value="Dogunke, Swantje">Dogunke, Swantje</option>
+                                
+                                    <option value="Leinen, Peter">Leinen, Peter</option>
+                                
+                                    <option value="Scherl, Magdalena">Scherl, Magdalena</option>
+                                
+                                    <option value="Unold, Martin">Unold, Martin</option>
+                                
+                                    <option value="Homburg, Timo">Homburg, Timo</option>
+                                
+                                    <option value="Kremer, Gerhard">Kremer, Gerhard</option>
+                                
+                                    <option value="Jung, Kerstin">Jung, Kerstin</option>
+                                
+                                    <option value="Neuefeind, Claes">Neuefeind, Claes</option>
+                                
+                                    <option value="Schildkamp, Philip">Schildkamp, Philip</option>
+                                
+                                    <option value="Harzenetter, Lukas">Harzenetter, Lukas</option>
+                                
+                                    <option value="Barzen, Johanna">Barzen, Johanna</option>
+                                
+                                    <option value="Breitenbücher, Uwe">Breitenbücher, Uwe</option>
+                                
+                                    <option value="Leymann, Frank">Leymann, Frank</option>
+                                
+                                    <option value="Cremer, Fabian">Cremer, Fabian</option>
+                                
+                                    <option value="Schlupkothen, Frederik">Schlupkothen, Frederik</option>
+                                
+                                    <option value="Nantke, Julia">Nantke, Julia</option>
+                                
+                                    <option value="Hottiger, Christoph">Hottiger, Christoph</option>
+                                
+                                    <option value="Kurz, Stephan">Kurz, Stephan</option>
+                                
+                                    <option value="Zaytseva, Ksenia">Zaytseva, Ksenia</option>
+                                
+                                    <option value="Katharina, Krüger">Katharina, Krüger</option>
+                                
+                                    <option value="Carla, Sökefeld">Carla, Sökefeld</option>
+                                
+                                    <option value="Gleim, Rüdiger">Gleim, Rüdiger</option>
+                                
+                                    <option value="Baumartz, Daniel">Baumartz, Daniel</option>
+                                
+                                    <option value="Kollatz, Thomas">Kollatz, Thomas</option>
+                                
+                                    <option value="Wübbena, Thorsten">Wübbena, Thorsten</option>
+                                
+                                    <option value="Efer, Thomas">Efer, Thomas</option>
+                                
+                                    <option value="Dimpel, Friedrich">Dimpel, Friedrich</option>
+                                
+                                    <option value="Meyer, Peter">Meyer, Peter</option>
+                                
+                                    <option value="Adelmann, Benedikt">Adelmann, Benedikt</option>
+                                
+                                    <option value="Krüger, Katharina">Krüger, Katharina</option>
+                                
+                                    <option value="Hohmann, Georg">Hohmann, Georg</option>
+                                
+                                    <option value="Geipel, Andrea">Geipel, Andrea</option>
+                                
+                                    <option value="Henkensiefken, Claus">Henkensiefken, Claus</option>
+                                
+                                    <option value="Tonne, Danah">Tonne, Danah</option>
+                                
+                                    <option value="Hegel, Philipp">Hegel, Philipp</option>
+                                
+                                    <option value="Krewet, Michael">Krewet, Michael</option>
+                                
+                                    <option value="Hübner, Julia">Hübner, Julia</option>
+                                
+                                    <option value="Söring, Sibylle">Söring, Sibylle</option>
+                                
+                                    <option value="Löffler, Andreas">Löffler, Andreas</option>
+                                
+                                    <option value="Hitzker, Michael">Hitzker, Michael</option>
+                                
+                                    <option value="Höfler, Markus">Höfler, Markus</option>
+                                
+                                    <option value="Schmidt, Timo">Schmidt, Timo</option>
+                                
+                                    <option value="Schulz, Julian">Schulz, Julian</option>
+                                
+                                    <option value="Mühleder, Peter">Mühleder, Peter</option>
+                                
+                                    <option value="Hoffmann, Tracy">Hoffmann, Tracy</option>
+                                
+                                    <option value="Rämisch, Florian">Rämisch, Florian</option>
+                                
+                                    <option value="Lorenz, Anne Katrin">Lorenz, Anne Katrin</option>
+                                
+                                    <option value="Müller-Dannhausen, Lea">Müller-Dannhausen, Lea</option>
+                                
+                                    <option value="Trautmann, Marjam">Trautmann, Marjam</option>
+                                
+                                    <option value="Druskat, Stephan">Druskat, Stephan</option>
+                                
+                                    <option value="Rockenberger, Annika">Rockenberger, Annika</option>
+                                
+                                    <option value="Marx, Michael">Marx, Michael</option>
+                                
+                                    <option value="Franke, Stefanie">Franke, Stefanie</option>
+                                
+                                    <option value="Artika, Farah">Artika, Farah</option>
+                                
+                                    <option value="Mahmutovic, Edin">Mahmutovic, Edin</option>
+                                
+                                    <option value="Röhrer, Ines">Röhrer, Ines</option>
+                                
+                                    <option value="Ullrich, Sabine">Ullrich, Sabine</option>
+                                
+                                    <option value="Hadersbeck, Maximilian">Hadersbeck, Maximilian</option>
+                                
+                                    <option value="Menke, Ulla">Menke, Ulla</option>
+                                
+                                    <option value="Dogaru, Teodora">Dogaru, Teodora</option>
+                                
+                                    <option value="Dunst, Alexander">Dunst, Alexander</option>
+                                
+                                    <option value="Sikora, Uwe">Sikora, Uwe</option>
+                                
+                                    <option value="Gronemeyer, Sven">Gronemeyer, Sven</option>
+                                
+                                    <option value="Wagner, Elisabeth">Wagner, Elisabeth</option>
+                                
+                                    <option value="Diederichs, Katja">Diederichs, Katja</option>
+                                
+                                    <option value="Grube, Nikolai">Grube, Nikolai</option>
+                                
+                                    <option value="Moeller, Katrin">Moeller, Katrin</option>
+                                
+                                    <option value="Purschwitz, Anne">Purschwitz, Anne</option>
+                                
+                                    <option value="Metzmacher, Katja">Metzmacher, Katja</option>
+                                
+                                    <option value="Helling, Patrick">Helling, Patrick</option>
+                                
+                                    <option value="Hemati, Wahed">Hemati, Wahed</option>
+                                
+                                    <option value="Wachter, Christian">Wachter, Christian</option>
+                                
+                                    <option value="Schlör, Daniel">Schlör, Daniel</option>
+                                
+                                    <option value="Veseli, Blerta">Veseli, Blerta</option>
+                                
+                                    <option value="Hotho, Andreas">Hotho, Andreas</option>
+                                
+                                    <option value="Meyer, Selina">Meyer, Selina</option>
+                                
+                                    <option value="Schmidtbauer, Stephanie">Schmidtbauer, Stephanie</option>
+                                
+                                    <option value="Molz, Johannes">Molz, Johannes</option>
+                                
+                                    <option value="Pagenstecher, Cord">Pagenstecher, Cord</option>
+                                
+                                    <option value="Grabsch, Sascha">Grabsch, Sascha</option>
+                                
+                                    <option value="Spiekermann, Christian">Spiekermann, Christian</option>
+                                
+                                    <option value="Guhr, Svenja">Guhr, Svenja</option>
+                                
+                                    <option value="Varachkina, Hanna">Varachkina, Hanna</option>
+                                
+                                    <option value="Lee, Geumbi">Lee, Geumbi</option>
+                                
+                                    <option value="Bürgermeister, Martina">Bürgermeister, Martina</option>
+                                
+                                    <option value="Bartz, Gabriele">Bartz, Gabriele</option>
+                                
+                                    <option value="Gneiß, Markus">Gneiß, Markus</option>
+                                
+                                    <option value="Stuber, Martin">Stuber, Martin</option>
+                                
+                                    <option value="Dängeli, Peter">Dängeli, Peter</option>
+                                
+                                    <option value="Forney, Christian">Forney, Christian</option>
+                                
+                                    <option value="Koch, Gertraud">Koch, Gertraud</option>
+                                
+                                    <option value="Kilincoglu, Deniz">Kilincoglu, Deniz</option>
+                                
+                                    <option value="Mandalka, Markus">Mandalka, Markus</option>
+                                
+                                    <option value="Seltmann, Melanie E.-H.">Seltmann, Melanie E.-H.</option>
+                                
+                                    <option value="Pagel, Janis">Pagel, Janis</option>
+                                
+                                    <option value="Haaf, Susanne">Haaf, Susanne</option>
+                                
+                                    <option value="Henny-Krahmer, Ulrike">Henny-Krahmer, Ulrike</option>
+                                
+                                    <option value="Neuber, Frederike">Neuber, Frederike</option>
+                                
+                                    <option value="Glinka, Katrin">Glinka, Katrin</option>
+                                
+                                    <option value="Görz, Günther">Görz, Günther</option>
+                                
+                                    <option value="Seidl, Chiara">Seidl, Chiara</option>
+                                
+                                    <option value="Thiering, Martin">Thiering, Martin</option>
+                                
+                                    <option value="Schaeben, Marcel">Schaeben, Marcel</option>
+                                
+                                    <option value="El Khatib, Randa">El Khatib, Randa</option>
+                                
+                                    <option value="Toscano, Roberta">Toscano, Roberta</option>
+                                
+                                    <option value="Schwappach, Florin">Schwappach, Florin</option>
+                                
+                                    <option value="Pause, Johannes">Pause, Johannes</option>
+                                
+                                    <option value="Walkowski, Niels-Oliver">Walkowski, Niels-Oliver</option>
+                                
+                                    <option value="Rettinghaus, Klaus">Rettinghaus, Klaus</option>
+                                
+                                    <option value="Severin, Simmler">Severin, Simmler</option>
+                                
+                                    <option value="Thorsten, Vitt">Thorsten, Vitt</option>
+                                
+                                    <option value="Pielström, Steffen">Pielström, Steffen</option>
+                                
+                                    <option value="Busch, Anna">Busch, Anna</option>
+                                
+                                    <option value="Bludau, Mark-Jan">Bludau, Mark-Jan</option>
+                                
+                                    <option value="Brüggemann, Viktoria">Brüggemann, Viktoria</option>
+                                
+                                    <option value="Dörk, Marian">Dörk, Marian</option>
+                                
+                                    <option value="Genzel, Kristina">Genzel, Kristina</option>
+                                
+                                    <option value="Möller, Klaus-Peter">Möller, Klaus-Peter</option>
+                                
+                                    <option value="Seifert, Sabine">Seifert, Sabine</option>
+                                
+                                    <option value="Wagner, Andreas">Wagner, Andreas</option>
+                                
+                                    <option value="Bragagnolo, Manuela">Bragagnolo, Manuela</option>
+                                
+                                    <option value="Türkoglu, Enes">Türkoglu, Enes</option>
+                                
+                                    <option value="Vitt, Thorsten">Vitt, Thorsten</option>
+                                
+                                    <option value="Brüning, Gerrit">Brüning, Gerrit</option>
+                                
+                                    <option value="Pravida, Dietmar">Pravida, Dietmar</option>
+                                
+                                    <option value="Wissenbach, Moritz">Wissenbach, Moritz</option>
+                                
+                                    <option value="Fritze, Christiane">Fritze, Christiane</option>
+                                
+                                    <option value="Fischer, Franz">Fischer, Franz</option>
+                                
+                                    <option value="Sahle, Patrick">Sahle, Patrick</option>
+                                
+                                    <option value="Nasarek, Robert">Nasarek, Robert</option>
+                                
+                                    <option value="Boenig, Matthias">Boenig, Matthias</option>
+                                
+                                    <option value="Herrmann, Elisa">Herrmann, Elisa</option>
+                                
+                                    <option value="Hartmann, Volker">Hartmann, Volker</option>
+                                
+                                    <option value="Jarosch, Julian">Jarosch, Julian</option>
+                                
+                                    <option value="Schrade, Torsten">Schrade, Torsten</option>
+                                
+                                    <option value="Yousef, Tariq">Yousef, Tariq</option>
+                                
+                                    <option value="Vasold, Gunter">Vasold, Gunter</option>
+                                
+                                    <option value="Staecker, Thomas">Staecker, Thomas</option>
+                                
+                                    <option value="Wigg-Wolf, David">Wigg-Wolf, David</option>
+                                
+                                    <option value="Tolle, Karsten">Tolle, Karsten</option>
+                                
+                                    <option value="Kissinger, Timo">Kissinger, Timo</option>
+                                
+                                    <option value="Evert, Stefan">Evert, Stefan</option>
+                                
+                                    <option value="Hannesschlaeger, Vanessa">Hannesschlaeger, Vanessa</option>
+                                
+                                    <option value="Weichselbaumer, Nikolaus">Weichselbaumer, Nikolaus</option>
+                                
+                                    <option value="Seuret, Mathias">Seuret, Mathias</option>
+                                
+                                    <option value="Limbach, Saskia">Limbach, Saskia</option>
+                                
+                                    <option value="Christlein, Vincent">Christlein, Vincent</option>
+                                
+                                    <option value="Maier, Andreas">Maier, Andreas</option>
+                                
+                                    <option value="Remus, Steffen">Remus, Steffen</option>
+                                
+                                    <option value="Ferger, Anne">Ferger, Anne</option>
+                                
+                                    <option value="Bührig, Kristin">Bührig, Kristin</option>
+                                
+                                    <option value="Biemann, Chris">Biemann, Chris</option>
+                                
+                                    <option value="Mukhametov, Sergey">Mukhametov, Sergey</option>
+                                
+                                    <option value="Brandenbeger, Christina">Brandenbeger, Christina</option>
+                                
+                                    <option value="Gerhards, Donata">Gerhards, Donata</option>
+                                
+                                    <option value="Hüther, Frank">Hüther, Frank</option>
+                                
+                                    <option value="Schüller, Daniel">Schüller, Daniel</option>
+                                
+                                    <option value="Mittelberg, Irene">Mittelberg, Irene</option>
+                                
+                                    <option value="Uhrig, Peter">Uhrig, Peter</option>
+                                
+                                    <option value="Kolodzie, Lisa">Kolodzie, Lisa</option>
+                                
+                                    <option value="Moisich, Oliver">Moisich, Oliver</option>
+                                
+                                    <option value="Mayr, Eva">Mayr, Eva</option>
+                                
+                                    <option value="Windhager, Florian">Windhager, Florian</option>
+                                
+                                    <option value="Schreder, Günther">Schreder, Günther</option>
+                                
+                                    <option value="Diesner, Jana">Diesner, Jana</option>
+                                
+                                    <option value="Flückiger, Barbara">Flückiger, Barbara</option>
+                                
+                            </select>
+                        </div>
+                        <div class="col-2 pb-2">
+                            <button type="button" class="btn btn-primary btn-block" onclick="neighbourhoodHighlight({nodes: []});">Reset Selection</button>
+                        </div>
+                    </div>
+                </div>
+            
+            
+              <div id="filter-menu" class="card-header">
+                <div class="row no-gutters">
+                  <div class="col-3 pb-2">
+                    <select
+                            class="form-select"
+                            aria-label="Default select example"
+                            onchange="updateFilter(value, 'item')"
+                            id="select-item"
+                        >
+                        <option value="">Select a network item</option>
+                        <option value="edge">edge</option>
+                        <option value="node">node</option>
+                    </select>
+                  </div>
+                  <div class="col-3 pb-2">
+                    <select
+                            class="form-select"
+                            aria-label="Default select example"
+                            onchange="updateFilter(value, 'property')"
+                            id="select-property"
+                        >
+                        <option value="">Select a property...</option>
+                    </select>
+                  </div>
+                  <div class="col-3 pb-2">
+                    <select
+                            class="form-select"
+                            aria-label="Default select example"
+                            id="select-value"
+                        >
+                        <option value="">Select value(s)...</option>
+                    </select>
+                  </div>
+                  <div class="col-1 pb-2">
+                    <button type="button" class="btn btn-primary btn-block" onclick="highlightFilter(filter);">Filter</button>
+                  </div>
+                  <div class="col-2 pb-2">
+                    <button type="button" class="btn btn-primary btn-block" onclick="clearFilter(true)">Reset Selection</button>
+                  </div>
+                </div>
+              </div>
+            
+            <div id="mynetwork" class="card-body"></div>
+<div style="position:relative; left:50px; right:50px; top:20px">
+
+  <style type="text/css">
+    .tg {
+      border: none;
+      border-collapse: collapse;
+      border-color: #ccc;
+      border-spacing: 0;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .tg td {
+      background-color: #fff;
+      border-color: #ccc;
+      border-style: solid;
+      border-width: 0px;
+      color: #333;
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      overflow: hidden;
+      padding: 10px 15px;
+      word-break: normal;
+    }
+
+    .tg th {
+      background-color: #f0f0f0;
+      border-color: #ccc;
+      border-style: solid;
+      border-width: 0px;
+      color: #333;
+      font-family: Arial, sans-serif;
+      font-size: 20px;
+      font-weight: normal;
+      overflow: hidden;
+      padding: 10px 5px;
+      word-break: normal;
+    }
+
+    .tg .tg-c3ow {
+      border-color: inherit;
+      text-align: left;
+      vertical-align: top
+    }
+
+    .tg .tg-7btt {
+      border-color: inherit;
+      font-weight: bold;
+      text-align: left;
+      vertical-align: top;
+      font-size: large
+    }
+
+  </style>
+
+  <h4 style="text-align:center; margin-bottom: 30px;">Further information about the network</h4>
+
+  <table class="tg" class="center">
+    <thead>
+      <tr>
+        <th class="tg-7btt"><span style="font-weight:bold">Node Colors</span></th>
+        <th class="tg-7btt"><span style="font-weight:bold">Node Shapes</span></th>
+        <th class="tg-7btt"><span style="font-weight:bold">Edge Colors</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="tg-c3ow">
+          <div>
+            <div
+              style="float: left; height: 18px; width: 18px; margin-bottom: 10px; margin-right:5px; border: 1px solid black; clear: both; background-color:#C70039">
+            </div>Authors who already contributed at previous DHd conference
+          </div>
+        </td>
+        <td class="tg-c3ow"><div style="height:auto; width:autro">&#8902; Most Contributing Authors</div></td>
+        <td class="tg-c3ow">
+          <div>
+            <div
+              style="float: left; height: 18px; width: 18px; margin-bottom: 10px; margin-right:5px; border: 1px solid black; clear: both; background-color:#360BFA">
+            </div>Three or more interactions between the authors
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="tg-c3ow">
+          <div>
+            <div
+              style="float: left; height: 18px; width: 18px; margin-bottom: 10px; margin-right:5px; border: 1px solid black; clear: both; background-color:orange">
+            </div>New Author
+          </div>
+        </td>
+        <td class="tg-c3ow"><div style="height:auto; width:auto">&#x25CB; Other Authors</div></td>
+        <td class="tg-c3ow">
+          <div>
+            <div
+              style="float: left; height: 18px; width: 18px; margin-bottom: 10px; margin-right:5px; border: 1px solid black; clear: both; background-color:#6CADFB">
+            </div>Two interactions between the authors
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="tg-c3ow"></td>
+        <td class="tg-c3ow"></td>
+        <td class="tg-c3ow">
+          <div>
+            <div
+              style="float: left; height: 18px; width: 18px; margin-bottom: 10px; margin-right:5px; border: 1px solid black; clear: both; background-color:#6CEAFB">
+            </div>One interaction between the authors
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>        </div>
+
+        
+            <div id="loadingBar">
+              <div class="outerBorder">
+                <div id="text">0%</div>
+                <div id="border">
+                  <div id="bar"></div>
+                </div>
+              </div>
+            </div>
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+                  new TomSelect("#select-node",{
+                      create: false,
+                      sortField: {
+                          field: "text",
+                          direction: "asc"
+                      }
+                  });
+              
+
+              
+                  // explicitly using onItemAdd and this function as we need to save multiple values
+                  let updateValueFilter = function() {
+                      return function () {
+                      filter['value'].push(arguments[0])
+                      }
+                  }
+
+                  let valueControl = new TomSelect("#select-value",{
+                      maxItems: null,
+                      valueField: 'id',
+                      labelField: 'title',
+                      searchField: 'title',
+                      create: false,
+                      sortField: {
+                          field: "text",
+                          direction: "asc"
+                      },
+                      onItemAdd: updateValueFilter()
+                  });
+
+                  let addValues = function() {
+                      return function () {
+                          // clear the current value options and add the selected attribute values
+                          // tom-select handles duplicates
+                          let selectedProperty = arguments[0];
+                          valueControl.clear();
+                          valueControl.clearOptions();
+                          filter['value'] = []
+                          if (filter['item'] === 'node') {
+                              for (let each in allNodes) {
+                                  valueControl.addOption({
+                                      id:allNodes[each][selectedProperty],
+                                      title:allNodes[each][selectedProperty]
+                                  })
+                              }
+                          }
+                          else if (filter['item'] === 'edge') {
+                              for (let each in allEdges) {
+                                  valueControl.addOption({
+                                      id:allEdges[each][selectedProperty],
+                                      title:allEdges[each][selectedProperty]
+                                  })
+                              }
+                          }
+                      }
+                  };
+
+                  let propControl = new TomSelect("#select-property",{
+                      valueField: 'id',
+                      labelField: 'title',
+                      searchField: 'title',
+                      create: false,
+                      sortField: {
+                          field: "text",
+                          direction: "asc"
+                      },
+                      onItemAdd: addValues()
+                  });
+
+                  let addProperties = function() {
+                      return function () {
+                          // loops through the selected network item and adds the attributes to dropdown
+                          // tom-select handles duplicates
+                          clearFilter(false)
+                          if (arguments[0] === 'edge') {
+                              for (let each in allEdges) {
+                                  if (allEdges.hasOwnProperty(each)) {
+                                      for (let eachProp in allEdges[each]) {
+                                          if (allEdges[each].hasOwnProperty(eachProp)) {
+                                              propControl.addOption({id: eachProp, title: eachProp})
+                                          }
+                                      }
+                                  }
+                              }
+                          }
+                          else if (arguments[0] === 'node') {
+                              for (let each in allNodes) {
+                                  if (allNodes.hasOwnProperty(each)) {
+                                      for (let eachProp in allNodes[each]) {
+                                          if (allNodes[each].hasOwnProperty(eachProp)
+                                              && (eachProp !== 'hidden' && eachProp !== 'savedLabel'
+                                                  && eachProp !== 'hiddenLabel')) {
+                                              propControl.addOption({id: eachProp, title: eachProp})
+
+                                          }
+                                      }
+                                  }
+                              }
+                          }
+                      }
+                  };
+
+                  let itemControl = new TomSelect("#select-item",{
+                      create: false,
+                      sortField:{
+                          field: "text",
+                          direction: "asc"
+                      },
+                      onItemAdd: addProperties()
+                  });
+
+                  function clearFilter(reset) {
+                      // utility function to clear all the selected filter options
+                      // if reset is set to true, the existing filter will be removed
+                      // else, only the dropdown options are cleared
+                      propControl.clear();
+                      propControl.clearOptions();
+                      valueControl.clear();
+                      valueControl.clearOptions();
+                      filter = {
+                          item : '',
+                          property : '',
+                          value : []
+                      }
+                      if (reset) {
+                          itemControl.clear();
+                          filterHighlight({nodes: []})
+                      }
+                  }
+
+                  function updateFilter(value, key) {
+                      // key could be 'item' or 'property' and value is as selected in dropdown
+                      filter[key] = value
+                  }
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Kuczera, Andreas", "label": "Kuczera, Andreas", "shape": "star", "size": 40, "title": ["Kuczera, Andreas", 4]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Steyer, Timo", "label": "Steyer, Timo", "shape": "star", "size": 40, "title": ["Steyer, Timo", 4]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Blumtritt, Jonathan", "label": "Blumtritt, Jonathan", "shape": "dot", "size": 30, "title": ["Blumtritt, Jonathan", 3]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Jannidis, Fotis", "label": "Jannidis, Fotis", "shape": "dot", "size": 30, "title": ["Jannidis, Fotis", 3]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Gius, Evelyn", "label": "Gius, Evelyn", "shape": "dot", "size": 30, "title": ["Gius, Evelyn", 3]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "M\u00fcller, Andreas", "label": "M\u00fcller, Andreas", "shape": "dot", "size": 30, "title": ["M\u00fcller, Andreas", 3]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Mehler, Alexander", "label": "Mehler, Alexander", "shape": "dot", "size": 30, "title": ["Mehler, Alexander", 3]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Diehr, Franziska", "label": "Diehr, Franziska", "shape": "dot", "size": 30, "title": ["Diehr, Franziska", 3]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Burghardt, Manuel", "label": "Burghardt, Manuel", "shape": "dot", "size": 30, "title": ["Burghardt, Manuel", 3]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Fricke-Steyer, Henrike", "label": "Fricke-Steyer, Henrike", "shape": "dot", "size": 20, "title": ["Fricke-Steyer, Henrike", 2]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Klaffki, Lisa", "label": "Klaffki, Lisa", "shape": "dot", "size": 20, "title": ["Klaffki, Lisa", 2]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Reul, Christian", "label": "Reul, Christian", "shape": "dot", "size": 20, "title": ["Reul, Christian", 2]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Puppe, Frank", "label": "Puppe, Frank", "shape": "dot", "size": 20, "title": ["Puppe, Frank", 2]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Schneider, Stefanie", "label": "Schneider, Stefanie", "shape": "dot", "size": 20, "title": ["Schneider, Stefanie", 2]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Schmidt, Thomas", "label": "Schmidt, Thomas", "shape": "dot", "size": 20, "title": ["Schmidt, Thomas", 2]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Hedeland, Hanna", "label": "Hedeland, Hanna", "shape": "dot", "size": 20, "title": ["Hedeland, Hanna", 2]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Rau, Felix", "label": "Rau, Felix", "shape": "dot", "size": 20, "title": ["Rau, Felix", 2]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Brunner, Annelen", "label": "Brunner, Annelen", "shape": "dot", "size": 20, "title": ["Brunner, Annelen", 2]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Tu, Ngoc Duyen Tanja", "label": "Tu, Ngoc Duyen Tanja", "shape": "dot", "size": 20, "title": ["Tu, Ngoc Duyen Tanja", 2]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Krug, Markus", "label": "Krug, Markus", "shape": "dot", "size": 20, "title": ["Krug, Markus", 2]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Horstmann, Jan", "label": "Horstmann, Jan", "shape": "dot", "size": 20, "title": ["Horstmann, Jan", 2]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Schumacher, Mareike", "label": "Schumacher, Mareike", "shape": "dot", "size": 20, "title": ["Schumacher, Mareike", 2]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Trilcke, Peer", "label": "Trilcke, Peer", "shape": "dot", "size": 20, "title": ["Trilcke, Peer", 2]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Prager, Christian", "label": "Prager, Christian", "shape": "dot", "size": 20, "title": ["Prager, Christian", 2]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Konle, Leonard", "label": "Konle, Leonard", "shape": "dot", "size": 20, "title": ["Konle, Leonard", 2]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Mathiak, Brigitte", "label": "Mathiak, Brigitte", "shape": "dot", "size": 20, "title": ["Mathiak, Brigitte", 2]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Andorfer, Peter", "label": "Andorfer, Peter", "shape": "dot", "size": 20, "title": ["Andorfer, Peter", 2]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Kesselheim, Wolfgang", "label": "Kesselheim, Wolfgang", "shape": "dot", "size": 20, "title": ["Kesselheim, Wolfgang", 2]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Uslu, Tolga", "label": "Uslu, Tolga", "shape": "dot", "size": 20, "title": ["Uslu, Tolga", 2]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Brodhun, Maximilian", "label": "Brodhun, Maximilian", "shape": "dot", "size": 20, "title": ["Brodhun, Maximilian", 2]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Proisl, Thomas", "label": "Proisl, Thomas", "shape": "dot", "size": 20, "title": ["Proisl, Thomas", 2]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Franken, Lina", "label": "Franken, Lina", "shape": "dot", "size": 20, "title": ["Franken, Lina", 2]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Vauth, Michael", "label": "Vauth, Michael", "shape": "dot", "size": 20, "title": ["Vauth, Michael", 2]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "G\u00f6tzelmann, Germaine", "label": "G\u00f6tzelmann, Germaine", "shape": "dot", "size": 20, "title": ["G\u00f6tzelmann, Germaine", 2]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Pohl, Oliver", "label": "Pohl, Oliver", "shape": "dot", "size": 20, "title": ["Pohl, Oliver", 2]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Schn\u00f6pf, Markus", "label": "Schn\u00f6pf, Markus", "shape": "dot", "size": 20, "title": ["Schn\u00f6pf, Markus", 2]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "K\u00f6nig, Mareike", "label": "K\u00f6nig, Mareike", "shape": "dot", "size": 20, "title": ["K\u00f6nig, Mareike", 2]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "M\u00fcller-Laackman, Jonas", "label": "M\u00fcller-Laackman, Jonas", "shape": "dot", "size": 20, "title": ["M\u00fcller-Laackman, Jonas", 2]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Hartel, Rita", "label": "Hartel, Rita", "shape": "dot", "size": 20, "title": ["Hartel, Rita", 2]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Abrami, Giuseppe", "label": "Abrami, Giuseppe", "shape": "dot", "size": 20, "title": ["Abrami, Giuseppe", 2]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Dumont, Stefan", "label": "Dumont, Stefan", "shape": "dot", "size": 20, "title": ["Dumont, Stefan", 2]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Sporleder, Caroline", "label": "Sporleder, Caroline", "shape": "dot", "size": 20, "title": ["Sporleder, Caroline", 2]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Ziehe, Stefan", "label": "Ziehe, Stefan", "shape": "dot", "size": 20, "title": ["Ziehe, Stefan", 2]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Wettlaufer, J\u00f6rg", "label": "Wettlaufer, J\u00f6rg", "shape": "dot", "size": 20, "title": ["Wettlaufer, J\u00f6rg", 2]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Krautter, Benjamin", "label": "Krautter, Benjamin", "shape": "dot", "size": 20, "title": ["Krautter, Benjamin", 2]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Vogeler, Georg", "label": "Vogeler, Georg", "shape": "dot", "size": 20, "title": ["Vogeler, Georg", 2]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Scholger, Martina", "label": "Scholger, Martina", "shape": "dot", "size": 20, "title": ["Scholger, Martina", 2]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Schl\u00f6gl, Matthias", "label": "Schl\u00f6gl, Matthias", "shape": "dot", "size": 20, "title": ["Schl\u00f6gl, Matthias", 2]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Martin, Fechner", "label": "Martin, Fechner", "shape": "dot", "size": 10, "title": ["Martin, Fechner", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Kleymann, Rabea", "label": "Kleymann, Rabea", "shape": "dot", "size": 10, "title": ["Kleymann, Rabea", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Seemann, Nina", "label": "Seemann, Nina", "shape": "dot", "size": 10, "title": ["Seemann, Nina", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Merten, Marie-Luis", "label": "Merten, Marie-Luis", "shape": "dot", "size": 10, "title": ["Merten, Marie-Luis", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Hodel, Tobias", "label": "Hodel, Tobias", "shape": "dot", "size": 10, "title": ["Hodel, Tobias", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Diem, Markus", "label": "Diem, Markus", "shape": "dot", "size": 10, "title": ["Diem, Markus", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Oliveira Ares, Sofia", "label": "Oliveira Ares, Sofia", "shape": "dot", "size": 10, "title": ["Oliveira Ares, Sofia", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Weidemann, Max", "label": "Weidemann, Max", "shape": "dot", "size": 10, "title": ["Weidemann, Max", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Wehrheim, Lino", "label": "Wehrheim, Lino", "shape": "dot", "size": 10, "title": ["Wehrheim, Lino", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Neumann, Katrin", "label": "Neumann, Katrin", "shape": "dot", "size": 10, "title": ["Neumann, Katrin", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Seltmann, Melanie", "label": "Seltmann, Melanie", "shape": "dot", "size": 10, "title": ["Seltmann, Melanie", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Walter, Scholger", "label": "Walter, Scholger", "shape": "dot", "size": 10, "title": ["Walter, Scholger", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "B\u00e4umer, Frederik Simon", "label": "B\u00e4umer, Frederik Simon", "shape": "dot", "size": 10, "title": ["B\u00e4umer, Frederik Simon", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Buff, Bianca", "label": "Buff, Bianca", "shape": "dot", "size": 10, "title": ["Buff, Bianca", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Geierhos, Michaela", "label": "Geierhos, Michaela", "shape": "dot", "size": 10, "title": ["Geierhos, Michaela", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Helm, Wiebke", "label": "Helm, Wiebke", "shape": "dot", "size": 10, "title": ["Helm, Wiebke", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Im, Chanjong", "label": "Im, Chanjong", "shape": "dot", "size": 10, "title": ["Im, Chanjong", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Mandl, Thomas", "label": "Mandl, Thomas", "shape": "dot", "size": 10, "title": ["Mandl, Thomas", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Schmideler, Sebastian", "label": "Schmideler, Sebastian", "shape": "dot", "size": 10, "title": ["Schmideler, Sebastian", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Calvo Tello, Jos\u00e9", "label": "Calvo Tello, Jos\u00e9", "shape": "dot", "size": 10, "title": ["Calvo Tello, Jos\u00e9", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Wuttke, Ulrike", "label": "Wuttke, Ulrike", "shape": "dot", "size": 10, "title": ["Wuttke, Ulrike", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Neuroth, Heike", "label": "Neuroth, Heike", "shape": "dot", "size": 10, "title": ["Neuroth, Heike", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Scha\u00dfan, Torsten", "label": "Scha\u00dfan, Torsten", "shape": "dot", "size": 10, "title": ["Scha\u00dfan, Torsten", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Baumgarten, Marcus", "label": "Baumgarten, Marcus", "shape": "dot", "size": 10, "title": ["Baumgarten, Marcus", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Iglesia, Martin de la", "label": "Iglesia, Martin de la", "shape": "dot", "size": 10, "title": ["Iglesia, Martin de la", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Kampkaspar, Dario", "label": "Kampkaspar, Dario", "shape": "dot", "size": 10, "title": ["Kampkaspar, Dario", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Parlitz, Dietrich", "label": "Parlitz, Dietrich", "shape": "dot", "size": 10, "title": ["Parlitz, Dietrich", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Springmann, Uwe", "label": "Springmann, Uwe", "shape": "dot", "size": 10, "title": ["Springmann, Uwe", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Wick, Christoph", "label": "Wick, Christoph", "shape": "dot", "size": 10, "title": ["Wick, Christoph", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Kohle, Hubertus", "label": "Kohle, Hubertus", "shape": "dot", "size": 10, "title": ["Kohle, Hubertus", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Burg, Severin", "label": "Burg, Severin", "shape": "dot", "size": 10, "title": ["Burg, Severin", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "K\u00fcchenhoff, Helmut", "label": "K\u00fcchenhoff, Helmut", "shape": "dot", "size": 10, "title": ["K\u00fcchenhoff, Helmut", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Meyer, Nils", "label": "Meyer, Nils", "shape": "dot", "size": 10, "title": ["Meyer, Nils", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "R\u00f6ssel, Julia", "label": "R\u00f6ssel, Julia", "shape": "dot", "size": 10, "title": ["R\u00f6ssel, Julia", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Maus, David", "label": "Maus, David", "shape": "dot", "size": 10, "title": ["Maus, David", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Bald, Markus", "label": "Bald, Markus", "shape": "dot", "size": 10, "title": ["Bald, Markus", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Damiani, Vincenzo", "label": "Damiani, Vincenzo", "shape": "dot", "size": 10, "title": ["Damiani, Vincenzo", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Essler, Holger", "label": "Essler, Holger", "shape": "dot", "size": 10, "title": ["Essler, Holger", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Eyeselein, Bj\u00f6rn", "label": "Eyeselein, Bj\u00f6rn", "shape": "dot", "size": 10, "title": ["Eyeselein, Bj\u00f6rn", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Hall, Mark", "label": "Hall, Mark", "shape": "dot", "size": 10, "title": ["Hall, Mark", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Howanitz, Gernot", "label": "Howanitz, Gernot", "shape": "dot", "size": 10, "title": ["Howanitz, Gernot", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Radisch, Erik", "label": "Radisch, Erik", "shape": "dot", "size": 10, "title": ["Radisch, Erik", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Decker, Jan-Oliver", "label": "Decker, Jan-Oliver", "shape": "dot", "size": 10, "title": ["Decker, Jan-Oliver", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Rehbein, Malte", "label": "Rehbein, Malte", "shape": "dot", "size": 10, "title": ["Rehbein, Malte", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Gorisch, Jan", "label": "Gorisch, Jan", "shape": "dot", "size": 10, "title": ["Gorisch, Jan", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "W\u00f6rner, Kai", "label": "W\u00f6rner, Kai", "shape": "dot", "size": 10, "title": ["W\u00f6rner, Kai", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Batinic, Josip", "label": "Batinic, Josip", "shape": "dot", "size": 10, "title": ["Batinic, Josip", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Frick, Elena", "label": "Frick, Elena", "shape": "dot", "size": 10, "title": ["Frick, Elena", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Gasch, Joachim", "label": "Gasch, Joachim", "shape": "dot", "size": 10, "title": ["Gasch, Joachim", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Weimer, Lukas", "label": "Weimer, Lukas", "shape": "dot", "size": 10, "title": ["Weimer, Lukas", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Engelberg, Stefan", "label": "Engelberg, Stefan", "shape": "dot", "size": 10, "title": ["Engelberg, Stefan", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Geelhaar, Tim", "label": "Geelhaar, Tim", "shape": "dot", "size": 10, "title": ["Geelhaar, Tim", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Zimmer, Sebastian", "label": "Zimmer, Sebastian", "shape": "dot", "size": 10, "title": ["Zimmer, Sebastian", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "G\u00f6del, Martina", "label": "G\u00f6del, Martina", "shape": "dot", "size": 10, "title": ["G\u00f6del, Martina", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Persch, Dana", "label": "Persch, Dana", "shape": "dot", "size": 10, "title": ["Persch, Dana", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Donig, Simon", "label": "Donig, Simon", "shape": "dot", "size": 10, "title": ["Donig, Simon", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Christoforaki, Maria", "label": "Christoforaki, Maria", "shape": "dot", "size": 10, "title": ["Christoforaki, Maria", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Bermeitinger, Bernhard", "label": "Bermeitinger, Bernhard", "shape": "dot", "size": 10, "title": ["Bermeitinger, Bernhard", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Handschuh, Siegfried", "label": "Handschuh, Siegfried", "shape": "dot", "size": 10, "title": ["Handschuh, Siegfried", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Meister, Jan Christoph", "label": "Meister, Jan Christoph", "shape": "dot", "size": 10, "title": ["Meister, Jan Christoph", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Petris, Marco", "label": "Petris, Marco", "shape": "dot", "size": 10, "title": ["Petris, Marco", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Hoenen, Armin", "label": "Hoenen, Armin", "shape": "dot", "size": 10, "title": ["Hoenen, Armin", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Rittershaus, David", "label": "Rittershaus, David", "shape": "dot", "size": 10, "title": ["Rittershaus, David", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Kuroczy\u0144ski, Piotr", "label": "Kuroczy\u0144ski, Piotr", "shape": "dot", "size": 10, "title": ["Kuroczy\u0144ski, Piotr", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Brandt, Julia", "label": "Brandt, Julia", "shape": "dot", "size": 10, "title": ["Brandt, Julia", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Jara, Karolina", "label": "Jara, Karolina", "shape": "dot", "size": 10, "title": ["Jara, Karolina", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Grosse, Peggy", "label": "Grosse, Peggy", "shape": "dot", "size": 10, "title": ["Grosse, Peggy", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Klaus, Carsten", "label": "Klaus, Carsten", "shape": "dot", "size": 10, "title": ["Klaus, Carsten", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Fankhauser, Peter", "label": "Fankhauser, Peter", "shape": "dot", "size": 10, "title": ["Fankhauser, Peter", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Klakow, Dietrich", "label": "Klakow, Dietrich", "shape": "dot", "size": 10, "title": ["Klakow, Dietrich", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Kempf, Sebastian", "label": "Kempf, Sebastian", "shape": "dot", "size": 10, "title": ["Kempf, Sebastian", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "David, Schmidt", "label": "David, Schmidt", "shape": "dot", "size": 10, "title": ["David, Schmidt", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Lukas, Weimer", "label": "Lukas, Weimer", "shape": "dot", "size": 10, "title": ["Lukas, Weimer", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Frank, Puppe", "label": "Frank, Puppe", "shape": "dot", "size": 10, "title": ["Frank, Puppe", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Fischer, Frank", "label": "Fischer, Frank", "shape": "dot", "size": 10, "title": ["Fischer, Frank", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "B\u00f6rner, Ingo", "label": "B\u00f6rner, Ingo", "shape": "dot", "size": 10, "title": ["B\u00f6rner, Ingo", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "G\u00f6bel, Mathias", "label": "G\u00f6bel, Mathias", "shape": "dot", "size": 10, "title": ["G\u00f6bel, Mathias", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Hechtl, Angelika", "label": "Hechtl, Angelika", "shape": "dot", "size": 10, "title": ["Hechtl, Angelika", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Kittel, Christopher", "label": "Kittel, Christopher", "shape": "dot", "size": 10, "title": ["Kittel, Christopher", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Milling, Carsten", "label": "Milling, Carsten", "shape": "dot", "size": 10, "title": ["Milling, Carsten", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Willand, Marcus", "label": "Willand, Marcus", "shape": "dot", "size": 10, "title": ["Willand, Marcus", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Reiter, Nils", "label": "Reiter, Nils", "shape": "dot", "size": 10, "title": ["Reiter, Nils", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Mei\u00dfner, Cordula", "label": "Mei\u00dfner, Cordula", "shape": "dot", "size": 10, "title": ["Mei\u00dfner, Cordula", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Wallner, Franziska", "label": "Wallner, Franziska", "shape": "dot", "size": 10, "title": ["Wallner, Franziska", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Toschka, Patrick", "label": "Toschka, Patrick", "shape": "dot", "size": 10, "title": ["Toschka, Patrick", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Laubrock, Jochen", "label": "Laubrock, Jochen", "shape": "dot", "size": 10, "title": ["Laubrock, Jochen", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Dubray, David", "label": "Dubray, David", "shape": "dot", "size": 10, "title": ["Dubray, David", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Pattee, Aaron", "label": "Pattee, Aaron", "shape": "dot", "size": 10, "title": ["Pattee, Aaron", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Volkmann, Armin", "label": "Volkmann, Armin", "shape": "dot", "size": 10, "title": ["Volkmann, Armin", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Mara, Hubert", "label": "Mara, Hubert", "shape": "dot", "size": 10, "title": ["Mara, Hubert", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Bogacz, Bartosz", "label": "Bogacz, Bartosz", "shape": "dot", "size": 10, "title": ["Bogacz, Bartosz", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Feldmann, Felix", "label": "Feldmann, Felix", "shape": "dot", "size": 10, "title": ["Feldmann, Felix", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Messemer, Heike", "label": "Messemer, Heike", "shape": "dot", "size": 10, "title": ["Messemer, Heike", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Baillot, Anne", "label": "Baillot, Anne", "shape": "dot", "size": 10, "title": ["Baillot, Anne", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Wottawa, Jane", "label": "Wottawa, Jane", "shape": "dot", "size": 10, "title": ["Wottawa, Jane", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Barrault, Lo\u00efc", "label": "Barrault, Lo\u00efc", "shape": "dot", "size": 10, "title": ["Barrault, Lo\u00efc", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Bougares, Fethi", "label": "Bougares, Fethi", "shape": "dot", "size": 10, "title": ["Bougares, Fethi", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Dewitz, Leyla", "label": "Dewitz, Leyla", "shape": "dot", "size": 10, "title": ["Dewitz, Leyla", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "M\u00fcnster, Sander", "label": "M\u00fcnster, Sander", "shape": "dot", "size": 10, "title": ["M\u00fcnster, Sander", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Niebling, Florian", "label": "Niebling, Florian", "shape": "dot", "size": 10, "title": ["Niebling, Florian", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Prell, Martin", "label": "Prell, Martin", "shape": "dot", "size": 10, "title": ["Prell, Martin", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Althof, Daniel", "label": "Althof, Daniel", "shape": "dot", "size": 10, "title": ["Althof, Daniel", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Dogunke, Swantje", "label": "Dogunke, Swantje", "shape": "dot", "size": 10, "title": ["Dogunke, Swantje", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Leinen, Peter", "label": "Leinen, Peter", "shape": "dot", "size": 10, "title": ["Leinen, Peter", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Scherl, Magdalena", "label": "Scherl, Magdalena", "shape": "dot", "size": 10, "title": ["Scherl, Magdalena", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Unold, Martin", "label": "Unold, Martin", "shape": "dot", "size": 10, "title": ["Unold, Martin", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Homburg, Timo", "label": "Homburg, Timo", "shape": "dot", "size": 10, "title": ["Homburg, Timo", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Kremer, Gerhard", "label": "Kremer, Gerhard", "shape": "dot", "size": 10, "title": ["Kremer, Gerhard", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Jung, Kerstin", "label": "Jung, Kerstin", "shape": "dot", "size": 10, "title": ["Jung, Kerstin", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Neuefeind, Claes", "label": "Neuefeind, Claes", "shape": "dot", "size": 10, "title": ["Neuefeind, Claes", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Schildkamp, Philip", "label": "Schildkamp, Philip", "shape": "dot", "size": 10, "title": ["Schildkamp, Philip", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Harzenetter, Lukas", "label": "Harzenetter, Lukas", "shape": "dot", "size": 10, "title": ["Harzenetter, Lukas", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Barzen, Johanna", "label": "Barzen, Johanna", "shape": "dot", "size": 10, "title": ["Barzen, Johanna", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Breitenb\u00fccher, Uwe", "label": "Breitenb\u00fccher, Uwe", "shape": "dot", "size": 10, "title": ["Breitenb\u00fccher, Uwe", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Leymann, Frank", "label": "Leymann, Frank", "shape": "dot", "size": 10, "title": ["Leymann, Frank", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Cremer, Fabian", "label": "Cremer, Fabian", "shape": "dot", "size": 10, "title": ["Cremer, Fabian", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Schlupkothen, Frederik", "label": "Schlupkothen, Frederik", "shape": "dot", "size": 10, "title": ["Schlupkothen, Frederik", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Nantke, Julia", "label": "Nantke, Julia", "shape": "dot", "size": 10, "title": ["Nantke, Julia", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Hottiger, Christoph", "label": "Hottiger, Christoph", "shape": "dot", "size": 10, "title": ["Hottiger, Christoph", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Kurz, Stephan", "label": "Kurz, Stephan", "shape": "dot", "size": 10, "title": ["Kurz, Stephan", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Zaytseva, Ksenia", "label": "Zaytseva, Ksenia", "shape": "dot", "size": 10, "title": ["Zaytseva, Ksenia", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Katharina, Kr\u00fcger", "label": "Katharina, Kr\u00fcger", "shape": "dot", "size": 10, "title": ["Katharina, Kr\u00fcger", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Carla, S\u00f6kefeld", "label": "Carla, S\u00f6kefeld", "shape": "dot", "size": 10, "title": ["Carla, S\u00f6kefeld", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Gleim, R\u00fcdiger", "label": "Gleim, R\u00fcdiger", "shape": "dot", "size": 10, "title": ["Gleim, R\u00fcdiger", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Baumartz, Daniel", "label": "Baumartz, Daniel", "shape": "dot", "size": 10, "title": ["Baumartz, Daniel", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Kollatz, Thomas", "label": "Kollatz, Thomas", "shape": "dot", "size": 10, "title": ["Kollatz, Thomas", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "W\u00fcbbena, Thorsten", "label": "W\u00fcbbena, Thorsten", "shape": "dot", "size": 10, "title": ["W\u00fcbbena, Thorsten", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Efer, Thomas", "label": "Efer, Thomas", "shape": "dot", "size": 10, "title": ["Efer, Thomas", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Dimpel, Friedrich", "label": "Dimpel, Friedrich", "shape": "dot", "size": 10, "title": ["Dimpel, Friedrich", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Meyer, Peter", "label": "Meyer, Peter", "shape": "dot", "size": 10, "title": ["Meyer, Peter", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Adelmann, Benedikt", "label": "Adelmann, Benedikt", "shape": "dot", "size": 10, "title": ["Adelmann, Benedikt", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Kr\u00fcger, Katharina", "label": "Kr\u00fcger, Katharina", "shape": "dot", "size": 10, "title": ["Kr\u00fcger, Katharina", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Hohmann, Georg", "label": "Hohmann, Georg", "shape": "dot", "size": 10, "title": ["Hohmann, Georg", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Geipel, Andrea", "label": "Geipel, Andrea", "shape": "dot", "size": 10, "title": ["Geipel, Andrea", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Henkensiefken, Claus", "label": "Henkensiefken, Claus", "shape": "dot", "size": 10, "title": ["Henkensiefken, Claus", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Tonne, Danah", "label": "Tonne, Danah", "shape": "dot", "size": 10, "title": ["Tonne, Danah", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Hegel, Philipp", "label": "Hegel, Philipp", "shape": "dot", "size": 10, "title": ["Hegel, Philipp", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Krewet, Michael", "label": "Krewet, Michael", "shape": "dot", "size": 10, "title": ["Krewet, Michael", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "H\u00fcbner, Julia", "label": "H\u00fcbner, Julia", "shape": "dot", "size": 10, "title": ["H\u00fcbner, Julia", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "S\u00f6ring, Sibylle", "label": "S\u00f6ring, Sibylle", "shape": "dot", "size": 10, "title": ["S\u00f6ring, Sibylle", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "L\u00f6ffler, Andreas", "label": "L\u00f6ffler, Andreas", "shape": "dot", "size": 10, "title": ["L\u00f6ffler, Andreas", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Hitzker, Michael", "label": "Hitzker, Michael", "shape": "dot", "size": 10, "title": ["Hitzker, Michael", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "H\u00f6fler, Markus", "label": "H\u00f6fler, Markus", "shape": "dot", "size": 10, "title": ["H\u00f6fler, Markus", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Schmidt, Timo", "label": "Schmidt, Timo", "shape": "dot", "size": 10, "title": ["Schmidt, Timo", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Schulz, Julian", "label": "Schulz, Julian", "shape": "dot", "size": 10, "title": ["Schulz, Julian", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "M\u00fchleder, Peter", "label": "M\u00fchleder, Peter", "shape": "dot", "size": 10, "title": ["M\u00fchleder, Peter", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Hoffmann, Tracy", "label": "Hoffmann, Tracy", "shape": "dot", "size": 10, "title": ["Hoffmann, Tracy", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "R\u00e4misch, Florian", "label": "R\u00e4misch, Florian", "shape": "dot", "size": 10, "title": ["R\u00e4misch, Florian", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Lorenz, Anne Katrin", "label": "Lorenz, Anne Katrin", "shape": "dot", "size": 10, "title": ["Lorenz, Anne Katrin", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "M\u00fcller-Dannhausen, Lea", "label": "M\u00fcller-Dannhausen, Lea", "shape": "dot", "size": 10, "title": ["M\u00fcller-Dannhausen, Lea", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Trautmann, Marjam", "label": "Trautmann, Marjam", "shape": "dot", "size": 10, "title": ["Trautmann, Marjam", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Druskat, Stephan", "label": "Druskat, Stephan", "shape": "dot", "size": 10, "title": ["Druskat, Stephan", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Rockenberger, Annika", "label": "Rockenberger, Annika", "shape": "dot", "size": 10, "title": ["Rockenberger, Annika", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Marx, Michael", "label": "Marx, Michael", "shape": "dot", "size": 10, "title": ["Marx, Michael", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Franke, Stefanie", "label": "Franke, Stefanie", "shape": "dot", "size": 10, "title": ["Franke, Stefanie", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Artika, Farah", "label": "Artika, Farah", "shape": "dot", "size": 10, "title": ["Artika, Farah", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Mahmutovic, Edin", "label": "Mahmutovic, Edin", "shape": "dot", "size": 10, "title": ["Mahmutovic, Edin", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "R\u00f6hrer, Ines", "label": "R\u00f6hrer, Ines", "shape": "dot", "size": 10, "title": ["R\u00f6hrer, Ines", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Ullrich, Sabine", "label": "Ullrich, Sabine", "shape": "dot", "size": 10, "title": ["Ullrich, Sabine", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Hadersbeck, Maximilian", "label": "Hadersbeck, Maximilian", "shape": "dot", "size": 10, "title": ["Hadersbeck, Maximilian", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Menke, Ulla", "label": "Menke, Ulla", "shape": "dot", "size": 10, "title": ["Menke, Ulla", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Dogaru, Teodora", "label": "Dogaru, Teodora", "shape": "dot", "size": 10, "title": ["Dogaru, Teodora", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Dunst, Alexander", "label": "Dunst, Alexander", "shape": "dot", "size": 10, "title": ["Dunst, Alexander", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Sikora, Uwe", "label": "Sikora, Uwe", "shape": "dot", "size": 10, "title": ["Sikora, Uwe", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Gronemeyer, Sven", "label": "Gronemeyer, Sven", "shape": "dot", "size": 10, "title": ["Gronemeyer, Sven", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Wagner, Elisabeth", "label": "Wagner, Elisabeth", "shape": "dot", "size": 10, "title": ["Wagner, Elisabeth", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Diederichs, Katja", "label": "Diederichs, Katja", "shape": "dot", "size": 10, "title": ["Diederichs, Katja", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Grube, Nikolai", "label": "Grube, Nikolai", "shape": "dot", "size": 10, "title": ["Grube, Nikolai", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Moeller, Katrin", "label": "Moeller, Katrin", "shape": "dot", "size": 10, "title": ["Moeller, Katrin", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Purschwitz, Anne", "label": "Purschwitz, Anne", "shape": "dot", "size": 10, "title": ["Purschwitz, Anne", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Metzmacher, Katja", "label": "Metzmacher, Katja", "shape": "dot", "size": 10, "title": ["Metzmacher, Katja", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Helling, Patrick", "label": "Helling, Patrick", "shape": "dot", "size": 10, "title": ["Helling, Patrick", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Hemati, Wahed", "label": "Hemati, Wahed", "shape": "dot", "size": 10, "title": ["Hemati, Wahed", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Wachter, Christian", "label": "Wachter, Christian", "shape": "dot", "size": 10, "title": ["Wachter, Christian", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Schl\u00f6r, Daniel", "label": "Schl\u00f6r, Daniel", "shape": "dot", "size": 10, "title": ["Schl\u00f6r, Daniel", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Veseli, Blerta", "label": "Veseli, Blerta", "shape": "dot", "size": 10, "title": ["Veseli, Blerta", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Hotho, Andreas", "label": "Hotho, Andreas", "shape": "dot", "size": 10, "title": ["Hotho, Andreas", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Meyer, Selina", "label": "Meyer, Selina", "shape": "dot", "size": 10, "title": ["Meyer, Selina", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Schmidtbauer, Stephanie", "label": "Schmidtbauer, Stephanie", "shape": "dot", "size": 10, "title": ["Schmidtbauer, Stephanie", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Molz, Johannes", "label": "Molz, Johannes", "shape": "dot", "size": 10, "title": ["Molz, Johannes", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Pagenstecher, Cord", "label": "Pagenstecher, Cord", "shape": "dot", "size": 10, "title": ["Pagenstecher, Cord", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Grabsch, Sascha", "label": "Grabsch, Sascha", "shape": "dot", "size": 10, "title": ["Grabsch, Sascha", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Spiekermann, Christian", "label": "Spiekermann, Christian", "shape": "dot", "size": 10, "title": ["Spiekermann, Christian", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Guhr, Svenja", "label": "Guhr, Svenja", "shape": "dot", "size": 10, "title": ["Guhr, Svenja", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Varachkina, Hanna", "label": "Varachkina, Hanna", "shape": "dot", "size": 10, "title": ["Varachkina, Hanna", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Lee, Geumbi", "label": "Lee, Geumbi", "shape": "dot", "size": 10, "title": ["Lee, Geumbi", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "B\u00fcrgermeister, Martina", "label": "B\u00fcrgermeister, Martina", "shape": "dot", "size": 10, "title": ["B\u00fcrgermeister, Martina", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Bartz, Gabriele", "label": "Bartz, Gabriele", "shape": "dot", "size": 10, "title": ["Bartz, Gabriele", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Gnei\u00df, Markus", "label": "Gnei\u00df, Markus", "shape": "dot", "size": 10, "title": ["Gnei\u00df, Markus", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Stuber, Martin", "label": "Stuber, Martin", "shape": "dot", "size": 10, "title": ["Stuber, Martin", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "D\u00e4ngeli, Peter", "label": "D\u00e4ngeli, Peter", "shape": "dot", "size": 10, "title": ["D\u00e4ngeli, Peter", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Forney, Christian", "label": "Forney, Christian", "shape": "dot", "size": 10, "title": ["Forney, Christian", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Koch, Gertraud", "label": "Koch, Gertraud", "shape": "dot", "size": 10, "title": ["Koch, Gertraud", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Kilincoglu, Deniz", "label": "Kilincoglu, Deniz", "shape": "dot", "size": 10, "title": ["Kilincoglu, Deniz", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Mandalka, Markus", "label": "Mandalka, Markus", "shape": "dot", "size": 10, "title": ["Mandalka, Markus", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Seltmann, Melanie E.-H.", "label": "Seltmann, Melanie E.-H.", "shape": "dot", "size": 10, "title": ["Seltmann, Melanie E.-H.", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Pagel, Janis", "label": "Pagel, Janis", "shape": "dot", "size": 10, "title": ["Pagel, Janis", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Haaf, Susanne", "label": "Haaf, Susanne", "shape": "dot", "size": 10, "title": ["Haaf, Susanne", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Henny-Krahmer, Ulrike", "label": "Henny-Krahmer, Ulrike", "shape": "dot", "size": 10, "title": ["Henny-Krahmer, Ulrike", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Neuber, Frederike", "label": "Neuber, Frederike", "shape": "dot", "size": 10, "title": ["Neuber, Frederike", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Glinka, Katrin", "label": "Glinka, Katrin", "shape": "dot", "size": 10, "title": ["Glinka, Katrin", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "G\u00f6rz, G\u00fcnther", "label": "G\u00f6rz, G\u00fcnther", "shape": "dot", "size": 10, "title": ["G\u00f6rz, G\u00fcnther", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Seidl, Chiara", "label": "Seidl, Chiara", "shape": "dot", "size": 10, "title": ["Seidl, Chiara", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Thiering, Martin", "label": "Thiering, Martin", "shape": "dot", "size": 10, "title": ["Thiering, Martin", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Schaeben, Marcel", "label": "Schaeben, Marcel", "shape": "dot", "size": 10, "title": ["Schaeben, Marcel", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "El Khatib, Randa", "label": "El Khatib, Randa", "shape": "dot", "size": 10, "title": ["El Khatib, Randa", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Toscano, Roberta", "label": "Toscano, Roberta", "shape": "dot", "size": 10, "title": ["Toscano, Roberta", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Schwappach, Florin", "label": "Schwappach, Florin", "shape": "dot", "size": 10, "title": ["Schwappach, Florin", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Pause, Johannes", "label": "Pause, Johannes", "shape": "dot", "size": 10, "title": ["Pause, Johannes", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Walkowski, Niels-Oliver", "label": "Walkowski, Niels-Oliver", "shape": "dot", "size": 10, "title": ["Walkowski, Niels-Oliver", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Rettinghaus, Klaus", "label": "Rettinghaus, Klaus", "shape": "dot", "size": 10, "title": ["Rettinghaus, Klaus", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Severin, Simmler", "label": "Severin, Simmler", "shape": "dot", "size": 10, "title": ["Severin, Simmler", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Thorsten, Vitt", "label": "Thorsten, Vitt", "shape": "dot", "size": 10, "title": ["Thorsten, Vitt", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Pielstr\u00f6m, Steffen", "label": "Pielstr\u00f6m, Steffen", "shape": "dot", "size": 10, "title": ["Pielstr\u00f6m, Steffen", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Busch, Anna", "label": "Busch, Anna", "shape": "dot", "size": 10, "title": ["Busch, Anna", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Bludau, Mark-Jan", "label": "Bludau, Mark-Jan", "shape": "dot", "size": 10, "title": ["Bludau, Mark-Jan", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Br\u00fcggemann, Viktoria", "label": "Br\u00fcggemann, Viktoria", "shape": "dot", "size": 10, "title": ["Br\u00fcggemann, Viktoria", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "D\u00f6rk, Marian", "label": "D\u00f6rk, Marian", "shape": "dot", "size": 10, "title": ["D\u00f6rk, Marian", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Genzel, Kristina", "label": "Genzel, Kristina", "shape": "dot", "size": 10, "title": ["Genzel, Kristina", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "M\u00f6ller, Klaus-Peter", "label": "M\u00f6ller, Klaus-Peter", "shape": "dot", "size": 10, "title": ["M\u00f6ller, Klaus-Peter", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Seifert, Sabine", "label": "Seifert, Sabine", "shape": "dot", "size": 10, "title": ["Seifert, Sabine", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Wagner, Andreas", "label": "Wagner, Andreas", "shape": "dot", "size": 10, "title": ["Wagner, Andreas", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Bragagnolo, Manuela", "label": "Bragagnolo, Manuela", "shape": "dot", "size": 10, "title": ["Bragagnolo, Manuela", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "T\u00fcrkoglu, Enes", "label": "T\u00fcrkoglu, Enes", "shape": "dot", "size": 10, "title": ["T\u00fcrkoglu, Enes", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Vitt, Thorsten", "label": "Vitt, Thorsten", "shape": "dot", "size": 10, "title": ["Vitt, Thorsten", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Br\u00fcning, Gerrit", "label": "Br\u00fcning, Gerrit", "shape": "dot", "size": 10, "title": ["Br\u00fcning, Gerrit", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Pravida, Dietmar", "label": "Pravida, Dietmar", "shape": "dot", "size": 10, "title": ["Pravida, Dietmar", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Wissenbach, Moritz", "label": "Wissenbach, Moritz", "shape": "dot", "size": 10, "title": ["Wissenbach, Moritz", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Fritze, Christiane", "label": "Fritze, Christiane", "shape": "dot", "size": 10, "title": ["Fritze, Christiane", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Fischer, Franz", "label": "Fischer, Franz", "shape": "dot", "size": 10, "title": ["Fischer, Franz", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Sahle, Patrick", "label": "Sahle, Patrick", "shape": "dot", "size": 10, "title": ["Sahle, Patrick", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Nasarek, Robert", "label": "Nasarek, Robert", "shape": "dot", "size": 10, "title": ["Nasarek, Robert", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Boenig, Matthias", "label": "Boenig, Matthias", "shape": "dot", "size": 10, "title": ["Boenig, Matthias", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Herrmann, Elisa", "label": "Herrmann, Elisa", "shape": "dot", "size": 10, "title": ["Herrmann, Elisa", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Hartmann, Volker", "label": "Hartmann, Volker", "shape": "dot", "size": 10, "title": ["Hartmann, Volker", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Jarosch, Julian", "label": "Jarosch, Julian", "shape": "dot", "size": 10, "title": ["Jarosch, Julian", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Schrade, Torsten", "label": "Schrade, Torsten", "shape": "dot", "size": 10, "title": ["Schrade, Torsten", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Yousef, Tariq", "label": "Yousef, Tariq", "shape": "dot", "size": 10, "title": ["Yousef, Tariq", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Vasold, Gunter", "label": "Vasold, Gunter", "shape": "dot", "size": 10, "title": ["Vasold, Gunter", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Staecker, Thomas", "label": "Staecker, Thomas", "shape": "dot", "size": 10, "title": ["Staecker, Thomas", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Wigg-Wolf, David", "label": "Wigg-Wolf, David", "shape": "dot", "size": 10, "title": ["Wigg-Wolf, David", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Tolle, Karsten", "label": "Tolle, Karsten", "shape": "dot", "size": 10, "title": ["Tolle, Karsten", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Kissinger, Timo", "label": "Kissinger, Timo", "shape": "dot", "size": 10, "title": ["Kissinger, Timo", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Evert, Stefan", "label": "Evert, Stefan", "shape": "dot", "size": 10, "title": ["Evert, Stefan", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Hannesschlaeger, Vanessa", "label": "Hannesschlaeger, Vanessa", "shape": "dot", "size": 10, "title": ["Hannesschlaeger, Vanessa", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Weichselbaumer, Nikolaus", "label": "Weichselbaumer, Nikolaus", "shape": "dot", "size": 10, "title": ["Weichselbaumer, Nikolaus", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Seuret, Mathias", "label": "Seuret, Mathias", "shape": "dot", "size": 10, "title": ["Seuret, Mathias", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Limbach, Saskia", "label": "Limbach, Saskia", "shape": "dot", "size": 10, "title": ["Limbach, Saskia", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Christlein, Vincent", "label": "Christlein, Vincent", "shape": "dot", "size": 10, "title": ["Christlein, Vincent", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Maier, Andreas", "label": "Maier, Andreas", "shape": "dot", "size": 10, "title": ["Maier, Andreas", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Remus, Steffen", "label": "Remus, Steffen", "shape": "dot", "size": 10, "title": ["Remus, Steffen", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Ferger, Anne", "label": "Ferger, Anne", "shape": "dot", "size": 10, "title": ["Ferger, Anne", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "B\u00fchrig, Kristin", "label": "B\u00fchrig, Kristin", "shape": "dot", "size": 10, "title": ["B\u00fchrig, Kristin", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Biemann, Chris", "label": "Biemann, Chris", "shape": "dot", "size": 10, "title": ["Biemann, Chris", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Mukhametov, Sergey", "label": "Mukhametov, Sergey", "shape": "dot", "size": 10, "title": ["Mukhametov, Sergey", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Brandenbeger, Christina", "label": "Brandenbeger, Christina", "shape": "dot", "size": 10, "title": ["Brandenbeger, Christina", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Gerhards, Donata", "label": "Gerhards, Donata", "shape": "dot", "size": 10, "title": ["Gerhards, Donata", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "H\u00fcther, Frank", "label": "H\u00fcther, Frank", "shape": "dot", "size": 10, "title": ["H\u00fcther, Frank", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Sch\u00fcller, Daniel", "label": "Sch\u00fcller, Daniel", "shape": "dot", "size": 10, "title": ["Sch\u00fcller, Daniel", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Mittelberg, Irene", "label": "Mittelberg, Irene", "shape": "dot", "size": 10, "title": ["Mittelberg, Irene", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Uhrig, Peter", "label": "Uhrig, Peter", "shape": "dot", "size": 10, "title": ["Uhrig, Peter", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Kolodzie, Lisa", "label": "Kolodzie, Lisa", "shape": "dot", "size": 10, "title": ["Kolodzie, Lisa", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Moisich, Oliver", "label": "Moisich, Oliver", "shape": "dot", "size": 10, "title": ["Moisich, Oliver", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Mayr, Eva", "label": "Mayr, Eva", "shape": "dot", "size": 10, "title": ["Mayr, Eva", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Windhager, Florian", "label": "Windhager, Florian", "shape": "dot", "size": 10, "title": ["Windhager, Florian", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "#C70039", "font": {"color": "black"}, "id": "Schreder, G\u00fcnther", "label": "Schreder, G\u00fcnther", "shape": "dot", "size": 10, "title": ["Schreder, G\u00fcnther", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Diesner, Jana", "label": "Diesner, Jana", "shape": "dot", "size": 10, "title": ["Diesner, Jana", 1]}, {"borderWidth": 1, "borderWidthSelected": 3, "color": "orange", "font": {"color": "black"}, "id": "Fl\u00fcckiger, Barbara", "label": "Fl\u00fcckiger, Barbara", "shape": "dot", "size": 10, "title": ["Fl\u00fcckiger, Barbara", 1]}]);
+                  edges = new vis.DataSet([{"color": "#6CADFB", "from": "Fricke-Steyer, Henrike", "title": 2, "to": "Klaffki, Lisa", "width": 2}, {"color": "#6CADFB", "from": "Reul, Christian", "title": 2, "to": "Puppe, Frank", "width": 2}, {"color": "#6CADFB", "from": "Blumtritt, Jonathan", "title": 2, "to": "Rau, Felix", "width": 2}, {"color": "#6CADFB", "from": "Mehler, Alexander", "title": 2, "to": "Uslu, Tolga", "width": 2}, {"color": "#6CADFB", "from": "Diehr, Franziska", "title": 2, "to": "Brodhun, Maximilian", "width": 2}, {"color": "#6CEAFB", "from": "Kuczera, Andreas", "title": 1, "to": "Martin, Fechner", "width": 1}, {"color": "#6CEAFB", "from": "Seemann, Nina", "title": 1, "to": "Merten, Marie-Luis", "width": 1}, {"color": "#6CEAFB", "from": "Hodel, Tobias", "title": 1, "to": "Diem, Markus", "width": 1}, {"color": "#6CEAFB", "from": "Hodel, Tobias", "title": 1, "to": "Oliveira Ares, Sofia", "width": 1}, {"color": "#6CEAFB", "from": "Hodel, Tobias", "title": 1, "to": "Weidemann, Max", "width": 1}, {"color": "#6CEAFB", "from": "Diem, Markus", "title": 1, "to": "Oliveira Ares, Sofia", "width": 1}, {"color": "#6CEAFB", "from": "Diem, Markus", "title": 1, "to": "Weidemann, Max", "width": 1}, {"color": "#6CEAFB", "from": "Oliveira Ares, Sofia", "title": 1, "to": "Weidemann, Max", "width": 1}, {"color": "#6CEAFB", "from": "Steyer, Timo", "title": 1, "to": "Neumann, Katrin", "width": 1}, {"color": "#6CEAFB", "from": "Steyer, Timo", "title": 1, "to": "Seltmann, Melanie", "width": 1}, {"color": "#6CEAFB", "from": "Steyer, Timo", "title": 1, "to": "Walter, Scholger", "width": 1}, {"color": "#6CEAFB", "from": "Neumann, Katrin", "title": 1, "to": "Seltmann, Melanie", "width": 1}, {"color": "#6CEAFB", "from": "Neumann, Katrin", "title": 1, "to": "Walter, Scholger", "width": 1}, {"color": "#6CEAFB", "from": "Seltmann, Melanie", "title": 1, "to": "Walter, Scholger", "width": 1}, {"color": "#6CEAFB", "from": "B\u00e4umer, Frederik Simon", "title": 1, "to": "Buff, Bianca", "width": 1}, {"color": "#6CEAFB", "from": "B\u00e4umer, Frederik Simon", "title": 1, "to": "Geierhos, Michaela", "width": 1}, {"color": "#6CEAFB", "from": "Buff, Bianca", "title": 1, "to": "Geierhos, Michaela", "width": 1}, {"color": "#6CEAFB", "from": "Helm, Wiebke", "title": 1, "to": "Im, Chanjong", "width": 1}, {"color": "#6CEAFB", "from": "Helm, Wiebke", "title": 1, "to": "Mandl, Thomas", "width": 1}, {"color": "#6CEAFB", "from": "Helm, Wiebke", "title": 1, "to": "Schmideler, Sebastian", "width": 1}, {"color": "#6CEAFB", "from": "Im, Chanjong", "title": 1, "to": "Mandl, Thomas", "width": 1}, {"color": "#6CEAFB", "from": "Im, Chanjong", "title": 1, "to": "Schmideler, Sebastian", "width": 1}, {"color": "#6CEAFB", "from": "Mandl, Thomas", "title": 1, "to": "Schmideler, Sebastian", "width": 1}, {"color": "#6CEAFB", "from": "Wuttke, Ulrike", "title": 1, "to": "Neuroth, Heike", "width": 1}, {"color": "#6CEAFB", "from": "Scha\u00dfan, Torsten", "title": 1, "to": "Baumgarten, Marcus", "width": 1}, {"color": "#6CEAFB", "from": "Scha\u00dfan, Torsten", "title": 1, "to": "Steyer, Timo", "width": 1}, {"color": "#6CEAFB", "from": "Scha\u00dfan, Torsten", "title": 1, "to": "Fricke-Steyer, Henrike", "width": 1}, {"color": "#6CEAFB", "from": "Scha\u00dfan, Torsten", "title": 1, "to": "Iglesia, Martin de la", "width": 1}, {"color": "#6CEAFB", "from": "Scha\u00dfan, Torsten", "title": 1, "to": "Kampkaspar, Dario", "width": 1}, {"color": "#6CEAFB", "from": "Scha\u00dfan, Torsten", "title": 1, "to": "Klaffki, Lisa", "width": 1}, {"color": "#6CEAFB", "from": "Scha\u00dfan, Torsten", "title": 1, "to": "Parlitz, Dietrich", "width": 1}, {"color": "#6CEAFB", "from": "Baumgarten, Marcus", "title": 1, "to": "Steyer, Timo", "width": 1}, {"color": "#6CEAFB", "from": "Baumgarten, Marcus", "title": 1, "to": "Fricke-Steyer, Henrike", "width": 1}, {"color": "#6CEAFB", "from": "Baumgarten, Marcus", "title": 1, "to": "Iglesia, Martin de la", "width": 1}, {"color": "#6CEAFB", "from": "Baumgarten, Marcus", "title": 1, "to": "Kampkaspar, Dario", "width": 1}, {"color": "#6CEAFB", "from": "Baumgarten, Marcus", "title": 1, "to": "Klaffki, Lisa", "width": 1}, {"color": "#6CEAFB", "from": "Baumgarten, Marcus", "title": 1, "to": "Parlitz, Dietrich", "width": 1}, {"color": "#6CEAFB", "from": "Steyer, Timo", "title": 1, "to": "Fricke-Steyer, Henrike", "width": 1}, {"color": "#6CEAFB", "from": "Steyer, Timo", "title": 1, "to": "Iglesia, Martin de la", "width": 1}, {"color": "#6CEAFB", "from": "Steyer, Timo", "title": 1, "to": "Kampkaspar, Dario", "width": 1}, {"color": "#6CEAFB", "from": "Steyer, Timo", "title": 1, "to": "Klaffki, Lisa", "width": 1}, {"color": "#6CEAFB", "from": "Steyer, Timo", "title": 1, "to": "Parlitz, Dietrich", "width": 1}, {"color": "#6CEAFB", "from": "Fricke-Steyer, Henrike", "title": 1, "to": "Iglesia, Martin de la", "width": 1}, {"color": "#6CEAFB", "from": "Fricke-Steyer, Henrike", "title": 1, "to": "Kampkaspar, Dario", "width": 1}, {"color": "#6CEAFB", "from": "Fricke-Steyer, Henrike", "title": 1, "to": "Parlitz, Dietrich", "width": 1}, {"color": "#6CEAFB", "from": "Iglesia, Martin de la", "title": 1, "to": "Kampkaspar, Dario", "width": 1}, {"color": "#6CEAFB", "from": "Iglesia, Martin de la", "title": 1, "to": "Klaffki, Lisa", "width": 1}, {"color": "#6CEAFB", "from": "Iglesia, Martin de la", "title": 1, "to": "Parlitz, Dietrich", "width": 1}, {"color": "#6CEAFB", "from": "Kampkaspar, Dario", "title": 1, "to": "Klaffki, Lisa", "width": 1}, {"color": "#6CEAFB", "from": "Kampkaspar, Dario", "title": 1, "to": "Parlitz, Dietrich", "width": 1}, {"color": "#6CEAFB", "from": "Klaffki, Lisa", "title": 1, "to": "Parlitz, Dietrich", "width": 1}, {"color": "#6CEAFB", "from": "Reul, Christian", "title": 1, "to": "Springmann, Uwe", "width": 1}, {"color": "#6CEAFB", "from": "Reul, Christian", "title": 1, "to": "Wick, Christoph", "width": 1}, {"color": "#6CEAFB", "from": "Springmann, Uwe", "title": 1, "to": "Wick, Christoph", "width": 1}, {"color": "#6CEAFB", "from": "Springmann, Uwe", "title": 1, "to": "Puppe, Frank", "width": 1}, {"color": "#6CEAFB", "from": "Wick, Christoph", "title": 1, "to": "Puppe, Frank", "width": 1}, {"color": "#6CEAFB", "from": "Schneider, Stefanie", "title": 1, "to": "Kohle, Hubertus", "width": 1}, {"color": "#6CEAFB", "from": "Schneider, Stefanie", "title": 1, "to": "Burg, Severin", "width": 1}, {"color": "#6CEAFB", "from": "Schneider, Stefanie", "title": 1, "to": "K\u00fcchenhoff, Helmut", "width": 1}, {"color": "#6CEAFB", "from": "Kohle, Hubertus", "title": 1, "to": "Burg, Severin", "width": 1}, {"color": "#6CEAFB", "from": "Kohle, Hubertus", "title": 1, "to": "K\u00fcchenhoff, Helmut", "width": 1}, {"color": "#6CEAFB", "from": "Burg, Severin", "title": 1, "to": "K\u00fcchenhoff, Helmut", "width": 1}, {"color": "#6CEAFB", "from": "R\u00f6ssel, Julia", "title": 1, "to": "Maus, David", "width": 1}, {"color": "#6CEAFB", "from": "Bald, Markus", "title": 1, "to": "Damiani, Vincenzo", "width": 1}, {"color": "#6CEAFB", "from": "Bald, Markus", "title": 1, "to": "Essler, Holger", "width": 1}, {"color": "#6CEAFB", "from": "Bald, Markus", "title": 1, "to": "Eyeselein, Bj\u00f6rn", "width": 1}, {"color": "#6CEAFB", "from": "Bald, Markus", "title": 1, "to": "Reul, Christian", "width": 1}, {"color": "#6CEAFB", "from": "Bald, Markus", "title": 1, "to": "Puppe, Frank", "width": 1}, {"color": "#6CEAFB", "from": "Damiani, Vincenzo", "title": 1, "to": "Essler, Holger", "width": 1}, {"color": "#6CEAFB", "from": "Damiani, Vincenzo", "title": 1, "to": "Eyeselein, Bj\u00f6rn", "width": 1}, {"color": "#6CEAFB", "from": "Damiani, Vincenzo", "title": 1, "to": "Reul, Christian", "width": 1}, {"color": "#6CEAFB", "from": "Damiani, Vincenzo", "title": 1, "to": "Puppe, Frank", "width": 1}, {"color": "#6CEAFB", "from": "Essler, Holger", "title": 1, "to": "Eyeselein, Bj\u00f6rn", "width": 1}, {"color": "#6CEAFB", "from": "Essler, Holger", "title": 1, "to": "Reul, Christian", "width": 1}, {"color": "#6CEAFB", "from": "Essler, Holger", "title": 1, "to": "Puppe, Frank", "width": 1}, {"color": "#6CEAFB", "from": "Eyeselein, Bj\u00f6rn", "title": 1, "to": "Reul, Christian", "width": 1}, {"color": "#6CEAFB", "from": "Eyeselein, Bj\u00f6rn", "title": 1, "to": "Puppe, Frank", "width": 1}, {"color": "#6CEAFB", "from": "Howanitz, Gernot", "title": 1, "to": "Radisch, Erik", "width": 1}, {"color": "#6CEAFB", "from": "Howanitz, Gernot", "title": 1, "to": "Decker, Jan-Oliver", "width": 1}, {"color": "#6CEAFB", "from": "Howanitz, Gernot", "title": 1, "to": "Rehbein, Malte", "width": 1}, {"color": "#6CEAFB", "from": "Radisch, Erik", "title": 1, "to": "Decker, Jan-Oliver", "width": 1}, {"color": "#6CEAFB", "from": "Radisch, Erik", "title": 1, "to": "Rehbein, Malte", "width": 1}, {"color": "#6CEAFB", "from": "Decker, Jan-Oliver", "title": 1, "to": "Rehbein, Malte", "width": 1}, {"color": "#6CEAFB", "from": "Schmidt, Thomas", "title": 1, "to": "Blumtritt, Jonathan", "width": 1}, {"color": "#6CEAFB", "from": "Schmidt, Thomas", "title": 1, "to": "Hedeland, Hanna", "width": 1}, {"color": "#6CEAFB", "from": "Schmidt, Thomas", "title": 1, "to": "Gorisch, Jan", "width": 1}, {"color": "#6CEAFB", "from": "Schmidt, Thomas", "title": 1, "to": "Rau, Felix", "width": 1}, {"color": "#6CEAFB", "from": "Schmidt, Thomas", "title": 1, "to": "W\u00f6rner, Kai", "width": 1}, {"color": "#6CEAFB", "from": "Blumtritt, Jonathan", "title": 1, "to": "Hedeland, Hanna", "width": 1}, {"color": "#6CEAFB", "from": "Blumtritt, Jonathan", "title": 1, "to": "Gorisch, Jan", "width": 1}, {"color": "#6CEAFB", "from": "Blumtritt, Jonathan", "title": 1, "to": "W\u00f6rner, Kai", "width": 1}, {"color": "#6CEAFB", "from": "Hedeland, Hanna", "title": 1, "to": "Gorisch, Jan", "width": 1}, {"color": "#6CEAFB", "from": "Hedeland, Hanna", "title": 1, "to": "Rau, Felix", "width": 1}, {"color": "#6CEAFB", "from": "Hedeland, Hanna", "title": 1, "to": "W\u00f6rner, Kai", "width": 1}, {"color": "#6CEAFB", "from": "Gorisch, Jan", "title": 1, "to": "Rau, Felix", "width": 1}, {"color": "#6CEAFB", "from": "Gorisch, Jan", "title": 1, "to": "W\u00f6rner, Kai", "width": 1}, {"color": "#6CEAFB", "from": "Rau, Felix", "title": 1, "to": "W\u00f6rner, Kai", "width": 1}, {"color": "#6CEAFB", "from": "Batinic, Josip", "title": 1, "to": "Frick, Elena", "width": 1}, {"color": "#6CEAFB", "from": "Batinic, Josip", "title": 1, "to": "Gasch, Joachim", "width": 1}, {"color": "#6CEAFB", "from": "Batinic, Josip", "title": 1, "to": "Schmidt, Thomas", "width": 1}, {"color": "#6CEAFB", "from": "Frick, Elena", "title": 1, "to": "Gasch, Joachim", "width": 1}, {"color": "#6CEAFB", "from": "Frick, Elena", "title": 1, "to": "Schmidt, Thomas", "width": 1}, {"color": "#6CEAFB", "from": "Gasch, Joachim", "title": 1, "to": "Schmidt, Thomas", "width": 1}, {"color": "#6CEAFB", "from": "Brunner, Annelen", "title": 1, "to": "Weimer, Lukas", "width": 1}, {"color": "#6CEAFB", "from": "Brunner, Annelen", "title": 1, "to": "Tu, Ngoc Duyen Tanja", "width": 1}, {"color": "#6CEAFB", "from": "Brunner, Annelen", "title": 1, "to": "Engelberg, Stefan", "width": 1}, {"color": "#6CEAFB", "from": "Brunner, Annelen", "title": 1, "to": "Jannidis, Fotis", "width": 1}, {"color": "#6CEAFB", "from": "Weimer, Lukas", "title": 1, "to": "Tu, Ngoc Duyen Tanja", "width": 1}, {"color": "#6CEAFB", "from": "Weimer, Lukas", "title": 1, "to": "Engelberg, Stefan", "width": 1}, {"color": "#6CEAFB", "from": "Weimer, Lukas", "title": 1, "to": "Jannidis, Fotis", "width": 1}, {"color": "#6CEAFB", "from": "Tu, Ngoc Duyen Tanja", "title": 1, "to": "Engelberg, Stefan", "width": 1}, {"color": "#6CEAFB", "from": "Tu, Ngoc Duyen Tanja", "title": 1, "to": "Jannidis, Fotis", "width": 1}, {"color": "#6CEAFB", "from": "Engelberg, Stefan", "title": 1, "to": "Jannidis, Fotis", "width": 1}, {"color": "#6CEAFB", "from": "Zimmer, Sebastian", "title": 1, "to": "G\u00f6del, Martina", "width": 1}, {"color": "#6CEAFB", "from": "Zimmer, Sebastian", "title": 1, "to": "Persch, Dana", "width": 1}, {"color": "#6CEAFB", "from": "G\u00f6del, Martina", "title": 1, "to": "Persch, Dana", "width": 1}, {"color": "#6CEAFB", "from": "Donig, Simon", "title": 1, "to": "Christoforaki, Maria", "width": 1}, {"color": "#6CEAFB", "from": "Donig, Simon", "title": 1, "to": "Bermeitinger, Bernhard", "width": 1}, {"color": "#6CEAFB", "from": "Donig, Simon", "title": 1, "to": "Handschuh, Siegfried", "width": 1}, {"color": "#6CEAFB", "from": "Christoforaki, Maria", "title": 1, "to": "Bermeitinger, Bernhard", "width": 1}, {"color": "#6CEAFB", "from": "Christoforaki, Maria", "title": 1, "to": "Handschuh, Siegfried", "width": 1}, {"color": "#6CEAFB", "from": "Bermeitinger, Bernhard", "title": 1, "to": "Handschuh, Siegfried", "width": 1}, {"color": "#6CEAFB", "from": "Tu, Ngoc Duyen Tanja", "title": 1, "to": "Krug, Markus", "width": 1}, {"color": "#6CEAFB", "from": "Krug, Markus", "title": 1, "to": "Brunner, Annelen", "width": 1}, {"color": "#6CEAFB", "from": "Horstmann, Jan", "title": 1, "to": "Meister, Jan Christoph", "width": 1}, {"color": "#6CEAFB", "from": "Horstmann, Jan", "title": 1, "to": "Petris, Marco", "width": 1}, {"color": "#6CEAFB", "from": "Horstmann, Jan", "title": 1, "to": "Schumacher, Mareike", "width": 1}, {"color": "#6CEAFB", "from": "Meister, Jan Christoph", "title": 1, "to": "Petris, Marco", "width": 1}, {"color": "#6CEAFB", "from": "Meister, Jan Christoph", "title": 1, "to": "Schumacher, Mareike", "width": 1}, {"color": "#6CEAFB", "from": "Petris, Marco", "title": 1, "to": "Schumacher, Mareike", "width": 1}, {"color": "#6CEAFB", "from": "Kuroczy\u0144ski, Piotr", "title": 1, "to": "Brandt, Julia", "width": 1}, {"color": "#6CEAFB", "from": "Kuroczy\u0144ski, Piotr", "title": 1, "to": "Jara, Karolina", "width": 1}, {"color": "#6CEAFB", "from": "Kuroczy\u0144ski, Piotr", "title": 1, "to": "Grosse, Peggy", "width": 1}, {"color": "#6CEAFB", "from": "Brandt, Julia", "title": 1, "to": "Jara, Karolina", "width": 1}, {"color": "#6CEAFB", "from": "Brandt, Julia", "title": 1, "to": "Grosse, Peggy", "width": 1}, {"color": "#6CEAFB", "from": "Jara, Karolina", "title": 1, "to": "Grosse, Peggy", "width": 1}, {"color": "#6CEAFB", "from": "Klaus, Carsten", "title": 1, "to": "Fankhauser, Peter", "width": 1}, {"color": "#6CEAFB", "from": "Klaus, Carsten", "title": 1, "to": "Klakow, Dietrich", "width": 1}, {"color": "#6CEAFB", "from": "Fankhauser, Peter", "title": 1, "to": "Klakow, Dietrich", "width": 1}, {"color": "#6CEAFB", "from": "Krug, Markus", "title": 1, "to": "Kempf, Sebastian", "width": 1}, {"color": "#6CEAFB", "from": "Krug, Markus", "title": 1, "to": "David, Schmidt", "width": 1}, {"color": "#6CEAFB", "from": "Krug, Markus", "title": 1, "to": "Lukas, Weimer", "width": 1}, {"color": "#6CEAFB", "from": "Krug, Markus", "title": 1, "to": "Frank, Puppe", "width": 1}, {"color": "#6CEAFB", "from": "Kempf, Sebastian", "title": 1, "to": "David, Schmidt", "width": 1}, {"color": "#6CEAFB", "from": "Kempf, Sebastian", "title": 1, "to": "Lukas, Weimer", "width": 1}, {"color": "#6CEAFB", "from": "Kempf, Sebastian", "title": 1, "to": "Frank, Puppe", "width": 1}, {"color": "#6CEAFB", "from": "David, Schmidt", "title": 1, "to": "Lukas, Weimer", "width": 1}, {"color": "#6CEAFB", "from": "David, Schmidt", "title": 1, "to": "Frank, Puppe", "width": 1}, {"color": "#6CEAFB", "from": "Lukas, Weimer", "title": 1, "to": "Frank, Puppe", "width": 1}, {"color": "#6CEAFB", "from": "Fischer, Frank", "title": 1, "to": "B\u00f6rner, Ingo", "width": 1}, {"color": "#6CEAFB", "from": "Fischer, Frank", "title": 1, "to": "G\u00f6bel, Mathias", "width": 1}, {"color": "#6CEAFB", "from": "Fischer, Frank", "title": 1, "to": "Hechtl, Angelika", "width": 1}, {"color": "#6CEAFB", "from": "Fischer, Frank", "title": 1, "to": "Kittel, Christopher", "width": 1}, {"color": "#6CEAFB", "from": "Fischer, Frank", "title": 1, "to": "Milling, Carsten", "width": 1}, {"color": "#6CEAFB", "from": "Fischer, Frank", "title": 1, "to": "Trilcke, Peer", "width": 1}, {"color": "#6CEAFB", "from": "B\u00f6rner, Ingo", "title": 1, "to": "G\u00f6bel, Mathias", "width": 1}, {"color": "#6CEAFB", "from": "B\u00f6rner, Ingo", "title": 1, "to": "Hechtl, Angelika", "width": 1}, {"color": "#6CEAFB", "from": "B\u00f6rner, Ingo", "title": 1, "to": "Kittel, Christopher", "width": 1}, {"color": "#6CEAFB", "from": "B\u00f6rner, Ingo", "title": 1, "to": "Milling, Carsten", "width": 1}, {"color": "#6CEAFB", "from": "B\u00f6rner, Ingo", "title": 1, "to": "Trilcke, Peer", "width": 1}, {"color": "#6CEAFB", "from": "G\u00f6bel, Mathias", "title": 1, "to": "Hechtl, Angelika", "width": 1}, {"color": "#6CEAFB", "from": "G\u00f6bel, Mathias", "title": 1, "to": "Kittel, Christopher", "width": 1}, {"color": "#6CEAFB", "from": "G\u00f6bel, Mathias", "title": 1, "to": "Milling, Carsten", "width": 1}, {"color": "#6CEAFB", "from": "G\u00f6bel, Mathias", "title": 1, "to": "Trilcke, Peer", "width": 1}, {"color": "#6CEAFB", "from": "Hechtl, Angelika", "title": 1, "to": "Kittel, Christopher", "width": 1}, {"color": "#6CEAFB", "from": "Hechtl, Angelika", "title": 1, "to": "Milling, Carsten", "width": 1}, {"color": "#6CEAFB", "from": "Hechtl, Angelika", "title": 1, "to": "Trilcke, Peer", "width": 1}, {"color": "#6CEAFB", "from": "Kittel, Christopher", "title": 1, "to": "Milling, Carsten", "width": 1}, {"color": "#6CEAFB", "from": "Kittel, Christopher", "title": 1, "to": "Trilcke, Peer", "width": 1}, {"color": "#6CEAFB", "from": "Milling, Carsten", "title": 1, "to": "Trilcke, Peer", "width": 1}, {"color": "#6CEAFB", "from": "Willand, Marcus", "title": 1, "to": "Gius, Evelyn", "width": 1}, {"color": "#6CEAFB", "from": "Willand, Marcus", "title": 1, "to": "Reiter, Nils", "width": 1}, {"color": "#6CEAFB", "from": "Gius, Evelyn", "title": 1, "to": "Reiter, Nils", "width": 1}, {"color": "#6CEAFB", "from": "Mei\u00dfner, Cordula", "title": 1, "to": "Wallner, Franziska", "width": 1}, {"color": "#6CEAFB", "from": "Laubrock, Jochen", "title": 1, "to": "Dubray, David", "width": 1}, {"color": "#6CEAFB", "from": "Pattee, Aaron", "title": 1, "to": "Kuczera, Andreas", "width": 1}, {"color": "#6CEAFB", "from": "Pattee, Aaron", "title": 1, "to": "Volkmann, Armin", "width": 1}, {"color": "#6CEAFB", "from": "Kuczera, Andreas", "title": 1, "to": "Volkmann, Armin", "width": 1}, {"color": "#6CEAFB", "from": "Prager, Christian", "title": 1, "to": "Mara, Hubert", "width": 1}, {"color": "#6CEAFB", "from": "Prager, Christian", "title": 1, "to": "Bogacz, Bartosz", "width": 1}, {"color": "#6CEAFB", "from": "Prager, Christian", "title": 1, "to": "Feldmann, Felix", "width": 1}, {"color": "#6CEAFB", "from": "Mara, Hubert", "title": 1, "to": "Bogacz, Bartosz", "width": 1}, {"color": "#6CEAFB", "from": "Mara, Hubert", "title": 1, "to": "Feldmann, Felix", "width": 1}, {"color": "#6CEAFB", "from": "Bogacz, Bartosz", "title": 1, "to": "Feldmann, Felix", "width": 1}, {"color": "#6CEAFB", "from": "Baillot, Anne", "title": 1, "to": "Wottawa, Jane", "width": 1}, {"color": "#6CEAFB", "from": "Baillot, Anne", "title": 1, "to": "Barrault, Lo\u00efc", "width": 1}, {"color": "#6CEAFB", "from": "Baillot, Anne", "title": 1, "to": "Bougares, Fethi", "width": 1}, {"color": "#6CEAFB", "from": "Wottawa, Jane", "title": 1, "to": "Barrault, Lo\u00efc", "width": 1}, {"color": "#6CEAFB", "from": "Wottawa, Jane", "title": 1, "to": "Bougares, Fethi", "width": 1}, {"color": "#6CEAFB", "from": "Barrault, Lo\u00efc", "title": 1, "to": "Bougares, Fethi", "width": 1}, {"color": "#6CEAFB", "from": "Dewitz, Leyla", "title": 1, "to": "M\u00fcnster, Sander", "width": 1}, {"color": "#6CEAFB", "from": "Dewitz, Leyla", "title": 1, "to": "Niebling, Florian", "width": 1}, {"color": "#6CEAFB", "from": "M\u00fcnster, Sander", "title": 1, "to": "Niebling, Florian", "width": 1}, {"color": "#6CEAFB", "from": "Dogunke, Swantje", "title": 1, "to": "Steyer, Timo", "width": 1}, {"color": "#6CEAFB", "from": "Jannidis, Fotis", "title": 1, "to": "Konle, Leonard", "width": 1}, {"color": "#6CEAFB", "from": "Jannidis, Fotis", "title": 1, "to": "Leinen, Peter", "width": 1}, {"color": "#6CEAFB", "from": "Konle, Leonard", "title": 1, "to": "Leinen, Peter", "width": 1}, {"color": "#6CEAFB", "from": "Scherl, Magdalena", "title": 1, "to": "Unold, Martin", "width": 1}, {"color": "#6CEAFB", "from": "Scherl, Magdalena", "title": 1, "to": "Homburg, Timo", "width": 1}, {"color": "#6CEAFB", "from": "Unold, Martin", "title": 1, "to": "Homburg, Timo", "width": 1}, {"color": "#6CEAFB", "from": "Kremer, Gerhard", "title": 1, "to": "Jung, Kerstin", "width": 1}, {"color": "#6CEAFB", "from": "Neuefeind, Claes", "title": 1, "to": "Schildkamp, Philip", "width": 1}, {"color": "#6CEAFB", "from": "Neuefeind, Claes", "title": 1, "to": "Mathiak, Brigitte", "width": 1}, {"color": "#6CEAFB", "from": "Neuefeind, Claes", "title": 1, "to": "Harzenetter, Lukas", "width": 1}, {"color": "#6CEAFB", "from": "Neuefeind, Claes", "title": 1, "to": "Barzen, Johanna", "width": 1}, {"color": "#6CEAFB", "from": "Neuefeind, Claes", "title": 1, "to": "Breitenb\u00fccher, Uwe", "width": 1}, {"color": "#6CEAFB", "from": "Neuefeind, Claes", "title": 1, "to": "Leymann, Frank", "width": 1}, {"color": "#6CEAFB", "from": "Schildkamp, Philip", "title": 1, "to": "Mathiak, Brigitte", "width": 1}, {"color": "#6CEAFB", "from": "Schildkamp, Philip", "title": 1, "to": "Harzenetter, Lukas", "width": 1}, {"color": "#6CEAFB", "from": "Schildkamp, Philip", "title": 1, "to": "Barzen, Johanna", "width": 1}, {"color": "#6CEAFB", "from": "Schildkamp, Philip", "title": 1, "to": "Breitenb\u00fccher, Uwe", "width": 1}, {"color": "#6CEAFB", "from": "Schildkamp, Philip", "title": 1, "to": "Leymann, Frank", "width": 1}, {"color": "#6CEAFB", "from": "Mathiak, Brigitte", "title": 1, "to": "Harzenetter, Lukas", "width": 1}, {"color": "#6CEAFB", "from": "Mathiak, Brigitte", "title": 1, "to": "Barzen, Johanna", "width": 1}, {"color": "#6CEAFB", "from": "Mathiak, Brigitte", "title": 1, "to": "Breitenb\u00fccher, Uwe", "width": 1}, {"color": "#6CEAFB", "from": "Mathiak, Brigitte", "title": 1, "to": "Leymann, Frank", "width": 1}, {"color": "#6CEAFB", "from": "Harzenetter, Lukas", "title": 1, "to": "Barzen, Johanna", "width": 1}, {"color": "#6CEAFB", "from": "Harzenetter, Lukas", "title": 1, "to": "Breitenb\u00fccher, Uwe", "width": 1}, {"color": "#6CEAFB", "from": "Harzenetter, Lukas", "title": 1, "to": "Leymann, Frank", "width": 1}, {"color": "#6CEAFB", "from": "Barzen, Johanna", "title": 1, "to": "Breitenb\u00fccher, Uwe", "width": 1}, {"color": "#6CEAFB", "from": "Barzen, Johanna", "title": 1, "to": "Leymann, Frank", "width": 1}, {"color": "#6CEAFB", "from": "Breitenb\u00fccher, Uwe", "title": 1, "to": "Leymann, Frank", "width": 1}, {"color": "#6CEAFB", "from": "Andorfer, Peter", "title": 1, "to": "Cremer, Fabian", "width": 1}, {"color": "#6CEAFB", "from": "Andorfer, Peter", "title": 1, "to": "Steyer, Timo", "width": 1}, {"color": "#6CEAFB", "from": "Cremer, Fabian", "title": 1, "to": "Steyer, Timo", "width": 1}, {"color": "#6CEAFB", "from": "Schlupkothen, Frederik", "title": 1, "to": "Nantke, Julia", "width": 1}, {"color": "#6CEAFB", "from": "Kesselheim, Wolfgang", "title": 1, "to": "Hottiger, Christoph", "width": 1}, {"color": "#6CEAFB", "from": "Kurz, Stephan", "title": 1, "to": "Zaytseva, Ksenia", "width": 1}, {"color": "#6CEAFB", "from": "Gius, Evelyn", "title": 1, "to": "Katharina, Kr\u00fcger", "width": 1}, {"color": "#6CEAFB", "from": "Gius, Evelyn", "title": 1, "to": "Carla, S\u00f6kefeld", "width": 1}, {"color": "#6CEAFB", "from": "Katharina, Kr\u00fcger", "title": 1, "to": "Carla, S\u00f6kefeld", "width": 1}, {"color": "#6CEAFB", "from": "Mehler, Alexander", "title": 1, "to": "Gleim, R\u00fcdiger", "width": 1}, {"color": "#6CEAFB", "from": "Mehler, Alexander", "title": 1, "to": "Baumartz, Daniel", "width": 1}, {"color": "#6CEAFB", "from": "Uslu, Tolga", "title": 1, "to": "Gleim, R\u00fcdiger", "width": 1}, {"color": "#6CEAFB", "from": "Uslu, Tolga", "title": 1, "to": "Baumartz, Daniel", "width": 1}, {"color": "#6CEAFB", "from": "Gleim, R\u00fcdiger", "title": 1, "to": "Baumartz, Daniel", "width": 1}, {"color": "#6CEAFB", "from": "Diehr, Franziska", "title": 1, "to": "Kuczera, Andreas", "width": 1}, {"color": "#6CEAFB", "from": "Diehr, Franziska", "title": 1, "to": "Kollatz, Thomas", "width": 1}, {"color": "#6CEAFB", "from": "Diehr, Franziska", "title": 1, "to": "W\u00fcbbena, Thorsten", "width": 1}, {"color": "#6CEAFB", "from": "Diehr, Franziska", "title": 1, "to": "Efer, Thomas", "width": 1}, {"color": "#6CEAFB", "from": "Brodhun, Maximilian", "title": 1, "to": "Kuczera, Andreas", "width": 1}, {"color": "#6CEAFB", "from": "Brodhun, Maximilian", "title": 1, "to": "Kollatz, Thomas", "width": 1}, {"color": "#6CEAFB", "from": "Brodhun, Maximilian", "title": 1, "to": "W\u00fcbbena, Thorsten", "width": 1}, {"color": "#6CEAFB", "from": "Brodhun, Maximilian", "title": 1, "to": "Efer, Thomas", "width": 1}, {"color": "#6CEAFB", "from": "Kuczera, Andreas", "title": 1, "to": "Kollatz, Thomas", "width": 1}, {"color": "#6CEAFB", "from": "Kuczera, Andreas", "title": 1, "to": "W\u00fcbbena, Thorsten", "width": 1}, {"color": "#6CEAFB", "from": "Kuczera, Andreas", "title": 1, "to": "Efer, Thomas", "width": 1}, {"color": "#6CEAFB", "from": "Kollatz, Thomas", "title": 1, "to": "W\u00fcbbena, Thorsten", "width": 1}, {"color": "#6CEAFB", "from": "Kollatz, Thomas", "title": 1, "to": "Efer, Thomas", "width": 1}, {"color": "#6CEAFB", "from": "W\u00fcbbena, Thorsten", "title": 1, "to": "Efer, Thomas", "width": 1}, {"color": "#6CEAFB", "from": "Dimpel, Friedrich", "title": 1, "to": "Proisl, Thomas", "width": 1}, {"color": "#6CEAFB", "from": "Adelmann, Benedikt", "title": 1, "to": "Franken, Lina", "width": 1}, {"color": "#6CEAFB", "from": "Adelmann, Benedikt", "title": 1, "to": "Gius, Evelyn", "width": 1}, {"color": "#6CEAFB", "from": "Adelmann, Benedikt", "title": 1, "to": "Kr\u00fcger, Katharina", "width": 1}, {"color": "#6CEAFB", "from": "Adelmann, Benedikt", "title": 1, "to": "Vauth, Michael", "width": 1}, {"color": "#6CEAFB", "from": "Franken, Lina", "title": 1, "to": "Gius, Evelyn", "width": 1}, {"color": "#6CEAFB", "from": "Franken, Lina", "title": 1, "to": "Kr\u00fcger, Katharina", "width": 1}, {"color": "#6CEAFB", "from": "Franken, Lina", "title": 1, "to": "Vauth, Michael", "width": 1}, {"color": "#6CEAFB", "from": "Gius, Evelyn", "title": 1, "to": "Kr\u00fcger, Katharina", "width": 1}, {"color": "#6CEAFB", "from": "Gius, Evelyn", "title": 1, "to": "Vauth, Michael", "width": 1}, {"color": "#6CEAFB", "from": "Kr\u00fcger, Katharina", "title": 1, "to": "Vauth, Michael", "width": 1}, {"color": "#6CEAFB", "from": "Hohmann, Georg", "title": 1, "to": "Geipel, Andrea", "width": 1}, {"color": "#6CEAFB", "from": "Hohmann, Georg", "title": 1, "to": "Henkensiefken, Claus", "width": 1}, {"color": "#6CEAFB", "from": "Geipel, Andrea", "title": 1, "to": "Henkensiefken, Claus", "width": 1}, {"color": "#6CEAFB", "from": "Tonne, Danah", "title": 1, "to": "G\u00f6tzelmann, Germaine", "width": 1}, {"color": "#6CEAFB", "from": "Tonne, Danah", "title": 1, "to": "Hegel, Philipp", "width": 1}, {"color": "#6CEAFB", "from": "Tonne, Danah", "title": 1, "to": "Krewet, Michael", "width": 1}, {"color": "#6CEAFB", "from": "Tonne, Danah", "title": 1, "to": "H\u00fcbner, Julia", "width": 1}, {"color": "#6CEAFB", "from": "Tonne, Danah", "title": 1, "to": "S\u00f6ring, Sibylle", "width": 1}, {"color": "#6CEAFB", "from": "Tonne, Danah", "title": 1, "to": "L\u00f6ffler, Andreas", "width": 1}, {"color": "#6CEAFB", "from": "Tonne, Danah", "title": 1, "to": "Hitzker, Michael", "width": 1}, {"color": "#6CEAFB", "from": "Tonne, Danah", "title": 1, "to": "H\u00f6fler, Markus", "width": 1}, {"color": "#6CEAFB", "from": "Tonne, Danah", "title": 1, "to": "Schmidt, Timo", "width": 1}, {"color": "#6CEAFB", "from": "G\u00f6tzelmann, Germaine", "title": 1, "to": "Hegel, Philipp", "width": 1}, {"color": "#6CEAFB", "from": "G\u00f6tzelmann, Germaine", "title": 1, "to": "Krewet, Michael", "width": 1}, {"color": "#6CEAFB", "from": "G\u00f6tzelmann, Germaine", "title": 1, "to": "H\u00fcbner, Julia", "width": 1}, {"color": "#6CEAFB", "from": "G\u00f6tzelmann, Germaine", "title": 1, "to": "S\u00f6ring, Sibylle", "width": 1}, {"color": "#6CEAFB", "from": "G\u00f6tzelmann, Germaine", "title": 1, "to": "L\u00f6ffler, Andreas", "width": 1}, {"color": "#6CEAFB", "from": "G\u00f6tzelmann, Germaine", "title": 1, "to": "Hitzker, Michael", "width": 1}, {"color": "#6CEAFB", "from": "G\u00f6tzelmann, Germaine", "title": 1, "to": "H\u00f6fler, Markus", "width": 1}, {"color": "#6CEAFB", "from": "G\u00f6tzelmann, Germaine", "title": 1, "to": "Schmidt, Timo", "width": 1}, {"color": "#6CEAFB", "from": "Hegel, Philipp", "title": 1, "to": "Krewet, Michael", "width": 1}, {"color": "#6CEAFB", "from": "Hegel, Philipp", "title": 1, "to": "H\u00fcbner, Julia", "width": 1}, {"color": "#6CEAFB", "from": "Hegel, Philipp", "title": 1, "to": "S\u00f6ring, Sibylle", "width": 1}, {"color": "#6CEAFB", "from": "Hegel, Philipp", "title": 1, "to": "L\u00f6ffler, Andreas", "width": 1}, {"color": "#6CEAFB", "from": "Hegel, Philipp", "title": 1, "to": "Hitzker, Michael", "width": 1}, {"color": "#6CEAFB", "from": "Hegel, Philipp", "title": 1, "to": "H\u00f6fler, Markus", "width": 1}, {"color": "#6CEAFB", "from": "Hegel, Philipp", "title": 1, "to": "Schmidt, Timo", "width": 1}, {"color": "#6CEAFB", "from": "Krewet, Michael", "title": 1, "to": "H\u00fcbner, Julia", "width": 1}, {"color": "#6CEAFB", "from": "Krewet, Michael", "title": 1, "to": "S\u00f6ring, Sibylle", "width": 1}, {"color": "#6CEAFB", "from": "Krewet, Michael", "title": 1, "to": "L\u00f6ffler, Andreas", "width": 1}, {"color": "#6CEAFB", "from": "Krewet, Michael", "title": 1, "to": "Hitzker, Michael", "width": 1}, {"color": "#6CEAFB", "from": "Krewet, Michael", "title": 1, "to": "H\u00f6fler, Markus", "width": 1}, {"color": "#6CEAFB", "from": "Krewet, Michael", "title": 1, "to": "Schmidt, Timo", "width": 1}, {"color": "#6CEAFB", "from": "H\u00fcbner, Julia", "title": 1, "to": "S\u00f6ring, Sibylle", "width": 1}, {"color": "#6CEAFB", "from": "H\u00fcbner, Julia", "title": 1, "to": "L\u00f6ffler, Andreas", "width": 1}, {"color": "#6CEAFB", "from": "H\u00fcbner, Julia", "title": 1, "to": "Hitzker, Michael", "width": 1}, {"color": "#6CEAFB", "from": "H\u00fcbner, Julia", "title": 1, "to": "H\u00f6fler, Markus", "width": 1}, {"color": "#6CEAFB", "from": "H\u00fcbner, Julia", "title": 1, "to": "Schmidt, Timo", "width": 1}, {"color": "#6CEAFB", "from": "S\u00f6ring, Sibylle", "title": 1, "to": "L\u00f6ffler, Andreas", "width": 1}, {"color": "#6CEAFB", "from": "S\u00f6ring, Sibylle", "title": 1, "to": "Hitzker, Michael", "width": 1}, {"color": "#6CEAFB", "from": "S\u00f6ring, Sibylle", "title": 1, "to": "H\u00f6fler, Markus", "width": 1}, {"color": "#6CEAFB", "from": "S\u00f6ring, Sibylle", "title": 1, "to": "Schmidt, Timo", "width": 1}, {"color": "#6CEAFB", "from": "L\u00f6ffler, Andreas", "title": 1, "to": "Hitzker, Michael", "width": 1}, {"color": "#6CEAFB", "from": "L\u00f6ffler, Andreas", "title": 1, "to": "H\u00f6fler, Markus", "width": 1}, {"color": "#6CEAFB", "from": "L\u00f6ffler, Andreas", "title": 1, "to": "Schmidt, Timo", "width": 1}, {"color": "#6CEAFB", "from": "Hitzker, Michael", "title": 1, "to": "H\u00f6fler, Markus", "width": 1}, {"color": "#6CEAFB", "from": "Hitzker, Michael", "title": 1, "to": "Schmidt, Timo", "width": 1}, {"color": "#6CEAFB", "from": "H\u00f6fler, Markus", "title": 1, "to": "Schmidt, Timo", "width": 1}, {"color": "#6CEAFB", "from": "M\u00fchleder, Peter", "title": 1, "to": "Hoffmann, Tracy", "width": 1}, {"color": "#6CEAFB", "from": "M\u00fchleder, Peter", "title": 1, "to": "R\u00e4misch, Florian", "width": 1}, {"color": "#6CEAFB", "from": "Hoffmann, Tracy", "title": 1, "to": "R\u00e4misch, Florian", "width": 1}, {"color": "#6CEAFB", "from": "Lorenz, Anne Katrin", "title": 1, "to": "M\u00fcller-Dannhausen, Lea", "width": 1}, {"color": "#6CEAFB", "from": "Lorenz, Anne Katrin", "title": 1, "to": "Trautmann, Marjam", "width": 1}, {"color": "#6CEAFB", "from": "M\u00fcller-Dannhausen, Lea", "title": 1, "to": "Trautmann, Marjam", "width": 1}, {"color": "#6CEAFB", "from": "Druskat, Stephan", "title": 1, "to": "Rockenberger, Annika", "width": 1}, {"color": "#6CEAFB", "from": "Pohl, Oliver", "title": 1, "to": "Marx, Michael", "width": 1}, {"color": "#6CEAFB", "from": "Pohl, Oliver", "title": 1, "to": "Franke, Stefanie", "width": 1}, {"color": "#6CEAFB", "from": "Pohl, Oliver", "title": 1, "to": "Artika, Farah", "width": 1}, {"color": "#6CEAFB", "from": "Pohl, Oliver", "title": 1, "to": "Schn\u00f6pf, Markus", "width": 1}, {"color": "#6CEAFB", "from": "Pohl, Oliver", "title": 1, "to": "Mahmutovic, Edin", "width": 1}, {"color": "#6CEAFB", "from": "Marx, Michael", "title": 1, "to": "Franke, Stefanie", "width": 1}, {"color": "#6CEAFB", "from": "Marx, Michael", "title": 1, "to": "Artika, Farah", "width": 1}, {"color": "#6CEAFB", "from": "Marx, Michael", "title": 1, "to": "Schn\u00f6pf, Markus", "width": 1}, {"color": "#6CEAFB", "from": "Marx, Michael", "title": 1, "to": "Mahmutovic, Edin", "width": 1}, {"color": "#6CEAFB", "from": "Franke, Stefanie", "title": 1, "to": "Artika, Farah", "width": 1}, {"color": "#6CEAFB", "from": "Franke, Stefanie", "title": 1, "to": "Schn\u00f6pf, Markus", "width": 1}, {"color": "#6CEAFB", "from": "Franke, Stefanie", "title": 1, "to": "Mahmutovic, Edin", "width": 1}, {"color": "#6CEAFB", "from": "Artika, Farah", "title": 1, "to": "Schn\u00f6pf, Markus", "width": 1}, {"color": "#6CEAFB", "from": "Artika, Farah", "title": 1, "to": "Mahmutovic, Edin", "width": 1}, {"color": "#6CEAFB", "from": "Schn\u00f6pf, Markus", "title": 1, "to": "Mahmutovic, Edin", "width": 1}, {"color": "#6CEAFB", "from": "R\u00f6hrer, Ines", "title": 1, "to": "Ullrich, Sabine", "width": 1}, {"color": "#6CEAFB", "from": "R\u00f6hrer, Ines", "title": 1, "to": "Hadersbeck, Maximilian", "width": 1}, {"color": "#6CEAFB", "from": "Ullrich, Sabine", "title": 1, "to": "Hadersbeck, Maximilian", "width": 1}, {"color": "#6CEAFB", "from": "K\u00f6nig, Mareike", "title": 1, "to": "Menke, Ulla", "width": 1}, {"color": "#6CEAFB", "from": "Pohl, Oliver", "title": 1, "to": "Dogaru, Teodora", "width": 1}, {"color": "#6CEAFB", "from": "Pohl, Oliver", "title": 1, "to": "M\u00fcller-Laackman, Jonas", "width": 1}, {"color": "#6CEAFB", "from": "Dogaru, Teodora", "title": 1, "to": "M\u00fcller-Laackman, Jonas", "width": 1}, {"color": "#6CEAFB", "from": "Dunst, Alexander", "title": 1, "to": "Hartel, Rita", "width": 1}, {"color": "#6CEAFB", "from": "Sikora, Uwe", "title": 1, "to": "Gronemeyer, Sven", "width": 1}, {"color": "#6CEAFB", "from": "Sikora, Uwe", "title": 1, "to": "Diehr, Franziska", "width": 1}, {"color": "#6CEAFB", "from": "Sikora, Uwe", "title": 1, "to": "Wagner, Elisabeth", "width": 1}, {"color": "#6CEAFB", "from": "Sikora, Uwe", "title": 1, "to": "Prager, Christian", "width": 1}, {"color": "#6CEAFB", "from": "Sikora, Uwe", "title": 1, "to": "Brodhun, Maximilian", "width": 1}, {"color": "#6CEAFB", "from": "Sikora, Uwe", "title": 1, "to": "Diederichs, Katja", "width": 1}, {"color": "#6CEAFB", "from": "Sikora, Uwe", "title": 1, "to": "Grube, Nikolai", "width": 1}, {"color": "#6CEAFB", "from": "Gronemeyer, Sven", "title": 1, "to": "Diehr, Franziska", "width": 1}, {"color": "#6CEAFB", "from": "Gronemeyer, Sven", "title": 1, "to": "Wagner, Elisabeth", "width": 1}, {"color": "#6CEAFB", "from": "Gronemeyer, Sven", "title": 1, "to": "Prager, Christian", "width": 1}, {"color": "#6CEAFB", "from": "Gronemeyer, Sven", "title": 1, "to": "Brodhun, Maximilian", "width": 1}, {"color": "#6CEAFB", "from": "Gronemeyer, Sven", "title": 1, "to": "Diederichs, Katja", "width": 1}, {"color": "#6CEAFB", "from": "Gronemeyer, Sven", "title": 1, "to": "Grube, Nikolai", "width": 1}, {"color": "#6CEAFB", "from": "Diehr, Franziska", "title": 1, "to": "Wagner, Elisabeth", "width": 1}, {"color": "#6CEAFB", "from": "Diehr, Franziska", "title": 1, "to": "Prager, Christian", "width": 1}, {"color": "#6CEAFB", "from": "Diehr, Franziska", "title": 1, "to": "Diederichs, Katja", "width": 1}, {"color": "#6CEAFB", "from": "Diehr, Franziska", "title": 1, "to": "Grube, Nikolai", "width": 1}, {"color": "#6CEAFB", "from": "Wagner, Elisabeth", "title": 1, "to": "Prager, Christian", "width": 1}, {"color": "#6CEAFB", "from": "Wagner, Elisabeth", "title": 1, "to": "Brodhun, Maximilian", "width": 1}, {"color": "#6CEAFB", "from": "Wagner, Elisabeth", "title": 1, "to": "Diederichs, Katja", "width": 1}, {"color": "#6CEAFB", "from": "Wagner, Elisabeth", "title": 1, "to": "Grube, Nikolai", "width": 1}, {"color": "#6CEAFB", "from": "Prager, Christian", "title": 1, "to": "Brodhun, Maximilian", "width": 1}, {"color": "#6CEAFB", "from": "Prager, Christian", "title": 1, "to": "Diederichs, Katja", "width": 1}, {"color": "#6CEAFB", "from": "Prager, Christian", "title": 1, "to": "Grube, Nikolai", "width": 1}, {"color": "#6CEAFB", "from": "Brodhun, Maximilian", "title": 1, "to": "Diederichs, Katja", "width": 1}, {"color": "#6CEAFB", "from": "Brodhun, Maximilian", "title": 1, "to": "Grube, Nikolai", "width": 1}, {"color": "#6CEAFB", "from": "Diederichs, Katja", "title": 1, "to": "Grube, Nikolai", "width": 1}, {"color": "#6CEAFB", "from": "Moeller, Katrin", "title": 1, "to": "M\u00fcller, Andreas", "width": 1}, {"color": "#6CEAFB", "from": "Moeller, Katrin", "title": 1, "to": "Purschwitz, Anne", "width": 1}, {"color": "#6CEAFB", "from": "M\u00fcller, Andreas", "title": 1, "to": "Purschwitz, Anne", "width": 1}, {"color": "#6CEAFB", "from": "Metzmacher, Katja", "title": 1, "to": "Helling, Patrick", "width": 1}, {"color": "#6CEAFB", "from": "Metzmacher, Katja", "title": 1, "to": "Blumtritt, Jonathan", "width": 1}, {"color": "#6CEAFB", "from": "Metzmacher, Katja", "title": 1, "to": "Mathiak, Brigitte", "width": 1}, {"color": "#6CEAFB", "from": "Helling, Patrick", "title": 1, "to": "Blumtritt, Jonathan", "width": 1}, {"color": "#6CEAFB", "from": "Helling, Patrick", "title": 1, "to": "Mathiak, Brigitte", "width": 1}, {"color": "#6CEAFB", "from": "Blumtritt, Jonathan", "title": 1, "to": "Mathiak, Brigitte", "width": 1}, {"color": "#6CEAFB", "from": "Hemati, Wahed", "title": 1, "to": "Mehler, Alexander", "width": 1}, {"color": "#6CEAFB", "from": "Hemati, Wahed", "title": 1, "to": "Uslu, Tolga", "width": 1}, {"color": "#6CEAFB", "from": "Hemati, Wahed", "title": 1, "to": "Abrami, Giuseppe", "width": 1}, {"color": "#6CEAFB", "from": "Mehler, Alexander", "title": 1, "to": "Abrami, Giuseppe", "width": 1}, {"color": "#6CEAFB", "from": "Uslu, Tolga", "title": 1, "to": "Abrami, Giuseppe", "width": 1}, {"color": "#6CEAFB", "from": "Schl\u00f6r, Daniel", "title": 1, "to": "Veseli, Blerta", "width": 1}, {"color": "#6CEAFB", "from": "Schl\u00f6r, Daniel", "title": 1, "to": "Hotho, Andreas", "width": 1}, {"color": "#6CEAFB", "from": "Veseli, Blerta", "title": 1, "to": "Hotho, Andreas", "width": 1}, {"color": "#6CEAFB", "from": "Burghardt, Manuel", "title": 1, "to": "Meyer, Selina", "width": 1}, {"color": "#6CEAFB", "from": "Burghardt, Manuel", "title": 1, "to": "Schmidtbauer, Stephanie", "width": 1}, {"color": "#6CEAFB", "from": "Burghardt, Manuel", "title": 1, "to": "Molz, Johannes", "width": 1}, {"color": "#6CEAFB", "from": "Meyer, Selina", "title": 1, "to": "Schmidtbauer, Stephanie", "width": 1}, {"color": "#6CEAFB", "from": "Meyer, Selina", "title": 1, "to": "Molz, Johannes", "width": 1}, {"color": "#6CEAFB", "from": "Schmidtbauer, Stephanie", "title": 1, "to": "Molz, Johannes", "width": 1}, {"color": "#6CEAFB", "from": "M\u00fcller-Laackman, Jonas", "title": 1, "to": "Dumont, Stefan", "width": 1}, {"color": "#6CEAFB", "from": "M\u00fcller-Laackman, Jonas", "title": 1, "to": "Grabsch, Sascha", "width": 1}, {"color": "#6CEAFB", "from": "Dumont, Stefan", "title": 1, "to": "Grabsch, Sascha", "width": 1}, {"color": "#6CEAFB", "from": "Abrami, Giuseppe", "title": 1, "to": "Spiekermann, Christian", "width": 1}, {"color": "#6CEAFB", "from": "Spiekermann, Christian", "title": 1, "to": "Mehler, Alexander", "width": 1}, {"color": "#6CEAFB", "from": "Guhr, Svenja", "title": 1, "to": "Varachkina, Hanna", "width": 1}, {"color": "#6CEAFB", "from": "Guhr, Svenja", "title": 1, "to": "Lee, Geumbi", "width": 1}, {"color": "#6CEAFB", "from": "Guhr, Svenja", "title": 1, "to": "Sporleder, Caroline", "width": 1}, {"color": "#6CEAFB", "from": "Varachkina, Hanna", "title": 1, "to": "Lee, Geumbi", "width": 1}, {"color": "#6CEAFB", "from": "Varachkina, Hanna", "title": 1, "to": "Sporleder, Caroline", "width": 1}, {"color": "#6CEAFB", "from": "Lee, Geumbi", "title": 1, "to": "Sporleder, Caroline", "width": 1}, {"color": "#6CEAFB", "from": "B\u00fcrgermeister, Martina", "title": 1, "to": "Bartz, Gabriele", "width": 1}, {"color": "#6CEAFB", "from": "B\u00fcrgermeister, Martina", "title": 1, "to": "Gnei\u00df, Markus", "width": 1}, {"color": "#6CEAFB", "from": "Bartz, Gabriele", "title": 1, "to": "Gnei\u00df, Markus", "width": 1}, {"color": "#6CEAFB", "from": "Ziehe, Stefan", "title": 1, "to": "Sporleder, Caroline", "width": 1}, {"color": "#6CEAFB", "from": "Stuber, Martin", "title": 1, "to": "D\u00e4ngeli, Peter", "width": 1}, {"color": "#6CEAFB", "from": "Stuber, Martin", "title": 1, "to": "Forney, Christian", "width": 1}, {"color": "#6CEAFB", "from": "D\u00e4ngeli, Peter", "title": 1, "to": "Forney, Christian", "width": 1}, {"color": "#6CEAFB", "from": "Koch, Gertraud", "title": 1, "to": "Franken, Lina", "width": 1}, {"color": "#6CEAFB", "from": "Wettlaufer, J\u00f6rg", "title": 1, "to": "Kilincoglu, Deniz", "width": 1}, {"color": "#6CEAFB", "from": "Wettlaufer, J\u00f6rg", "title": 1, "to": "Ziehe, Stefan", "width": 1}, {"color": "#6CEAFB", "from": "Wettlaufer, J\u00f6rg", "title": 1, "to": "Mandalka, Markus", "width": 1}, {"color": "#6CEAFB", "from": "Ziehe, Stefan", "title": 1, "to": "Mandalka, Markus", "width": 1}, {"color": "#6CEAFB", "from": "Krautter, Benjamin", "title": 1, "to": "Pagel, Janis", "width": 1}, {"color": "#6CEAFB", "from": "Dumont, Stefan", "title": 1, "to": "Haaf, Susanne", "width": 1}, {"color": "#6CEAFB", "from": "Dumont, Stefan", "title": 1, "to": "Henny-Krahmer, Ulrike", "width": 1}, {"color": "#6CEAFB", "from": "Dumont, Stefan", "title": 1, "to": "Krautter, Benjamin", "width": 1}, {"color": "#6CEAFB", "from": "Dumont, Stefan", "title": 1, "to": "Neuber, Frederike", "width": 1}, {"color": "#6CEAFB", "from": "Haaf, Susanne", "title": 1, "to": "Henny-Krahmer, Ulrike", "width": 1}, {"color": "#6CEAFB", "from": "Haaf, Susanne", "title": 1, "to": "Krautter, Benjamin", "width": 1}, {"color": "#6CEAFB", "from": "Haaf, Susanne", "title": 1, "to": "Neuber, Frederike", "width": 1}, {"color": "#6CEAFB", "from": "Henny-Krahmer, Ulrike", "title": 1, "to": "Krautter, Benjamin", "width": 1}, {"color": "#6CEAFB", "from": "Henny-Krahmer, Ulrike", "title": 1, "to": "Neuber, Frederike", "width": 1}, {"color": "#6CEAFB", "from": "Krautter, Benjamin", "title": 1, "to": "Neuber, Frederike", "width": 1}, {"color": "#6CEAFB", "from": "Diehr, Franziska", "title": 1, "to": "Glinka, Katrin", "width": 1}, {"color": "#6CEAFB", "from": "G\u00f6rz, G\u00fcnther", "title": 1, "to": "Seidl, Chiara", "width": 1}, {"color": "#6CEAFB", "from": "G\u00f6rz, G\u00fcnther", "title": 1, "to": "Thiering, Martin", "width": 1}, {"color": "#6CEAFB", "from": "Seidl, Chiara", "title": 1, "to": "Thiering, Martin", "width": 1}, {"color": "#6CEAFB", "from": "Schaeben, Marcel", "title": 1, "to": "El Khatib, Randa", "width": 1}, {"color": "#6CEAFB", "from": "Schwappach, Florin", "title": 1, "to": "Burghardt, Manuel", "width": 1}, {"color": "#6CEAFB", "from": "Burghardt, Manuel", "title": 1, "to": "Pause, Johannes", "width": 1}, {"color": "#6CEAFB", "from": "Burghardt, Manuel", "title": 1, "to": "Walkowski, Niels-Oliver", "width": 1}, {"color": "#6CEAFB", "from": "Pause, Johannes", "title": 1, "to": "Walkowski, Niels-Oliver", "width": 1}, {"color": "#6CEAFB", "from": "Severin, Simmler", "title": 1, "to": "Thorsten, Vitt", "width": 1}, {"color": "#6CEAFB", "from": "Severin, Simmler", "title": 1, "to": "Pielstr\u00f6m, Steffen", "width": 1}, {"color": "#6CEAFB", "from": "Thorsten, Vitt", "title": 1, "to": "Pielstr\u00f6m, Steffen", "width": 1}, {"color": "#6CEAFB", "from": "Busch, Anna", "title": 1, "to": "Bludau, Mark-Jan", "width": 1}, {"color": "#6CEAFB", "from": "Busch, Anna", "title": 1, "to": "Br\u00fcggemann, Viktoria", "width": 1}, {"color": "#6CEAFB", "from": "Busch, Anna", "title": 1, "to": "D\u00f6rk, Marian", "width": 1}, {"color": "#6CEAFB", "from": "Busch, Anna", "title": 1, "to": "Genzel, Kristina", "width": 1}, {"color": "#6CEAFB", "from": "Busch, Anna", "title": 1, "to": "M\u00f6ller, Klaus-Peter", "width": 1}, {"color": "#6CEAFB", "from": "Busch, Anna", "title": 1, "to": "Seifert, Sabine", "width": 1}, {"color": "#6CEAFB", "from": "Busch, Anna", "title": 1, "to": "Trilcke, Peer", "width": 1}, {"color": "#6CEAFB", "from": "Bludau, Mark-Jan", "title": 1, "to": "Br\u00fcggemann, Viktoria", "width": 1}, {"color": "#6CEAFB", "from": "Bludau, Mark-Jan", "title": 1, "to": "D\u00f6rk, Marian", "width": 1}, {"color": "#6CEAFB", "from": "Bludau, Mark-Jan", "title": 1, "to": "Genzel, Kristina", "width": 1}, {"color": "#6CEAFB", "from": "Bludau, Mark-Jan", "title": 1, "to": "M\u00f6ller, Klaus-Peter", "width": 1}, {"color": "#6CEAFB", "from": "Bludau, Mark-Jan", "title": 1, "to": "Seifert, Sabine", "width": 1}, {"color": "#6CEAFB", "from": "Bludau, Mark-Jan", "title": 1, "to": "Trilcke, Peer", "width": 1}, {"color": "#6CEAFB", "from": "Br\u00fcggemann, Viktoria", "title": 1, "to": "D\u00f6rk, Marian", "width": 1}, {"color": "#6CEAFB", "from": "Br\u00fcggemann, Viktoria", "title": 1, "to": "Genzel, Kristina", "width": 1}, {"color": "#6CEAFB", "from": "Br\u00fcggemann, Viktoria", "title": 1, "to": "M\u00f6ller, Klaus-Peter", "width": 1}, {"color": "#6CEAFB", "from": "Br\u00fcggemann, Viktoria", "title": 1, "to": "Seifert, Sabine", "width": 1}, {"color": "#6CEAFB", "from": "Br\u00fcggemann, Viktoria", "title": 1, "to": "Trilcke, Peer", "width": 1}, {"color": "#6CEAFB", "from": "D\u00f6rk, Marian", "title": 1, "to": "Genzel, Kristina", "width": 1}, {"color": "#6CEAFB", "from": "D\u00f6rk, Marian", "title": 1, "to": "M\u00f6ller, Klaus-Peter", "width": 1}, {"color": "#6CEAFB", "from": "D\u00f6rk, Marian", "title": 1, "to": "Seifert, Sabine", "width": 1}, {"color": "#6CEAFB", "from": "D\u00f6rk, Marian", "title": 1, "to": "Trilcke, Peer", "width": 1}, {"color": "#6CEAFB", "from": "Genzel, Kristina", "title": 1, "to": "M\u00f6ller, Klaus-Peter", "width": 1}, {"color": "#6CEAFB", "from": "Genzel, Kristina", "title": 1, "to": "Seifert, Sabine", "width": 1}, {"color": "#6CEAFB", "from": "Genzel, Kristina", "title": 1, "to": "Trilcke, Peer", "width": 1}, {"color": "#6CEAFB", "from": "M\u00f6ller, Klaus-Peter", "title": 1, "to": "Seifert, Sabine", "width": 1}, {"color": "#6CEAFB", "from": "M\u00f6ller, Klaus-Peter", "title": 1, "to": "Trilcke, Peer", "width": 1}, {"color": "#6CEAFB", "from": "Seifert, Sabine", "title": 1, "to": "Trilcke, Peer", "width": 1}, {"color": "#6CEAFB", "from": "Wagner, Andreas", "title": 1, "to": "Bragagnolo, Manuela", "width": 1}, {"color": "#6CEAFB", "from": "Vitt, Thorsten", "title": 1, "to": "Br\u00fcning, Gerrit", "width": 1}, {"color": "#6CEAFB", "from": "Vitt, Thorsten", "title": 1, "to": "Pravida, Dietmar", "width": 1}, {"color": "#6CEAFB", "from": "Vitt, Thorsten", "title": 1, "to": "Wissenbach, Moritz", "width": 1}, {"color": "#6CEAFB", "from": "Br\u00fcning, Gerrit", "title": 1, "to": "Pravida, Dietmar", "width": 1}, {"color": "#6CEAFB", "from": "Br\u00fcning, Gerrit", "title": 1, "to": "Wissenbach, Moritz", "width": 1}, {"color": "#6CEAFB", "from": "Pravida, Dietmar", "title": 1, "to": "Wissenbach, Moritz", "width": 1}, {"color": "#6CEAFB", "from": "Fritze, Christiane", "title": 1, "to": "Fischer, Franz", "width": 1}, {"color": "#6CEAFB", "from": "Fritze, Christiane", "title": 1, "to": "Vogeler, Georg", "width": 1}, {"color": "#6CEAFB", "from": "Fritze, Christiane", "title": 1, "to": "Schn\u00f6pf, Markus", "width": 1}, {"color": "#6CEAFB", "from": "Fritze, Christiane", "title": 1, "to": "Scholger, Martina", "width": 1}, {"color": "#6CEAFB", "from": "Fritze, Christiane", "title": 1, "to": "Sahle, Patrick", "width": 1}, {"color": "#6CEAFB", "from": "Fischer, Franz", "title": 1, "to": "Vogeler, Georg", "width": 1}, {"color": "#6CEAFB", "from": "Fischer, Franz", "title": 1, "to": "Schn\u00f6pf, Markus", "width": 1}, {"color": "#6CEAFB", "from": "Fischer, Franz", "title": 1, "to": "Scholger, Martina", "width": 1}, {"color": "#6CEAFB", "from": "Fischer, Franz", "title": 1, "to": "Sahle, Patrick", "width": 1}, {"color": "#6CEAFB", "from": "Vogeler, Georg", "title": 1, "to": "Schn\u00f6pf, Markus", "width": 1}, {"color": "#6CEAFB", "from": "Vogeler, Georg", "title": 1, "to": "Scholger, Martina", "width": 1}, {"color": "#6CEAFB", "from": "Vogeler, Georg", "title": 1, "to": "Sahle, Patrick", "width": 1}, {"color": "#6CEAFB", "from": "Schn\u00f6pf, Markus", "title": 1, "to": "Scholger, Martina", "width": 1}, {"color": "#6CEAFB", "from": "Schn\u00f6pf, Markus", "title": 1, "to": "Sahle, Patrick", "width": 1}, {"color": "#6CEAFB", "from": "Scholger, Martina", "title": 1, "to": "Sahle, Patrick", "width": 1}, {"color": "#6CEAFB", "from": "Nasarek, Robert", "title": 1, "to": "M\u00fcller, Andreas", "width": 1}, {"color": "#6CEAFB", "from": "Boenig, Matthias", "title": 1, "to": "Herrmann, Elisa", "width": 1}, {"color": "#6CEAFB", "from": "Boenig, Matthias", "title": 1, "to": "Hartmann, Volker", "width": 1}, {"color": "#6CEAFB", "from": "Herrmann, Elisa", "title": 1, "to": "Hartmann, Volker", "width": 1}, {"color": "#6CEAFB", "from": "Jarosch, Julian", "title": 1, "to": "Kuczera, Andreas", "width": 1}, {"color": "#6CEAFB", "from": "Jarosch, Julian", "title": 1, "to": "Schrade, Torsten", "width": 1}, {"color": "#6CEAFB", "from": "Jarosch, Julian", "title": 1, "to": "Yousef, Tariq", "width": 1}, {"color": "#6CEAFB", "from": "Kuczera, Andreas", "title": 1, "to": "Schrade, Torsten", "width": 1}, {"color": "#6CEAFB", "from": "Kuczera, Andreas", "title": 1, "to": "Yousef, Tariq", "width": 1}, {"color": "#6CEAFB", "from": "Schrade, Torsten", "title": 1, "to": "Yousef, Tariq", "width": 1}, {"color": "#6CEAFB", "from": "Vogeler, Georg", "title": 1, "to": "Vasold, Gunter", "width": 1}, {"color": "#6CEAFB", "from": "Vogeler, Georg", "title": 1, "to": "Schl\u00f6gl, Matthias", "width": 1}, {"color": "#6CEAFB", "from": "Vasold, Gunter", "title": 1, "to": "Schl\u00f6gl, Matthias", "width": 1}, {"color": "#6CEAFB", "from": "Wigg-Wolf, David", "title": 1, "to": "Tolle, Karsten", "width": 1}, {"color": "#6CEAFB", "from": "Wigg-Wolf, David", "title": 1, "to": "Kissinger, Timo", "width": 1}, {"color": "#6CEAFB", "from": "Tolle, Karsten", "title": 1, "to": "Kissinger, Timo", "width": 1}, {"color": "#6CEAFB", "from": "Proisl, Thomas", "title": 1, "to": "Konle, Leonard", "width": 1}, {"color": "#6CEAFB", "from": "Proisl, Thomas", "title": 1, "to": "Evert, Stefan", "width": 1}, {"color": "#6CEAFB", "from": "Proisl, Thomas", "title": 1, "to": "Jannidis, Fotis", "width": 1}, {"color": "#6CEAFB", "from": "Konle, Leonard", "title": 1, "to": "Evert, Stefan", "width": 1}, {"color": "#6CEAFB", "from": "Evert, Stefan", "title": 1, "to": "Jannidis, Fotis", "width": 1}, {"color": "#6CEAFB", "from": "Weichselbaumer, Nikolaus", "title": 1, "to": "Seuret, Mathias", "width": 1}, {"color": "#6CEAFB", "from": "Weichselbaumer, Nikolaus", "title": 1, "to": "Limbach, Saskia", "width": 1}, {"color": "#6CEAFB", "from": "Weichselbaumer, Nikolaus", "title": 1, "to": "Christlein, Vincent", "width": 1}, {"color": "#6CEAFB", "from": "Weichselbaumer, Nikolaus", "title": 1, "to": "Maier, Andreas", "width": 1}, {"color": "#6CEAFB", "from": "Seuret, Mathias", "title": 1, "to": "Limbach, Saskia", "width": 1}, {"color": "#6CEAFB", "from": "Seuret, Mathias", "title": 1, "to": "Christlein, Vincent", "width": 1}, {"color": "#6CEAFB", "from": "Seuret, Mathias", "title": 1, "to": "Maier, Andreas", "width": 1}, {"color": "#6CEAFB", "from": "Limbach, Saskia", "title": 1, "to": "Christlein, Vincent", "width": 1}, {"color": "#6CEAFB", "from": "Limbach, Saskia", "title": 1, "to": "Maier, Andreas", "width": 1}, {"color": "#6CEAFB", "from": "Christlein, Vincent", "title": 1, "to": "Maier, Andreas", "width": 1}, {"color": "#6CEAFB", "from": "Hedeland, Hanna", "title": 1, "to": "Remus, Steffen", "width": 1}, {"color": "#6CEAFB", "from": "Hedeland, Hanna", "title": 1, "to": "Ferger, Anne", "width": 1}, {"color": "#6CEAFB", "from": "Hedeland, Hanna", "title": 1, "to": "B\u00fchrig, Kristin", "width": 1}, {"color": "#6CEAFB", "from": "Hedeland, Hanna", "title": 1, "to": "Biemann, Chris", "width": 1}, {"color": "#6CEAFB", "from": "Remus, Steffen", "title": 1, "to": "Ferger, Anne", "width": 1}, {"color": "#6CEAFB", "from": "Remus, Steffen", "title": 1, "to": "B\u00fchrig, Kristin", "width": 1}, {"color": "#6CEAFB", "from": "Remus, Steffen", "title": 1, "to": "Biemann, Chris", "width": 1}, {"color": "#6CEAFB", "from": "Ferger, Anne", "title": 1, "to": "B\u00fchrig, Kristin", "width": 1}, {"color": "#6CEAFB", "from": "Ferger, Anne", "title": 1, "to": "Biemann, Chris", "width": 1}, {"color": "#6CEAFB", "from": "B\u00fchrig, Kristin", "title": 1, "to": "Biemann, Chris", "width": 1}, {"color": "#6CEAFB", "from": "Mukhametov, Sergey", "title": 1, "to": "Kesselheim, Wolfgang", "width": 1}, {"color": "#6CEAFB", "from": "Mukhametov, Sergey", "title": 1, "to": "Brandenbeger, Christina", "width": 1}, {"color": "#6CEAFB", "from": "Kesselheim, Wolfgang", "title": 1, "to": "Brandenbeger, Christina", "width": 1}, {"color": "#6CEAFB", "from": "Gerhards, Donata", "title": 1, "to": "H\u00fcther, Frank", "width": 1}, {"color": "#6CEAFB", "from": "Schl\u00f6gl, Matthias", "title": 1, "to": "Andorfer, Peter", "width": 1}, {"color": "#6CEAFB", "from": "Sch\u00fcller, Daniel", "title": 1, "to": "Mittelberg, Irene", "width": 1}, {"color": "#6CEAFB", "from": "Moisich, Oliver", "title": 1, "to": "Hartel, Rita", "width": 1}, {"color": "#6CEAFB", "from": "Mayr, Eva", "title": 1, "to": "Windhager, Florian", "width": 1}, {"color": "#6CEAFB", "from": "Mayr, Eva", "title": 1, "to": "Schreder, G\u00fcnther", "width": 1}, {"color": "#6CEAFB", "from": "Windhager, Florian", "title": 1, "to": "Schreder, G\u00fcnther", "width": 1}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+                    network.on("click", neighbourhoodHighlight);
+                  
+
+                  
+                    network.on("selectNode", neighbourhoodHighlight);
+                  
+
+                  
+
+
+                  
+                      network.on("stabilizationProgress", function(params) {
+                          document.getElementById('loadingBar').removeAttribute("style");
+                          var maxWidth = 496;
+                          var minWidth = 20;
+                          var widthFactor = params.iterations/params.total;
+                          var width = Math.max(minWidth,maxWidth * widthFactor);
+                          document.getElementById('bar').style.width = width + 'px';
+                          document.getElementById('text').innerHTML = Math.round(widthFactor*100) + '%';
+                      });
+                      network.once("stabilizationIterationsDone", function() {
+                          document.getElementById('text').innerHTML = '100%';
+                          document.getElementById('bar').style.width = '496px';
+                          document.getElementById('loadingBar').style.opacity = 0;
+                          // really clean the dom element
+                          setTimeout(function () {document.getElementById('loadingBar').style.display = 'none';}, 500);
+                      });
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>

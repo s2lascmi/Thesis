@@ -1,0 +1,115 @@
+<div style="position:relative; left:50px; right:50px; top:20px">
+
+  <style type="text/css">
+    .tg {
+      border: none;
+      border-collapse: collapse;
+      border-color: #ccc;
+      border-spacing: 0;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .tg td {
+      background-color: #fff;
+      border-color: #ccc;
+      border-style: solid;
+      border-width: 0px;
+      color: #333;
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      overflow: hidden;
+      padding: 10px 15px;
+      word-break: normal;
+    }
+
+    .tg th {
+      background-color: #f0f0f0;
+      border-color: #ccc;
+      border-style: solid;
+      border-width: 0px;
+      color: #333;
+      font-family: Arial, sans-serif;
+      font-size: 20px;
+      font-weight: normal;
+      overflow: hidden;
+      padding: 10px 5px;
+      word-break: normal;
+    }
+
+    .tg .tg-c3ow {
+      border-color: inherit;
+      text-align: left;
+      vertical-align: top
+    }
+
+    .tg .tg-7btt {
+      border-color: inherit;
+      font-weight: bold;
+      text-align: left;
+      vertical-align: top;
+      font-size: large
+    }
+
+  </style>
+
+  <h4 style="text-align:center; margin-bottom: 30px;">Further information about the network</h4>
+
+  <table class="tg" class="center">
+    <thead>
+      <tr>
+        <th class="tg-7btt"><span style="font-weight:bold">Node Colors</span></th>
+        <th class="tg-7btt"><span style="font-weight:bold">Node Shapes</span></th>
+        <th class="tg-7btt"><span style="font-weight:bold">Edge Colors</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="tg-c3ow">
+          <div>
+            <div
+              style="float: left; height: 18px; width: 18px; margin-bottom: 10px; margin-right:5px; border: 1px solid black; clear: both; background-color:#C70039">
+            </div>Authors who already contributed at previous DHd conference
+          </div>
+        </td>
+        <td class="tg-c3ow"><div style="height:auto; width:autro">&#8902; Most Contributing Authors</div></td>
+        <td class="tg-c3ow">
+          <div>
+            <div
+              style="float: left; height: 18px; width: 18px; margin-bottom: 10px; margin-right:5px; border: 1px solid black; clear: both; background-color:#360BFA">
+            </div>Three or more interactions between the authors
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="tg-c3ow">
+          <div>
+            <div
+              style="float: left; height: 18px; width: 18px; margin-bottom: 10px; margin-right:5px; border: 1px solid black; clear: both; background-color:orange">
+            </div>New Author
+          </div>
+        </td>
+        <td class="tg-c3ow"><div style="height:auto; width:auto">&#x25CB; Other Authors</div></td>
+        <td class="tg-c3ow">
+          <div>
+            <div
+              style="float: left; height: 18px; width: 18px; margin-bottom: 10px; margin-right:5px; border: 1px solid black; clear: both; background-color:#6CADFB">
+            </div>Two interactions between the authors
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="tg-c3ow"></td>
+        <td class="tg-c3ow"></td>
+        <td class="tg-c3ow">
+          <div>
+            <div
+              style="float: left; height: 18px; width: 18px; margin-bottom: 10px; margin-right:5px; border: 1px solid black; clear: both; background-color:#6CEAFB">
+            </div>One interaction between the authors
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

@@ -1,0 +1,2324 @@
+,DHd 2016,DHd 2017,DHd 2018,DHd 2019,DHd 2020,DHd 2022,DHd 2023
+Methodik,0.006,0.0,0.0,0.006,0.0,0.006,0.0
+Faksimile,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Codierung,0.006,0.0,0.006,0.0,0.006,0.0,0.0
+Befund und Deutung,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+digitale 3D-Rekonstruktion,0.006,0.0,0.0,0.006,0.0,0.0,0.0
+Grundlagen,0.006,0.0,0.0,0.006,0.0,0.0,0.0
+Datenmodellierung,0.013,0.019,0.025,0.006,0.013,0.013,0.025
+Dokumentation,0.013,0.006,0.006,0.006,0.006,0.0,0.006
+Visualisierung,0.119,0.019,0.031,0.037,0.019,0.056,0.025
+Vernetzung,0.025,0.0,0.006,0.013,0.006,0.006,0.013
+Übergreifend,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+regional,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Kommunikation,0.006,0.0,0.0,0.006,0.0,0.0,0.0
+Diskussion,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Datenzentren,0.006,0.006,0.013,0.0,0.0,0.0,0.0
+Nachhaltigkeit,0.013,0.044,0.013,0.0,0.006,0.013,0.013
+Forschungsdaten,0.031,0.013,0.019,0.025,0.019,0.019,0.019
+Datenkuratierung,0.006,0.006,0.0,0.0,0.0,0.006,0.006
+Use Case,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Infrastruktur,0.019,0.019,0.019,0.013,0.006,0.013,0.019
+CLARIN-D,0.013,0.0,0.0,0.0,0.0,0.0,0.0
+Aufbewahren,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Digitale Editionen,0.006,0.0,0.006,0.013,0.006,0.006,0.0
+Modellierung,0.037,0.013,0.013,0.006,0.013,0.037,0.019
+korpusbasierte Untersuchungen historischer Sprachstufen,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Tokenisierung,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Lemmatisierung,0.006,0.0,0.0,0.006,0.006,0.0,0.0
+Annotation,0.05,0.05,0.075,0.037,0.031,0.037,0.019
+verschiedene frühneuhochdeutsche Textkorpora,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Benutzerintegration,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Crowdsourcing,0.019,0.006,0.0,0.006,0.0,0.006,0.006
+Edition,0.013,0.013,0.019,0.013,0.019,0.013,0.025
+Georeferecing,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Retrieval,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Lehrbuch,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Kollaboration,0.031,0.006,0.013,0.0,0.006,0.0,0.013
+Open Access,0.013,0.006,0.006,0.0,0.006,0.0,0.031
+Forschungsdatenmanagement,0.013,0.0,0.013,0.031,0.019,0.031,0.006
+Kostümsprache,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Mustersprache,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Ähnlichkeitsanalyse,0.006,0.0,0.0,0.0,0.0,0.006,0.0
+Empirische Filmanalyse,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Daten Visualisierung,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+digitales Publizieren,0.006,0.0,0.0,0.0,0.006,0.0,0.0
+Autorschaft,0.013,0.0,0.0,0.0,0.0,0.0,0.0
+Review-Verfahren,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Langzeitarchivierung,0.031,0.006,0.013,0.006,0.0,0.019,0.0
+Korpora,0.019,0.0,0.0,0.019,0.0,0.0,0.006
+Sociale Medien,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Social Media,0.006,0.0,0.0,0.006,0.006,0.006,0.0
+Internetbasierte Kommunikation,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+CMC,0.006,0.006,0.0,0.0,0.0,0.0,0.0
+Korpuslinguistik,0.031,0.0,0.013,0.013,0.006,0.013,0.006
+Parts of speech,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+TEI,0.025,0.019,0.05,0.013,0.025,0.019,0.013
+STTS,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Digitale Genres,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+TaDiRAH,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Taxonomie,0.013,0.0,0.0,0.0,0.0,0.0,0.0
+Übersetzung,0.006,0.0,0.0,0.006,0.0,0.0,0.0
+islamische manuskripte,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+bibliographische datenbank,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+entwicklung,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+netzwerke,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+visualisierung,0.006,0.0,0.0,0.006,0.0,0.0,0.0
+Explorative Netzwerkvisualisierung,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Indexierung,0.006,0.0,0.0,0.0,0.0,0.006,0.0
+histoGraph,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+XML,0.025,0.0,0.013,0.013,0.013,0.0,0.0
+GUI,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Arbeitsablauf,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Metaphern,0.006,0.0,0.0,0.0,0.006,0.006,0.006
+19. Jahrhundert,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Natur und Staat,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Forschungsdatenzentrum,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Beratung,0.006,0.0,0.0,0.0,0.0,0.0,0.006
+DatenkuratorInnen,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+normalization,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+regular expressions,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+date recognition,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Distant Reading,0.006,0.0,0.006,0.0,0.013,0.013,0.006
+Literaturgeschichte,0.013,0.0,0.006,0.0,0.0,0.013,0.013
+Dramatik,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Netzwerkanalyse,0.013,0.006,0.013,0.013,0.019,0.013,0.013
+Konfliktforschung,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Multiperspektivität,0.006,0.0,0.0,0.006,0.0,0.0,0.0
+Semantic Web,0.05,0.006,0.019,0.006,0.006,0.006,0.025
+Linked Data,0.006,0.006,0.006,0.006,0.0,0.013,0.0
+Visuelle Analyse,0.006,0.006,0.0,0.0,0.0,0.0,0.006
+Inventar,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Handschrift,0.013,0.0,0.0,0.0,0.0,0.0,0.0
+Inkunabel,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Provenance,0.006,0.0,0.0,0.006,0.0,0.0,0.0
+Raumbezüge,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Textkorpus,0.006,0.0,0.0,0.0,0.0,0.0,0.006
+Ortsannotationen,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Wientopographie,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Online Edition,0.013,0.0,0.0,0.0,0.0,0.0,0.0
+XML-TEI,0.013,0.0,0.0,0.0,0.0,0.0,0.0
+Reisebeschreibung,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+lebendige Geschichte,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Mapping,0.006,0.0,0.0,0.0,0.006,0.0,0.0
+GoetheFind,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+anchor-key XML,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+No SQL-Database,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Faksimile-Viewer,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Multimedia,0.006,0.0,0.0,0.013,0.0,0.0,0.0
+Ambiguität,0.006,0.006,0.006,0.0,0.006,0.0,0.0
+Korpus,0.013,0.013,0.013,0.013,0.006,0.013,0.006
+interdisziplinäre Annotation,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+NLP,0.019,0.0,0.006,0.013,0.019,0.013,0.006
+NLTK,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Ontologie,0.019,0.006,0.037,0.0,0.013,0.006,0.019
+CIDOC CRM,0.013,0.006,0.019,0.0,0.013,0.0,0.019
+Lizenzen,0.006,0.0,0.006,0.0,0.0,0.0,0.0
+Recht,0.006,0.0,0.019,0.0,0.0,0.0,0.0
+Literatur,0.025,0.013,0.013,0.013,0.006,0.006,0.006
+Digitalisierung,0.025,0.013,0.031,0.013,0.013,0.037,0.013
+Metadaten,0.013,0.013,0.013,0.019,0.019,0.037,0.013
+Digitales Publizieren; Open Access; Enhanced Publication; Statement Finder; Experteninterview,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Forschungsdatenmanagement; Bestandsbezogene Forschung,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Design,0.006,0.0,0.006,0.0,0.0,0.0,0.0
+Emotionen,0.013,0.0,0.0,0.0,0.0,0.0,0.0
+Gernika,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+europäische Öffentlichkeiten,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+semantic web,0.006,0.0,0.0,0.0,0.013,0.006,0.006
+Yenda,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Virtuelle Forschungsumgebungen,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Musikedition,0.006,0.0,0.0,0.006,0.006,0.0,0.006
+Datenressourcen,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Lexikografie,0.013,0.0,0.0,0.0,0.0,0.0,0.0
+Nutzerstudien,0.006,0.0,0.0,0.0,0.006,0.0,0.0
+nutzerorientierte Softwareentwicklung,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+interdisziplinäre Forschung,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Netzwerktheorie,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+historische Epistemologie,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Wissenschaftsgeschichte,0.006,0.006,0.006,0.0,0.0,0.006,0.0
+Typografie,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Digitale Edition,0.013,0.031,0.025,0.031,0.025,0.031,0.031
+Ontologien,0.013,0.0,0.006,0.0,0.0,0.0,0.0
+Literaturwissenschaft,0.013,0.006,0.013,0.006,0.0,0.006,0.013
+regionale Zusammenarbeit,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Mitteldeutschland,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Operative Bildlichkeit,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Archivierung,0.013,0.0,0.013,0.0,0.0,0.006,0.0
+Sprachdokumentation,0.013,0.0,0.006,0.0,0.0,0.0,0.0
+Natural Language Processing,0.013,0.006,0.0,0.0,0.0,0.006,0.013
+Tool,0.013,0.0,0.0,0.013,0.0,0.0,0.0
+SharedCanvas,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Portale,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Semanic Web,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Arbeitsgruppe,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Digitale Romanistik,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Dissemination,0.006,0.0,0.0,0.006,0.006,0.006,0.0
+Semantische Web,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Wissensmodellierung,0.013,0.0,0.0,0.0,0.0,0.0,0.006
+WissKI,0.006,0.006,0.019,0.0,0.006,0.0,0.019
+Virtuelle Forschungsumgebung,0.013,0.006,0.0,0.0,0.0,0.0,0.006
+digitale Edition,0.006,0.013,0.006,0.0,0.006,0.019,0.006
+Forschungsportal,0.006,0.0,0.006,0.0,0.0,0.0,0.0
+Handschriften,0.006,0.0,0.0,0.006,0.006,0.0,0.0
+Briefe,0.006,0.0,0.0,0.019,0.0,0.006,0.006
+Dialektologie,0.006,0.0,0.006,0.0,0.0,0.0,0.0
+Lexikographie,0.006,0.0,0.013,0.0,0.0,0.006,0.0
+Citizen Science,0.006,0.006,0.0,0.0,0.006,0.006,0.019
+Blog,0.013,0.0,0.0,0.0,0.0,0.0,0.0
+Forschungsinfrastruktur,0.019,0.006,0.006,0.006,0.006,0.006,0.0
+Datenerschließung,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Webportal,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Kulturerbe,0.013,0.0,0.0,0.0,0.0,0.006,0.013
+Retrodigitalisierung,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+virtuelle Sammlungen,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Begleitforschung,0.006,0.006,0.0,0.0,0.0,0.0,0.0
+Nutzerverhalten,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Usability,0.013,0.0,0.0,0.006,0.0,0.0,0.0
+Erfolgskriterien,0.006,0.006,0.0,0.0,0.0,0.0,0.0
+Forschungsinfrastrukturen,0.006,0.0,0.006,0.0,0.0,0.0,0.0
+Forschungsinfrastruktur; Cloud Services; Dialektlexikographie; Workplace Innovation,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Informationsvisualisierung,0.006,0.013,0.019,0.0,0.0,0.0,0.0
+Kohärenztechniken,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Mentale Modelle,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Visuelle Syntax,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Interoperabilität von Bildern,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Plattform,0.006,0.0,0.0,0.0,0.006,0.0,0.006
+Lehrmaterialien,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+textuelle Daten,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Computerlinguistik,0.006,0.013,0.025,0.0,0.0,0.013,0.0
+Datensäuberung,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Hermeneutische Schleife,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Methodologie,0.013,0.006,0.013,0.0,0.006,0.0,0.0
+Itinerarerschließung,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Altwege- bzw. Altstraßenforschung,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Gazetteeranreicherung,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Kodikology,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Bildwissenschaft,0.006,0.0,0.0,0.0,0.006,0.0,0.0
+Katalogisierung,0.006,0.0,0.0,0.0,0.0,0.006,0.0
+Algorithmen,0.006,0.0,0.006,0.006,0.0,0.0,0.0
+Diskursanalyse,0.006,0.0,0.0,0.006,0.0,0.0,0.006
+semantische Modellierung,0.006,0.0,0.0,0.0,0.006,0.0,0.0
+SKOS,0.006,0.0,0.0,0.0,0.0,0.006,0.0
+historische Reiseführer,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Motif Index,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Märchen,0.006,0.0,0.006,0.0,0.0,0.006,0.0
+Repository,0.006,0.0,0.006,0.0,0.0,0.0,0.0
+Web Service,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Sprachdatenbanken,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Kuration,0.006,0.0,0.0,0.006,0.0,0.0,0.0
+Suche,0.006,0.0,0.0,0.0,0.0,0.0,0.006
+text mining,0.006,0.0,0.006,0.0,0.0,0.013,0.0
+Forschungsdateninfrastruktur,0.006,0.0,0.006,0.006,0.0,0.006,0.0
+Sprachwandel,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Diachronie,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Romantik,0.006,0.0,0.0,0.0,0.006,0.0,0.0
+Google Books,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Deutsch,0.013,0.0,0.0,0.0,0.0,0.0,0.0
+Topic-Modellen,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+WebLicht,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+dynamisches Stemma,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Stemmatologie,0.006,0.0,0.0,0.0,0.006,0.0,0.0
+Manuskriptologie,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Tag Clouds,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+TagPies,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Graphdatenbanken,0.006,0.006,0.0,0.0,0.0,0.0,0.0
+Netzwerke,0.006,0.0,0.0,0.0,0.006,0.0,0.0
+Methodenentwicklung,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Textanalyse,0.019,0.0,0.013,0.0,0.013,0.019,0.013
+Modulariserung,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Bildungsgeschichte,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Annotieren,0.006,0.0,0.0,0.0,0.0,0.0,0.013
+Software,0.006,0.0,0.0,0.006,0.013,0.0,0.013
+Textquellen,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Editorisches Konzept,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Graphische Rekonstruktion,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+XSLT,0.006,0.0,0.0,0.0,0.006,0.0,0.0
+Multimodalität,0.006,0.0,0.006,0.006,0.0,0.013,0.0
+Modalitätsinterdependenz,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Mündliche Korpora,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Analyse-Plattform,0.013,0.0,0.0,0.0,0.0,0.0,0.0
+Paläographie,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Keilschrift,0.013,0.006,0.006,0.006,0.0,0.0,0.0
+Bildannotation,0.006,0.0,0.0,0.0,0.0,0.006,0.006
+Text,0.006,0.0,0.0,0.006,0.0,0.013,0.019
+Kollation,0.006,0.0,0.0,0.006,0.0,0.0,0.0
+Apache SOLR,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Typo3,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Höfe- und Residenzen,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Hypertext,0.006,0.0,0.006,0.006,0.0,0.0,0.0
+Finite-State-Morphologie,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Dialektometrie,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+neue Datenarten,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+digitale Literatur,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+kollaboratives Schreiben,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Modellbildung,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Korpusinfrastruktur,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Drucktypen,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Mustererkennung,0.006,0.0,0.0,0.006,0.006,0.0,0.0
+Typenrepertorium,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Inkunabeln,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Frühe Neuzeit,0.006,0.0,0.0,0.0,0.006,0.013,0.006
+Drama,0.006,0.006,0.013,0.0,0.006,0.019,0.013
+Werkbank,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Sprachverarbeitung,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Modellierung sprachlicher Muster,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Lokale Grammatiken,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Analyse der Berichterstattung von Unternehmenszusammenschlüssen,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Koreferenzresolution,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Alignierung,0.006,0.0,0.0,0.006,0.0,0.006,0.0
+Russisch,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Klassifikation,0.006,0.006,0.006,0.013,0.006,0.0,0.0
+Argument,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Deliberation,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Politikwissenschaft,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Stilometrie,0.025,0.0,0.019,0.019,0.019,0.0,0.0
+Autorschaftsattribution,0.013,0.0,0.0,0.006,0.0,0.0,0.0
+Delta,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Datenmodell,0.006,0.0,0.0,0.0,0.006,0.0,0.0
+Virtualisierung,0.006,0.0,0.0,0.006,0.0,0.0,0.0
+Interfakultär,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Mobil,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Raumgebunden,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Entwicklungsprozess,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Kooperation,0.006,0.006,0.0,0.0,0.0,0.013,0.006
+Texttechnolgie,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Intertextualitätsforschung,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+wikidition,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Open-Source-Worklflow,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Infrastrukturbildung,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Standardisierung,0.006,0.006,0.019,0.013,0.0,0.006,0.0
+Nachnutzung,0.013,0.013,0.013,0.0,0.006,0.013,0.025
+digitale Briefedition,0.006,0.0,0.0,0.0,0.0,0.006,0.006
+Data Mining,0.006,0.0,0.006,0.0,0.0,0.0,0.0
+Pattern Mining,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Machine Learning,0.006,0.0,0.013,0.025,0.006,0.006,0.006
+algorithmische Visualisierung,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Visual Analytics,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Coding Cultures,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Denkstile,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Computer Vision,0.006,0.0,0.006,0.0,0.006,0.006,0.013
+Bildanalyse,0.013,0.006,0.013,0.0,0.0,0.0,0.0
+Kunstgeschichte,0.006,0.006,0.0,0.019,0.006,0.031,0.006
+Erschließung,0.006,0.006,0.006,0.0,0.006,0.013,0.0
+Bilddatenbanken,0.013,0.006,0.0,0.0,0.0,0.0,0.0
+Corpusanalyse,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+multimodale Erzählungen,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Comics,0.006,0.006,0.006,0.006,0.0,0.0,0.0
+Meta-Analyse,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Validierung,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Topic Modelling,0.013,0.0,0.0,0.006,0.006,0.0,0.0
+Gamification,0.006,0.0,0.006,0.0,0.0,0.0,0.0
+TextGrid Repository,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Rechtslinguistik,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Sprache und Recht,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Referenzkorpus,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Archiv,0.006,0.0,0.0,0.006,0.0,0.006,0.006
+best practices,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Standards,0.006,0.0,0.006,0.006,0.013,0.013,0.006
+Scholarly Domain Model,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Scholarly Primitives,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Virtuelle Forschungsinfrastruktur,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Kafka,0.013,0.0,0.0,0.0,0.0,0.0,0.0
+Stil,0.006,0.006,0.006,0.0,0.0,0.0,0.0
+POS,0.006,0.006,0.006,0.0,0.0,0.0,0.0
+Literarische Moderne,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Definition,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Philosophie,0.006,0.0,0.006,0.0,0.019,0.0,0.0
+Wissenschaftstheorie,0.006,0.0,0.006,0.0,0.006,0.0,0.0
+Software Engineering,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Korpusanalyse,0.006,0.0,0.0,0.0,0.006,0.013,0.0
+RDF,0.013,0.013,0.0,0.019,0.0,0.0,0.0
+Big Data,0.006,0.006,0.006,0.006,0.006,0.0,0.0
+Komparatistische Literturwissenschaft,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Eye-Tracking,0.006,0.0,0.0,0.006,0.0,0.0,0.0
+graphische Romane,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Umfrage,0.006,0.006,0.0,0.006,0.0,0.0,0.0
+Forschungspraxis,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Forschungsaktivitäten,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Softwareeinsatz,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Spatial Humanities,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Visual Humanities,0.006,0.006,0.0,0.0,0.0,0.0,0.0
+Kulturgeschichte,0.006,0.0,0.0,0.0,0.006,0.0,0.0
+3D-Modelle,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Geowissenschaftliche Analyse,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Deutsche Geschichte,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Automated Toponym Resolution,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Wissenschaftssprache,0.006,0.0,0.006,0.0,0.0,0.0,0.0
+Log-Likelihood-Test,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Bar Chart,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Mela Hartwig,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+digitale Kunstgeschichte,0.006,0.0,0.006,0.0,0.006,0.006,0.0
+small data,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+räumliche Kunst,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Semantic annotation,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+linked open data,0.006,0.0,0.0,0.0,0.0,0.019,0.0
+REST API,0.006,0.0,0.006,0.0,0.0,0.0,0.0
+digitale Editionen,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Sprachdaten,0.006,0.0,0.006,0.0,0.0,0.0,0.0
+User Experience,0.006,0.0,0.0,0.006,0.0,0.006,0.0
+Klang,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Bild,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Information,0.006,0.0,0.006,0.0,0.0,0.0,0.0
+Sonifkation,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Virtuelle Frouschungsumgebung,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+digitale Hermeneutik,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Throrie und Methoden der digitalen Geisteswissenschaften,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Text-Bild-Beziehung,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Kartographie,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Historische Klimatologie,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Weiße Flecken,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Fachkommunikation,0.006,0.0,0.0,0.0,0.006,0.0,0.0
+Digitalität,0.006,0.0,0.019,0.0,0.0,0.0,0.0
+Computer,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Kulturwissenschaft,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Knowledge Bases,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Computational Logic,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Inferences,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Named Entity Recognition,0.006,0.0,0.0,0.0,0.0,0.006,0.006
+distant reading,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+close reading,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+erklärende Annotation,0.006,0.0,0.006,0.0,0.0,0.0,0.0
+Projektbeschreibung,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+manuelle Annotation,0.006,0.0,0.0,0.0,0.0,0.0,0.006
+algorithmische Verfahren,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+interaktive Visualisierung,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Algorithmic Criticism,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+OCR,0.006,0.0,0.006,0.019,0.006,0.025,0.006
+17. Jahrhundert,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Texterfassung,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Ocropus,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Tesseract,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Handlungsempfehlungen,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Entwicklungskapazitäten,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Datensynchronisation,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Rückfluss,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Filmanalyse,0.006,0.0,0.0,0.0,0.0,0.013,0.0
+Filmsprache,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Farbanalyse,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Differenzanalyse,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Webapplikation,0.006,0.0,0.006,0.006,0.006,0.0,0.0
+Operationalisierung,0.006,0.0,0.0,0.0,0.019,0.006,0.013
+Forschungsfrage,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Judaica Suchmaschine,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+generische Suche,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+forschungsorienterte Datenföderation,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+DARIAH-DE,0.019,0.013,0.006,0.0,0.0,0.0,0.0
+Biographien,0.006,0.0,0.006,0.0,0.0,0.0,0.0
+Transnationalität,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Cosmobilities,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Datenföderation,0.006,0.006,0.0,0.0,0.0,0.0,0.0
+Sanskrit;Pāṇini;Lexik;Sprachwandel,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Narratologie,0.006,0.006,0.006,0.006,0.006,0.0,0.0
+best practice,0.006,0.0,0.0,0.0,0.0,0.006,0.0
+Sprechererkennung,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Quantitative Textanalyse,0.006,0.0,0.0,0.0,0.0,0.0,0.006
+Textkorpora,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+diachron,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Kollokation,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Zeitreihe,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Graph-Datenbanken,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Text-Modellierung,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Text-Repräsentation,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Psychostilistik,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Best Practices,0.006,0.0,0.006,0.0,0.006,0.0,0.006
+Workflows,0.006,0.0,0.006,0.006,0.0,0.006,0.0
+Langzeitprojekt,0.006,0.006,0.0,0.0,0.0,0.0,0.0
+Darstellung von Unschärfe,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Visualisierung; Netzwerkanalyse; Diagnostik;,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+complexity,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+legal texts,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+visualization,0.006,0.0,0.006,0.006,0.013,0.0,0.006
+digitization,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+LERA,0.006,0.0,0.0,0.0,0.0,0.006,0.0
+SaDA,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Textvergleich,0.006,0.0,0.006,0.0,0.0,0.0,0.0
+Editionsphilologie,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Exploration,0.006,0.0,0.0,0.0,0.0,0.006,0.006
+Genreklassifikation,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Spanien,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Cervantes,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Don Quijote,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Korpushermeneutik,0.006,0.0,0.006,0.0,0.0,0.0,0.0
+CorpusExplorer,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Nutzerstudie,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+mündliche Korpora,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Webservice,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Topic Modeling,0.006,0.0,0.019,0.013,0.031,0.019,0.013
+Spanische Literatur,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Lateinamerikanische Literatur,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Textverlauf,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Multilingualität; Multikulturalität; Diversity,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Sepulkralkulturen,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+soziale Identität,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Ortsnamen,0.006,0.0,0.0,0.006,0.0,0.0,0.0
+Taiwan,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Linguistik,0.006,0.0,0.013,0.013,0.0,0.0,0.0
+Gebrauchstauglichkeit,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Modellierung geisteswissenschaftlicher Inhalte und Forschungsprozesse,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Probleme des Markup und anderer Ansätze zur Formalisierung von Inhalten,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Softwarewerkzeuge für die Geisteswissenschaften,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Mehrwert von neuen Methoden und Technologien,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Dramen,0.006,0.0,0.0,0.006,0.006,0.006,0.0
+small worlds,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+semitische Sprachen,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+lingustische Annotation,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+tagging,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Datenvisualisierung,0.006,0.006,0.0,0.006,0.013,0.019,0.0
+Textumwandlung,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Textexploration,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Interaktiv,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Bach,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Datenbanken,0.006,0.0,0.0,0.0,0.0,0.0,0.006
+Automatisierte Handschriftenerkennung,0.006,0.006,0.0,0.0,0.0,0.0,0.0
+Wissenschaftsblog,0.006,0.0,0.0,0.006,0.0,0.0,0.006
+nodegoat,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Repositorien,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Interdisziplinärer Autausch,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+historische Korpora,0.006,0.0,0.006,0.0,0.0,0.0,0.0
+Wiederverwendung,0.006,0.0,0.006,0.0,0.0,0.0,0.0
+Textannotation,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Automatisierung,0.006,0.0,0.013,0.0,0.0,0.0,0.0
+TUSTEP,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Publizieren,0.006,0.006,0.0,0.0,0.0,0.006,0.006
+Crossmedia,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Tools,0.006,0.006,0.006,0.0,0.0,0.006,0.006
+Libraries,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Textsatz;kritische Editionen;Publikation,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+Infrastrukturen,0.006,0.006,0.0,0.013,0.006,0.0,0.0
+Forschungsumgebund,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+TextGrid,0.006,0.0,0.0,0.0,0.0,0.0,0.0
+historische Sprachen,0.0,0.006,0.0,0.006,0.0,0.0,0.0
+Adaption,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+virtuelle Forschungsumgebungen,0.0,0.006,0.006,0.006,0.0,0.0,0.0
+Transkription,0.0,0.006,0.0,0.0,0.0,0.013,0.013
+Datenaufbereitung,0.0,0.006,0.0,0.0,0.006,0.0,0.006
+Museum,0.0,0.006,0.0,0.0,0.006,0.013,0.006
+Kulturelles Erbe,0.0,0.006,0.0,0.0,0.0,0.0,0.006
+Wissenstransfer,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Evaluation,0.0,0.019,0.006,0.013,0.013,0.006,0.0
+Rezension,0.0,0.006,0.006,0.0,0.006,0.006,0.006
+Beurteilungskriterien,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+digitale Angebote,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Virtuele Forschungsumgebungen,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Visualisierung und Archiwvierung,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Bildrepositorien,0.0,0.006,0.006,0.0,0.006,0.0,0.0
+Forschung,0.0,0.013,0.019,0.0,0.0,0.0,0.0
+Vermittlung,0.0,0.019,0.0,0.0,0.006,0.006,0.006
+Open-Data-Politik,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Hackathon,0.0,0.006,0.013,0.0,0.006,0.0,0.0
+Gedächtnis­institutionen,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Data literacy,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Dramenanalyse,0.0,0.006,0.0,0.006,0.006,0.006,0.0
+Methodenvergleich,0.0,0.006,0.0,0.0,0.0,0.006,0.0
+Labor,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Bürgerwissenschaft,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+,0.0,0.019,0.013,0.013,0.013,0.0,0.013
+Kulturerbedaten,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Equipment,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Anthologie,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Software Archivierung,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Automatisierte Softwarebereitstellung,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+TOSCA,0.0,0.006,0.0,0.006,0.006,0.0,0.0
+OpenTOSCA,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Datenmanagement,0.0,0.006,0.006,0.0,0.0,0.013,0.0
+Kontrollierte Vokabularien,0.0,0.006,0.0,0.0,0.0,0.006,0.0
+crowdsourcing,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+optical character recognition,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+optical music recognition,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+music transcription tool,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Tagset,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Splätlatein,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Altfranzösisch,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Repositorium,0.0,0.006,0.0,0.0,0.013,0.013,0.0
+technische Nachhaltigkeit,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Messung,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Softwaremanagementpläne,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Normalisierung,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Historisierung,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Markdown,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+responsive webdesign,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+mean,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+open source,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+blog corpus,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+corpus compilation,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+corpus annotation,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Episteme,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+mise en page,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+SFB 980,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Open Source,0.0,0.006,0.0,0.0,0.013,0.006,0.006
+UIMA,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Public History,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Twitter,0.0,0.006,0.006,0.006,0.0,0.006,0.0
+Daten-Organisation,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Graphische Literatur,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Zeitwahrnehmung,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Blickbewegungen,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Experimentalpsychologie,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Kalender,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Zeitrechnung,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Datumsbestimmung,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Webressource,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Graphdaten,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+grafische Literatur,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Eyetracking,0.0,0.006,0.0,0.0,0.0,0.013,0.0
+LOD,0.0,0.006,0.0,0.0,0.013,0.0,0.0
+Datamining,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Biographie,0.0,0.006,0.0,0.006,0.013,0.0,0.0
+Nutzer,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Community-Building,0.0,0.006,0.0,0.0,0.006,0.0,0.0
+Heterogene Forschungsfragen,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Historische Korpora,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Annotation Architektur Nachhaltigkeit Derivationsmorphologie,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+topic modeling,0.0,0.006,0.006,0.0,0.0,0.0,0.0
+python,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Platon,0.0,0.006,0.006,0.0,0.0,0.0,0.0
+Paraphrase,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Paraphrasenerkennung,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Paraphrasensuche,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Altgriechisch,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Themenmodelle,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Interpretation,0.0,0.006,0.013,0.0,0.025,0.0,0.0
+Entity Linking,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Relation Extraction,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Geschichtswissenschaft,0.0,0.006,0.0,0.006,0.0,0.0,0.0
+Informatik,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Textgenese,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Datenmigration,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Textkodierung,0.0,0.006,0.0,0.006,0.0,0.0,0.0
+Normdaten,0.0,0.006,0.0,0.013,0.013,0.019,0.019
+DH-Curriculum,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Nachhaltige IT-Didaktik,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Fachnahe IT-Grundausbildung,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Interaktive Lehr- und Lernumgebung,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Datenrepositorium,0.0,0.006,0.0,0.0,0.0,0.006,0.0
+Maßnahmen,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Dialekt,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Pflanzen,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Linked Open Data,0.0,0.019,0.013,0.025,0.019,0.037,0.037
+religiöser Online-Kommunikation,0.0,0.006,0.006,0.0,0.0,0.0,0.0
+topic models,0.0,0.006,0.006,0.0,0.0,0.0,0.0
+LDA,0.0,0.006,0.006,0.0,0.0,0.0,0.0
+relNet,0.0,0.006,0.006,0.0,0.0,0.0,0.0
+Bibliothek,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Fachinformationsdienst,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Musikwissenschaft,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Johann-Friedrich Blumenbach online,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Wissenschaftsakademien,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Projektedatenbank,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+digitale Infrastruktur,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Wissenschaftskommunikation,0.0,0.006,0.0,0.019,0.006,0.006,0.006
+Hermeneutik,0.0,0.013,0.019,0.006,0.006,0.0,0.006
+Lehrinstrument,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Raum,0.0,0.006,0.0,0.0,0.006,0.013,0.0
+Digitale Textanalyse,0.0,0.006,0.0,0.0,0.0,0.0,0.006
+Literaturkartographie,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+DH-Entwickler,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Forschungs-Software-Nachhaltigkeit,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Textgenetik,0.0,0.006,0.0,0.0,0.006,0.0,0.0
+Hethitisch,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Semantische Suche,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Lexikalisch-Semantische Methoden,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Stilometrie; Autorschaftsattribution; Delta; ältere Sprachstufen,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Generalisierung,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Interface Design,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Mittelhochdeutsch,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Wortarten,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Tagging,0.0,0.006,0.006,0.0,0.0,0.0,0.0
+PoS,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Disambiguierung,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Handschriftentranskription,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Distant reading,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Halbautomatische Texterschließung,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Antonomasie,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+vossianische Antonomasie,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Stilistik,0.0,0.013,0.0,0.0,0.0,0.0,0.0
+Zeitungskorpora,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+visuelle Grammatik,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Interaktivität,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Soziologie,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Zettelkasten,0.0,0.006,0.006,0.006,0.0,0.0,0.0
+Nachlass,0.0,0.006,0.0,0.0,0.0,0.0,0.006
+Bibliographie,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+virtuelle Forschungsumgebung,0.0,0.006,0.006,0.006,0.0,0.0,0.006
+Domain Driven Design,0.0,0.013,0.0,0.0,0.0,0.0,0.0
+Behaviour Driven Development,0.0,0.013,0.0,0.0,0.0,0.0,0.0
+Akademienprogramm,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Goethes Biographica,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Langzeitforschungsvorhaben,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Moderne,0.0,0.006,0.0,0.0,0.0,0.006,0.006
+Bilddatenbank,0.0,0.013,0.0,0.0,0.0,0.0,0.0
+Graphdatenbank,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Editionsarbeit,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Nutzerforschung,0.0,0.006,0.013,0.0,0.006,0.0,0.0
+Wissensarbeit,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Orientierung und Standardisierung,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Zitationsanalyse Sentimentanalyse Bibliometrie Ontologien Annotation,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Digitale Rekonstruktion,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Projekte,0.0,0.006,0.006,0.0,0.0,0.006,0.0
+Übersicht,0.0,0.006,0.0,0.0,0.0,0.006,0.0
+Informationsextraktion,0.0,0.006,0.0,0.006,0.0,0.006,0.0
+cinemetrics,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+color quantization,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+k-means,0.0,0.006,0.0,0.0,0.0,0.0,0.006
+farbkontraste,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+zombies,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Metapher,0.0,0.006,0.0,0.0,0.0,0.006,0.0
+Happy End classification,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+plot representation,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Dokumentanalyse,0.0,0.006,0.0,0.0,0.006,0.0,0.0
+Zeitschriften,0.0,0.006,0.0,0.013,0.006,0.006,0.0
+Masse,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Diskurs,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Reproduktion,0.0,0.006,0.0,0.006,0.0,0.0,0.0
+Frankreich,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Satzlänge,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Agile Softwareentwicklung,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+DevOps,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+digitale Nachhaltigkeit,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Nachhaltigkeitsstrategie,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+mobile Technologien,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+kulturelles Erbe,0.0,0.006,0.006,0.0,0.0,0.006,0.006
+Christopher Polhem,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+virtual heritage,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+pedagogical models,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+3D modeling,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+3D scanning,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+3D simulation,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Laboratorium mechanicum,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Royal Swedish Model Chamber,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Impact,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Plot,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Digitale Literaturwissenschaft,0.0,0.006,0.0,0.0,0.0,0.019,0.006
+Strukturanalyse,0.0,0.006,0.0,0.006,0.0,0.006,0.0
+Digitale Erschliessung,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+OpenGLAM,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Datenbank,0.0,0.006,0.013,0.006,0.006,0.006,0.013
+Idiom,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+interdisziplinär,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Analysetool,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+user-activity-analysis,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+digital humanities,0.0,0.006,0.006,0.0,0.0,0.0,0.0
+forschungspraxis,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+methodologie,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Biographiedaten,0.0,0.006,0.0,0.0,0.0,0.006,0.0
+Visuelle Synthese,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Space-Time Cube,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+kritischer Apparat,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+digitale Arbeitsumgebung,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Webedition,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Lizenzierung,0.0,0.006,0.006,0.0,0.006,0.006,0.0
+creative commons,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+digital peer publishing,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Datenlizenzen,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Softwarelizenzen,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+automatisierte Layouterkennung,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Transkribieren,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Edieren,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Archivbestände,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Fedora Commons,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+IIIF,0.0,0.006,0.006,0.006,0.0,0.0,0.0
+Digital Editions,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+SPARQL,0.0,0.006,0.0,0.0,0.0,0.0,0.006
+Web-App,0.0,0.006,0.0,0.006,0.0,0.0,0.0
+Hands-on,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Archivieren,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+XMP,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Glasmalerei,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+shared task,0.0,0.006,0.006,0.0,0.0,0.0,0.0
+unshared task,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Entitätenreferenz,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Modularisierung von Forschungsfragen,0.0,0.006,0.0,0.0,0.0,0.0,0.0
+Code,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Grundlagenreflexion,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Georeferenzierung,0.0,0.0,0.006,0.0,0.006,0.0,0.0
+n-Gramm-Analyse,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Germanistik,0.0,0.0,0.006,0.0,0.006,0.0,0.0
+Dependenzannotation,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Positivistischer Methodenfetischismus,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Wissenschaftliche Relevanz,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Kritik digitaler Methoden,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Biographische Daten,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Gruppenbildung,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Nachnutzbarkeit,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Pipelines,0.0,0.0,0.006,0.0,0.0,0.0,0.006
+Reproduzierbarkeit,0.0,0.0,0.006,0.0,0.0,0.0,0.006
+Datenkuration,0.0,0.0,0.006,0.0,0.0,0.0,0.006
+Forschungssoftware,0.0,0.0,0.013,0.0,0.006,0.013,0.0
+Lebende Systeme,0.0,0.0,0.006,0.006,0.006,0.0,0.0
+Soziale Medien,0.0,0.0,0.006,0.006,0.0,0.0,0.0
+Rezeption von Literatur,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Assoziationen,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Fernando Pessoa,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Netzwerk,0.0,0.0,0.006,0.0,0.0,0.006,0.0
+Musikwissenschaften,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Bach-Forschung,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Common Science,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Historiker,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Forschungsdatenrepositorien,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Ground Truth,0.0,0.0,0.006,0.0,0.0,0.006,0.0
+Referenzdaten,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Textauszeichnung,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Graphstrukturen,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Redewiedergabe,0.0,0.0,0.006,0.006,0.006,0.0,0.0
+Maschinelles Lernen,0.0,0.0,0.013,0.006,0.019,0.019,0.0
+Deep Learning,0.0,0.0,0.025,0.025,0.019,0.006,0.0
+Textmining,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Geistewissenschaften,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Jüdische Geschichte,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Computergestützte Filmanalyse,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Stilanalyse,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Liedtexte,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Korpusvergleich,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Frequenzanalyse,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Signifikanztest,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Buchdruck,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Grammatiken und Sprachtraktate,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Digital Humanities,0.0,0.0,0.013,0.031,0.013,0.006,0.006
+Restaurierung,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Kodikologie,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Handschriftenbeschreibung,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Literaturkarte,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Literaturgeschichtsschreibung,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+TEI Encoding,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+3D-Objekte,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Typologie,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Wahrnehmung,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Software Evolution,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Software Aging,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Softwarewartung,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Universal Morphology,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Morphologie(generierung),0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Community-Standards,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Schnittstellenprobleme (NLP vs. Sprachwissenschaft),0.0,0.0,0.006,0.0,0.0,0.0,0.0
+semantische Annotation,0.0,0.0,0.006,0.0,0.0,0.0,0.006
+Sichtbarkeit,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Information Retrieval,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Digitalisierung OCR Metadaten Transkription TEI,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Formalisierung,0.0,0.0,0.006,0.006,0.0,0.006,0.0
+Python,0.0,0.0,0.013,0.0,0.006,0.006,0.013
+Stilometrie; Autorschaftsattribution,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Quantitative Verfahren,0.0,0.0,0.006,0.006,0.0,0.0,0.0
+Neoclassica,0.0,0.0,0.006,0.006,0.0,0.0,0.0
+Distant Viewing,0.0,0.0,0.013,0.006,0.0,0.0,0.006
+Klassizismus,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Material Culture,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Datenformate,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Brief,0.0,0.0,0.006,0.0,0.0,0.0,0.006
+Editon,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Einzelstellenkommentar,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+API,0.0,0.0,0.006,0.006,0.006,0.025,0.006
+Corpus,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+multimodale Medien,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Sentimentanalyse,0.0,0.0,0.019,0.0,0.006,0.0,0.0
+unstrukturierte Texte,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+literaturgeschichtliche Rezeptionsanalyse,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Editionsportal,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Datentransformation,0.0,0.0,0.006,0.0,0.0,0.0,0.006
+TEI-Modellierung,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Kritik,0.0,0.0,0.031,0.0,0.0,0.0,0.0
+Interdisziplinäre Lehre,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Kulturelle Sammlungen,0.0,0.0,0.006,0.0,0.0,0.006,0.006
+virtuelle Realität,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Theater,0.0,0.0,0.006,0.0,0.006,0.0,0.0
+Digitale Kulturwissenschaft,0.0,0.0,0.006,0.0,0.0,0.006,0.0
+Kritische Geisteswissenschaften,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Aufklärung,0.0,0.0,0.006,0.0,0.006,0.006,0.0
+Meme,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Präsentation,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Langzeitverfügbarkeit,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+OWL DL,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Drupal,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Anton Tschechow,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Russische Literatur,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Deutsche Nationalbibliothek,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Katalogdaten,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Digitale Methoden,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Diagrammatisches Denken,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+medieval studies,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+community,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Architekturgeschichte,0.0,0.0,0.019,0.0,0.0,0.0,0.0
+Photogrammetrie,0.0,0.0,0.013,0.0,0.0,0.0,0.0
+3D/4D,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Geisteswissenschaften,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Epistemologie,0.0,0.0,0.006,0.0,0.013,0.0,0.0
+Ägypten,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Zeichenerkennung,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Hieratisch,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Kursivschrift,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+digitale Paläographie,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Interoperabilität,0.0,0.0,0.006,0.0,0.0,0.006,0.0
+Textmodellierung,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Webentwicklung,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Microservices,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+persistente Referenzierung,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Interface,0.0,0.0,0.013,0.0,0.0,0.0,0.006
+Manuskript,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+XML/TEI,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Online-Kommentar,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+TEI-Datenmodell,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Heterogenität,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Grabungsdatenbank,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Digitale Epigraphik,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Vagheit,0.0,0.0,0.013,0.0,0.0,0.0,0.0
+Schriftzeichen,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Entzifferung,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Ontologische Modellierung,0.0,0.0,0.006,0.0,0.0,0.006,0.0
+Semantische Wissensmodellierung,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+CIDOC-CRM,0.0,0.0,0.006,0.006,0.013,0.0,0.0
+Interpretation historischer Quellen,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Forschungsprojekte,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Friedensrepräsentationen,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+quantitativ-qualitative Analyse; Methodendiskussion; Korpuslinguistik; TEI-Analyse; Textgliederungsprinzipien,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+gender studies,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Geschlechtertheorie,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Datenanreicherung,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+agent-based modelling,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+opinion dynamics,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+diskurs,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+FRBRoo,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Diachrone Sprachwissenschaft,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Semantik,0.0,0.0,0.013,0.0,0.006,0.0,0.0
+Distributionelle Semantik,0.0,0.0,0.013,0.006,0.0,0.0,0.0
+Literarische Gattungen,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Prototypentheorie,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+MFW,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Hispanoamerikanischer Roman,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Tagger,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+DTA,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Intercoder-Reliabilität,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Kybernetik,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Geschichte der DH,0.0,0.0,0.006,0.0,0.0,0.006,0.0
+Theorie,0.0,0.0,0.006,0.006,0.0,0.0,0.006
+Wissenschaftspolitik,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Geschichte,0.0,0.0,0.013,0.0,0.006,0.013,0.0
+Konservierung,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Automatic Text Recognition,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Quellenarbeit,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Transkriptionssoftware,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Transkribus,0.0,0.0,0.006,0.0,0.0,0.006,0.0
+Texterkennung,0.0,0.0,0.006,0.0,0.006,0.006,0.0
+Handschriftenerkennung,0.0,0.0,0.006,0.0,0.0,0.0,0.006
+abbreviations,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Georgian,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Latin,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Wörterbuch,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+GIS,0.0,0.0,0.006,0.006,0.0,0.0,0.0
+Bewegungsbücher,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Interaktion,0.0,0.0,0.006,0.0,0.006,0.0,0.013
+Augmented Reality,0.0,0.0,0.013,0.019,0.0,0.0,0.0
+Forschungsumgebung,0.0,0.0,0.006,0.0,0.006,0.0,0.0
+Didaktik,0.0,0.0,0.013,0.0,0.0,0.0,0.0
+UrhWissG,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Urheberrecht,0.0,0.0,0.019,0.0,0.006,0.0,0.0
+Copyright,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+maschinelles Lernverfahren,0.0,0.0,0.013,0.0,0.0,0.0,0.0
+Captivity Narratives,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+analoges Projekt,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Transformation,0.0,0.0,0.006,0.006,0.0,0.006,0.0
+Denkmalpflege,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+reporting tool,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+network analysis,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Figurenanalyse,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Verfassungsanalyse,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+historischer Vergleich,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Wissenssoziologie,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Softwarewerkzeug,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Illustrierte Postkarte,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Interdisziplinarität,0.0,0.0,0.006,0.0,0.006,0.013,0.0
+Direct Speech,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Social media,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+sentiment analysis,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+digital memes,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Kopräsenz,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Wortfeldsemantik,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Sentiment,0.0,0.0,0.006,0.0,0.0,0.006,0.0
+Lehre,0.0,0.0,0.006,0.0,0.006,0.006,0.0
+Query,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Preprocessing,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Extensibility,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Netzwerkvisualisierung,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Prosopographie,0.0,0.0,0.006,0.013,0.013,0.0,0.006
+Mittelalter und Frühe Neuzeit,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Neuronale Netze,0.0,0.0,0.006,0.0,0.0,0.006,0.006
+Bildverarbeitung,0.0,0.0,0.006,0.006,0.0,0.0,0.006
+Graphic Novels,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Kulturelle Evolution,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Phylogenetik,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Klaus Mann,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+autobiographische Texte,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Text Mining,0.0,0.0,0.006,0.0,0.0,0.006,0.0
+agentenbasierte Sozialsimulation,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Diskursräume,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Bibliometrisches Netwerk,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Podcast,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Forschungswerkstatt,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Interviews,0.0,0.0,0.006,0.006,0.006,0.006,0.0
+Studium,0.0,0.0,0.006,0.0,0.006,0.0,0.0
+Gemeinsame Normdatei,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+GND,0.0,0.0,0.006,0.0,0.006,0.0,0.013
+BEACON,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Wikipedia,0.0,0.0,0.013,0.0,0.0,0.0,0.0
+Semantic MediaWiki,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Wandertheater,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+17./18. Jahrhundert,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+digitales Archiv,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Opinion Mining,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Sentiment Analysis,0.0,0.0,0.006,0.0,0.006,0.006,0.0
+Nutzertests,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+benutzerzentrierte Gestaltungsprozesse,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Partizipation,0.0,0.0,0.006,0.0,0.006,0.0,0.006
+Forschungsdatemanagement,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Kooperationen,0.0,0.0,0.013,0.0,0.0,0.0,0.0
+Organisation,0.0,0.0,0.006,0.0,0.006,0.0,0.0
+Datenautorenschaft,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Leistungsbewertung,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Syntax,0.0,0.0,0.006,0.006,0.006,0.0,0.0
+Editor,0.0,0.0,0.006,0.0,0.0,0.006,0.0
+Auszeichnung,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Parser,0.0,0.0,0.006,0.0,0.0,0.006,0.0
+qualitative Inhaltsanalyse,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+MAXQDA,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Vergleich,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Dokumente,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Wikidata,0.0,0.0,0.006,0.0,0.0,0.006,0.025
+Strukturierte Daten,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Digital Cultural Heritage,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Digitale 3D-Rekonstruktion,0.0,0.0,0.006,0.006,0.0,0.0,0.0
+Wettbewerb,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Berufe,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Digitale Musikwissenschaft,0.0,0.0,0.006,0.0,0.006,0.0,0.0
+Datenaggregation,0.0,0.0,0.006,0.0,0.0,0.006,0.0
+Digitale Ressourcen,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Methodendiskurs,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Sanskrit,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Indogermanistik,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Suche und Visualisierung,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Analyse,0.0,0.0,0.013,0.013,0.0,0.006,0.0
+Critical Code Studies,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Programmiersprachen,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+distributional semantics,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+word2vec,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Ontology,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Daten,0.0,0.0,0.013,0.0,0.013,0.0,0.006
+MEDEA,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Rechnungsbücher,0.0,0.0,0.006,0.0,0.0,0.006,0.0
+Protégé,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Autorschaftsattribuierung,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Paraphrasen,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Referenzen,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+CTS,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+visual internet,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+distant watching,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+trauma studies,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+new methods,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+automated image interpretation,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Methoden,0.0,0.0,0.019,0.0,0.006,0.0,0.006
+Medientheorie,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+audio mining,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+speech recognition,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+audiovisual data,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Robert Musil,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Stylometry,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Authorship Attribution,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Short Texts,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Shared task,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+training,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+narratologie,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+annotationsrichtlinien,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Historische Zeitungen,0.0,0.0,0.006,0.0,0.0,0.006,0.006
+Volltextdigitalisierung,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Texterschließung,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Rezeptionsgeschichte,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Musikkritik,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Aufdeckungsverfahren,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Lernverfahren,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Vektorsemantik,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Bioinfomratik,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+sonnet,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+corpus,0.0,0.0,0.006,0.0,0.0,0.0,0.006
+Spanish,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+verse,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+OpenSource,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Text Encoding Initiative,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Korrespondenznetzwerke,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Theoriebildung,0.0,0.0,0.006,0.006,0.0,0.0,0.013
+Quellenkritik,0.0,0.0,0.006,0.006,0.0,0.013,0.0
+Datenkritik,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Born Digital,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Volkskunde,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Exakt historische Methode,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Max Bense,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Omeka,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Intertextualität,0.0,0.0,0.006,0.013,0.006,0.0,0.006
+Situationstheorie,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Struktur,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Sentiment Analysis; Dramenanalyse;,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Leistungsschutzrecht,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Datenschutz,0.0,0.0,0.006,0.0,0.006,0.006,0.0
+Sammlungserschließung,0.0,0.0,0.013,0.0,0.0,0.0,0.0
+Objekte im Netz,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Strategie,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Research Software Engineering,0.0,0.0,0.006,0.0,0.0,0.006,0.006
+Qualitätssicherung,0.0,0.0,0.006,0.006,0.0,0.0,0.0
+Programmierung,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Austausch,0.0,0.0,0.013,0.0,0.0,0.006,0.0
+digitaler Apparat,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Historische Grundwissenschaften,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Urkunden,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Lehr-Lern-Projekt,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Zeta,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Distinktivität,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Keyness,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Workflow,0.0,0.0,0.006,0.0,0.0,0.006,0.019
+Sprachgeschichte,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Frühneuhochdeutsch,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Kollokationsanalyse,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Onlinezeitung,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Userkommentare,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Französische Präsidentschaftswahl 2017,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Bundestagswahl 2017,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Twitter-Bots,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+maschinelles Lernen,0.0,0.0,0.006,0.006,0.006,0.006,0.006
+Texttheorie,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+virtuelle Ausstellung,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Projektmanagement,0.0,0.0,0.006,0.0,0.006,0.006,0.006
+Projektplanung,0.0,0.0,0.006,0.006,0.0,0.006,0.0
+Briefedition,0.0,0.0,0.006,0.0,0.0,0.0,0.013
+Projektvernetzung,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+allographische Transkription,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Verknüpfung von Transkription und Bild,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Textgenese bei Editionen,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Ähnlichkeiten,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Suchmaschine,0.0,0.0,0.006,0.006,0.0,0.0,0.0
+automatisieren,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+historische Texte,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+multi-ebene Annotation,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Sammlungsinterfaces,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+kritische Kulturwissenschaft,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Designstrategien,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Thesaurus,0.0,0.0,0.006,0.006,0.0,0.0,0.006
+Flublattsammlung,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Strafrecht,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+18. Jahrhundert,0.0,0.0,0.006,0.0,0.006,0.0,0.0
+Prozesse,0.0,0.0,0.006,0.0,0.0,0.0,0.0
+Ediarum,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Graphentechnologien,0.0,0.0,0.0,0.013,0.0,0.0,0.0
+Softwareprototypen,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Erkenntnistheorie,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+linguistische Annotationen,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Toolkit,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Handwritten Text Recognition,0.0,0.0,0.0,0.006,0.006,0.0,0.0
+Layout Analysis,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Transcription,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Topic Models,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+ökonomische Experten,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Wirtschaftsgeschichte,0.0,0.0,0.0,0.006,0.0,0.006,0.0
+Digitales Publizieren,0.0,0.0,0.0,0.019,0.006,0.0,0.0
+Barcamp,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Privatsphäre,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+inhärente Informationen,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Stilmotrie,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Objekterkennung,0.0,0.0,0.0,0.006,0.0,0.006,0.0
+Gattung,0.0,0.0,0.0,0.006,0.006,0.0,0.006
+Spanisch,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+eLearning,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Training,0.0,0.0,0.0,0.006,0.006,0.006,0.0
+Digitale Bibliothek,0.0,0.0,0.0,0.006,0.0,0.0,0.006
+Optical Character Recognition,0.0,0.0,0.0,0.013,0.006,0.0,0.0
+19th century Fraktur,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Mixed Models,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Statistik,0.0,0.0,0.0,0.006,0.0,0.0,0.006
+Archivportal,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Vokabular,0.0,0.0,0.0,0.013,0.0,0.0,0.006
+Anreicherung,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Maschinenlernen,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Weimarer Republik,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Kulturdaten,0.0,0.0,0.0,0.006,0.006,0.019,0.006
+Metadaten Assessment,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Graphische Sammlung,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Druckgraphik,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Zeichnungen,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Alignment,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Ground Truth Generation,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Gender,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Sprache,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Quantitative Analyse,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Distant Watching,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Bilder,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Videos,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Menschen,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Visual Computing,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Posenerkennung,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Mimikerkennung,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+audiovisuell,0.0,0.0,0.0,0.013,0.0,0.0,0.0
+Sprachkorpora,0.0,0.0,0.0,0.013,0.0,0.0,0.0
+Historisch,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Zeitungen,0.0,0.0,0.0,0.013,0.0,0.006,0.0
+Latein,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Historische Semantik,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+3D-Visualisierung,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Distributional Semantics,0.0,0.0,0.0,0.006,0.006,0.0,0.0
+direkte Rede,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+regelbasiertes Verfahren,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+automatische Erkennung,0.0,0.0,0.0,0.006,0.0,0.006,0.0
+rooting,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+stemmatology,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+historical linguistics,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Objektidentifikation,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Tanz,0.0,0.0,0.0,0.006,0.006,0.0,0.0
+Tanzwissenschaft,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Building Information Modelling (BIM),0.0,0.0,0.0,0.006,0.0,0.0,0.0
+zerstörte Kunst und Architektur,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+noisy channel model,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+historical corpus,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+ocr,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+misspellings,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+royal society,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Character Reference detection,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+BiLSTM-CRF,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Dramenforschung,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Shared Task,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Sprache der Geisteswissenschaften,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Wortliste,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Ressource,0.0,0.0,0.0,0.006,0.0,0.0,0.006
+Datenanalyse,0.0,0.0,0.0,0.006,0.006,0.006,0.0
+Präsentationsschicht,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+JSON-LD,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+schema.org,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Embedding,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Prosodieerkennung,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Convolutional Neural Network,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Maschinelles Sehen,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Visuelle Stilometrie,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Neo4j,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+QGIS,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Laserscan,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Fotogrammetrie,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Digitale Epigraphie,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+automatisierte Zeichenerkennung,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Mayaschrift,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+digitales 3D-Modell,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+historische Architektur,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+wissenschaftliche Rezeption,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+internationale Sichtbarkeit,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Automatische Übersetzung,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Philologien,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Transdisziplinarität,0.0,0.0,0.0,0.006,0.0,0.0,0.006
+Evaluierung,0.0,0.0,0.0,0.013,0.0,0.0,0.0
+Editionen,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Onlineportal,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Standard,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Medien,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Zeichen,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Bedarfsanalyse,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Gattungen,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Komplexität,0.0,0.0,0.0,0.013,0.006,0.0,0.006
+Schemaliteratur,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Hochliteratur,0.0,0.0,0.0,0.006,0.006,0.0,0.0
+Arabische Schrift,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+LevenshteinDistanz,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Gazeteer,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+maschinelle Lernverfahren,0.0,0.0,0.0,0.006,0.006,0.0,0.0
+Entitätenreferenzen,0.0,0.0,0.0,0.006,0.006,0.0,0.0
+Reflexion,0.0,0.0,0.0,0.006,0.006,0.006,0.006
+Programmiercode,0.0,0.0,0.0,0.006,0.006,0.0,0.0
+Praxiserfahrung,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Software-Stacks,0.0,0.0,0.0,0.006,0.006,0.0,0.0
+Publikationsprozess,0.0,0.0,0.0,0.006,0.0,0.006,0.0
+Abstracts,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+digitale Quellenkritik,0.0,0.0,0.0,0.006,0.0,0.013,0.0
+Forschungsergebnis,0.0,0.0,0.0,0.013,0.0,0.0,0.0
+Linkbase,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Multimodale Repräsentation,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Wissenskonstruktion,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Konversationsanalyse,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Auxiliardaten,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Korpuserstellung,0.0,0.0,0.0,0.006,0.006,0.019,0.0
+Dubletten,0.0,0.0,0.0,0.006,0.006,0.0,0.0
+topic,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+literature,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Open Space,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Community-Bildung,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Property-Graph,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Computerlexikografie,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Abfragewerkzeug,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Heuristik,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Wortfeld,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Word Embedding,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Virtual Reality,0.0,0.0,0.0,0.019,0.0,0.0,0.0
+Digital Storytelling,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Annotationen,0.0,0.0,0.0,0.006,0.006,0.0,0.006
+Web Annotation Data Model,0.0,0.0,0.0,0.013,0.0,0.0,0.0
+Triple-Store,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+SPARQL 1.1,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Simultaneitätsstudie,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Git,0.0,0.0,0.0,0.006,0.0,0.006,0.0
+Versionskontrolle,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+kollaboratives Arbeiten,0.0,0.0,0.0,0.006,0.006,0.0,0.0
+GitHub,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Koran,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Arabisch,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Rekonstruktion,0.0,0.0,0.0,0.006,0.006,0.0,0.006
+Semantisierung,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+neuronale maschinelle Übersetzung,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Publikation,0.0,0.0,0.0,0.006,0.006,0.006,0.013
+eXist-db,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+vue.js,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+quoteSalute,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+correspSearch,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Briefeditionen,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Multimodal,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+komplexes Schriftsystem,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Hieroglyphenschrift,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+ontologische Vernetzung,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+TEI-P5,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Mayakultur,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Epigraphik,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Stand-off-Markup,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Hexenforschung,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Methodenkritik,0.0,0.0,0.0,0.006,0.006,0.006,0.006
+Studie,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+E-Publishing,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Wissensrepräsentation,0.0,0.0,0.0,0.006,0.0,0.006,0.0
+Rezipientenwirkung,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Biofeedback,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Text Reuse,0.0,0.0,0.0,0.006,0.0,0.006,0.0
+Shakespeare,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Audio,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Video,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Oral History,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Digitale Briefedition,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+TEI-XML,0.0,0.0,0.0,0.006,0.0,0.006,0.0
+Virtuelle Umgebung,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Multimodale Hypertexte,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Aufbau,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Koordination,0.0,0.0,0.0,0.006,0.006,0.0,0.0
+Lautstärkeanalyse,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Literaturanalyse,0.0,0.0,0.0,0.006,0.0,0.006,0.0
+Expressionismus,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Verba Dicendi,0.0,0.0,0.0,0.006,0.006,0.0,0.0
+mittelalterliche Urkunden,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+keyword extraction,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+statistische Methoden,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+multimodale Analyse,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Netzwerkforschung,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+datenzentrierte digitale Editionen,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+legacy data,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Datenmodelle,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Kulturanthropologie,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Filter,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Apache Solr,0.0,0.0,0.0,0.013,0.0,0.0,0.0
+Reiseberichte,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Türkei,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Nationalismus,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Open Semantic Search,0.0,0.0,0.0,0.013,0.0,0.0,0.0
+NER,0.0,0.0,0.0,0.006,0.0,0.019,0.0
+Part-of-Speech-Tagging,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Nonstandardvarietäten,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Variationslinguistik,0.0,0.0,0.0,0.006,0.006,0.0,0.0
+3D-Rekonstruktion,0.0,0.0,0.0,0.006,0.006,0.0,0.0
+Wissen,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Forschungsmethodik,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Titelfiguren,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+digitale Vermittlungsformate,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+museale Forschung,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+vernetzte Systeme,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Museumsdokumentationssystem,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+spatial cognition,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+text analysis,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+map annotation,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Wissenschaftsblogs,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Literary Mapping,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Deep Maps,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Georektifizierung,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Prototyp,0.0,0.0,0.0,0.013,0.0,0.006,0.0
+Karte,0.0,0.0,0.0,0.006,0.0,0.006,0.0
+Leaflet,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Literatur der frühen Neuzeit,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+historische Netzwerkanalyse,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Gephi,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Entscheidungsprozess,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Notizbücher,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Natural Interaction,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Narrativität,0.0,0.0,0.0,0.006,0.0,0.0,0.006
+Informationsvermittlung,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+scalable viewing,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+filmwissenschaften,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Metasuche,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Autor*innenbibliotheken,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Bildähnlichkeitssuche,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Layoutanalyse,0.0,0.0,0.0,0.006,0.0,0.006,0.006
+Digitalisiererung,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Theaterwissenschaft,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Schattentheater,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Kontextualisat,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Kultur,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Materialität,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Aura,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Unity Engine,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Chronologie,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Datierung,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Faust,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Graphen,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Werkgenese,0.0,0.0,0.0,0.006,0.0,0.0,0.006
+Schools,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+außeruniversitäre Lehre,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+ocropy,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+imagepreprocessing,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+virtualmachine,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Graph,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Extraktion,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+neo4j,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Kuratierung,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Suchportale,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Factoid-Modell,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Edirom,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+kulturwissenschaftliche Datenbank,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+FRBR,0.0,0.0,0.0,0.006,0.006,0.0,0.0
+Pasticcio,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Textwissenschaft,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Markup,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Persistenz,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Numismatik,0.0,0.0,0.0,0.006,0.0,0.006,0.0
+Archäologie,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Kommunikation von Forschungsmethoden,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Dependenzparsing,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Open Science,0.0,0.0,0.0,0.006,0.006,0.0,0.019
+Peter Handke,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Multilingualität,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Outreach,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+rechtliche Rahmenbedingungen,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Schriftart,0.0,0.0,0.0,0.006,0.006,0.0,0.0
+Neuronales Netz,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Buchgeschichte,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+WebAnno,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+EXMARaLDA,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+ISO/TEI,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Räumliche Interaktionen,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Soziale Interaktionen,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Besucherforschung,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Interaktionsraum,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+räumliches Verhalten,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Tracking,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Metadatenanalyse,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+AG Datenzentren,0.0,0.0,0.0,0.006,0.0,0.006,0.0
+Datenzetren,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+DHd,0.0,0.0,0.0,0.006,0.0,0.006,0.0
+FDM,0.0,0.0,0.0,0.006,0.006,0.019,0.0
+NFDI,0.0,0.0,0.0,0.006,0.0,0.0,0.013
+Nationale Forschungsdateninfrastruktur,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Organisationsform,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Polygone,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+RestAPI,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Notizbuch,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Ideengenese,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Motion Capture,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Gestik,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+gesprochene Sprache,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+multimodale Kommunikation,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+maschinelle Sprachverarbeitung,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Digitale Kunstgeschichte,0.0,0.0,0.0,0.006,0.0,0.0,0.006
+Annotationssystem,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+graphische Narrative,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Integration,0.0,0.0,0.0,0.006,0.0,0.0,0.0
+Romanistik,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Metadatenextraktion,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+TEI-P5 XML Edition und Transformation,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Lexikalische Arbeit,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Suchmaschinen Programmierung,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+NLP-Ähnlichkeitssuche,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+WEB-Programmierung,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+git Projektmanagement,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+MongoDB,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Clustering,0.0,0.0,0.0,0.0,0.006,0.0,0.006
+Intermediation,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Management,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Narrative,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Mediävistik,0.0,0.0,0.0,0.0,0.013,0.0,0.006
+Co-Design,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Entwicklung,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Figurenrede,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Postmodern Poetry,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Translation,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Punctuation Reconstruction,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Lab,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Werkstatt,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Wissensvermittlung,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Entitäten,0.0,0.0,0.0,0.0,0.013,0.0,0.0
+best-practices,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+visuelle Medien,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+quantitative Analyse,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+KNN,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+8-Bit,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Computerspiele,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Rezensionen,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Deutsches Zeitungsportal,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Deutsche Digitale Bibliothek,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Digital Heritage,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Sammlungsdatenmanagement,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+historische Drucke,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Inhaltsanalyse,0.0,0.0,0.0,0.0,0.006,0.006,0.013
+Online-Beratung,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Kontextualisierung,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Ikoniziät,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Diagrammatik,0.0,0.0,0.0,0.0,0.006,0.0,0.006
+Online Publishing,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Open Encyclopedia System,0.0,0.0,0.0,0.0,0.006,0.0,0.006
+Schnittstelle,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Verschlagwortung,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Facettensuche,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+KunsthistorikerInnen,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+wissenschaftliche Forschungspraktiken,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Koreferenzauflösung,0.0,0.0,0.0,0.0,0.006,0.006,0.0
+Named Entity Erkennung,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Webarchive,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Event Crawl,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Wahlkampf,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+reflektiert,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Erzählebenen,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Wertherness,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+CRETA,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Trinkglas,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Die gute Form,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Fraktur,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Schriftgeschichte,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Buchwissenschaft,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Typographie,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Computerliteratur,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Stochastische Musik,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Aleatorik,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Theo Lutz,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Wilhelm Fucks,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Wissenschaftsgeschichte der DH,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Karl Kraus,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Mittelniederdeutsch,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Grammatikographie,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Flexionsmorphologie,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Varianz,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Unsicherheit,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+unvollständige Daten,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+sozio-historische Netzwerkanalyse,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+statistische Inferenz,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Reformation,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Briefkorrespondenznetzwerk,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Topics-Anzahl,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Erfolgsfaktoren,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Figurenbeziehungen,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Figurenverzeichnis,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+GerDraCor,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Softwarekuration,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+digitale Methoden,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Lernen und Lehren,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+kanon,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+literaturgeschichte,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+portal,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Geoanalyse,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Mittelalterliche Manuskripte,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Optische Musikerkennung,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Digitalisierte Zeitungen,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+FAIR-Prinzipien,0.0,0.0,0.0,0.0,0.006,0.013,0.006
+hierarchische Metadaten,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Textualität,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Medialität,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Forschungsprogramm,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Statistische Musikwissenschaft,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Web-Tool,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+User Centered Design,0.0,0.0,0.0,0.0,0.013,0.0,0.0
+Distant Hearing,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Ogham,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+räumliche Analyse,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Semantische Modellierung,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Bereinigung,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Phänomene,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Erkenntnisinteresse,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Positivismus,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+geistiger Gegenstand,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Rudolf Carnap,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Interpretationsspielraum,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+digitale Musikedition,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Digitale Dramenanalyse,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+CLS,0.0,0.0,0.0,0.0,0.006,0.006,0.0
+Heftromane,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Genre,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Automatische Erkennung,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Methodendiskussion,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Virtuelle Archive,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Dias,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Filme,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Webpräsentation,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+OCR-D,0.0,0.0,0.0,0.0,0.006,0.006,0.0
+Volltexterkennung,0.0,0.0,0.0,0.0,0.006,0.006,0.0
+(Retro)Digitalisierung,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Druckeditionen,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+text similarity,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+information retrieval,0.0,0.0,0.0,0.0,0.013,0.0,0.0
+stylometry,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+subtitles,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+historische Textlinguistik,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Textsorte,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Mehrebenen-Modell,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+quantitative und qualitative Textanalyse,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+spartenübergreifend,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Weiterentwicklung,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Speisekarten,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Web-Applikation,0.0,0.0,0.0,0.0,0.006,0.006,0.0
+Coding da Vinci,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+intertextuality,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+text reuse,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+word embeddings,0.0,0.0,0.0,0.0,0.006,0.006,0.0
+Digitale Literatur,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Literatur im Netz,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Repositories,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Datenlebenszyklus,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Predictive Modeling,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Bias,0.0,0.0,0.0,0.0,0.013,0.0,0.0
+Tool-Entwicklung,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Varianzanalyse,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Textsynopse,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Networking,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Digitales Lesen,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Prototyping,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Webanwendung,0.0,0.0,0.0,0.0,0.006,0.0,0.006
+Data Literacy,0.0,0.0,0.0,0.0,0.006,0.006,0.0
+Datenkompetenzen,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Orte,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Emigration,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Israel,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+London Charter,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Quellenlage,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Architektur,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Ruine,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+archäologisches Objekt,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Digitale Editorik,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+digitale Rechtswissenschaft,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Renaissancemusik,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Mensuralnotation,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Historische Netzwerkanalyse,0.0,0.0,0.0,0.0,0.006,0.006,0.0
+Multimediale Annotation,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Annotationsbasiertes Storytelling,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Objektrepositorium,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Nachlässe,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+LIDO,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+eXist-DB,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Historische Edition,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Oxygen XML Editor,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Bayern,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Zeitgeschichte,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Protokolle,0.0,0.0,0.0,0.0,0.006,0.006,0.0
+Handeln,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Dinge,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Beziehungen,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Musicking,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+cooking recipes,0.0,0.0,0.0,0.0,0.013,0.0,0.0
+middle ages,0.0,0.0,0.0,0.0,0.013,0.0,0.0
+medieval,0.0,0.0,0.0,0.0,0.013,0.0,0.0
+food,0.0,0.0,0.0,0.0,0.013,0.0,0.0
+schema,0.0,0.0,0.0,0.0,0.013,0.0,0.0
+virtuelle Arbeitsumgebung,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+projektbegleitend,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Peer Review,0.0,0.0,0.0,0.0,0.006,0.006,0.0
+literary motif,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+motif search,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+motif annotation,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+digital corpora,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+search strategies,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Kabbala,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Hebräisch,0.0,0.0,0.0,0.0,0.006,0.006,0.0
+Synopse,0.0,0.0,0.0,0.0,0.006,0.0,0.006
+Kollationierung,0.0,0.0,0.0,0.0,0.006,0.006,0.0
+DH Lehraktivitäten,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Automatische Bildanalyse,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Heraldik,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Gendertheorie,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Bewertungsanalyse,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+digitale Annotation,0.0,0.0,0.0,0.0,0.006,0.006,0.0
+Historische Texte,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Guidelineentwicklung,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Graphendaten,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Mittelalter,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Jüdische Studien,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Visual Studies,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Critical Machine Vision,0.0,0.0,0.0,0.0,0.006,0.0,0.006
+niedrigschwellige Dissemination,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Kartenspiel,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Lerntypen,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Discovery,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+FAIR,0.0,0.0,0.0,0.0,0.006,0.013,0.0
+Arbeitspraktiken,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Nachwuchs,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Community,0.0,0.0,0.0,0.0,0.006,0.025,0.013
+Digital Medievalist,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Digitale Mediävistik,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+(Audio-)Narratologie,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Deutsche Prosaliteratur,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Digitale Philologie,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Emanzipation der Frau,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Lautstärke,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Datenschutzrecht,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Ethik,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+IT-Regulation,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Nutzerorientierung,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Wissenschaftsethik,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Songtexte,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Lyrics,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+stylo,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Kollokationen,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Objektklassifizierung,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Granularität,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Textressourcen,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Sommeruniversität,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Sprachwissenschaft,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Sprachressourcen,0.0,0.0,0.0,0.0,0.013,0.0,0.0
+ODD,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Schemaspezifikation,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+digitale Editionsrichtlinien,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+MEI,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Self-Tracking,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+historische Datenerfassung,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+RESTful API,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Psychologiegeschichte,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Zeitschriftenforschung,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+performative kulturelle Objekte,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Film &amp; Video,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Ontologies,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Metadata,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Databases,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Conversion,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Discovering,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Gathering,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Briefkorpus,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Hugo Schuchardt,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Evaluierung von Tools,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Semantische Datenmodellierung,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Kunstkammer,0.0,0.0,0.0,0.0,0.006,0.0,0.006
+Bewegungsanimation,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Musik,0.0,0.0,0.0,0.0,0.013,0.006,0.0
+Deutschordensresidenz,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+3D-Modell,0.0,0.0,0.0,0.0,0.006,0.0,0.006
+Nutzer*innen,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+maschinelle Übersetzung,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Terminologie,0.0,0.0,0.0,0.0,0.006,0.006,0.006
+Schulbücher,0.0,0.0,0.0,0.0,0.006,0.0,0.006
+Quellengattung,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+CLARIN,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+VLO,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+CMDI,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+metaphilosophy,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+hps,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+umap,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+hdbscan,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Computational Folkloristics,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Kulturvergleich,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+events,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Ereignisse,0.0,0.0,0.0,0.0,0.006,0.006,0.006
+Named Entities,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Softwareentwicklung,0.0,0.0,0.0,0.0,0.006,0.006,0.0
+Soziale Netzwerkanalyse,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Diskursnetzwerke,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Projektvorstellung,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Social Reading,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Web 2.0,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Leser,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Literaturkritik,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Metaphernidentifikation,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Politischer Diskurs,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Rechtspopulismus,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Emotionsanalyse,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Theorie des Digitalen,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Methodenreflexion,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+World Café,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Digitale Werkverzeichnisse,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Semantisches Publizieren,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+arthistoricum.net,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+Music Information Retrieval,0.0,0.0,0.0,0.0,0.006,0.0,0.0
+social media,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+instagram stories,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+bundestagswahl,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Ego-Dokumente,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Erlebnisbericht,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Osteuropaforschung,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Südosteuropaforschung,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Aufführungsdaten,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+genuin digitale Quellen,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Historische Fachkommunikation,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Digital History,0.0,0.0,0.0,0.0,0.0,0.013,0.013
+spaCy,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Domänenspezifische Notationen,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Contextfreie Sprachen,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+EBNF,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Schlüsselstelle,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Praxeologie,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Zitaterkennung,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Chinese text OCR,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+character segmentation,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+synthetic training data,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+OCR error correction,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+maps,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+ontologies,0.0,0.0,0.0,0.0,0.0,0.006,0.006
+intangible cultural heritage,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+open data,0.0,0.0,0.0,0.0,0.0,0.006,0.006
+Glossen,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Frühmittelalter,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Erinnerungskultur,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+history of science,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+cultural heritage,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Dekolonialisierung,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+indigene Datensouveränität,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Transparenz,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Forschendes Lernen,0.0,0.0,0.0,0.0,0.0,0.013,0.0
+Methodenvermittlung,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Projektkooperation,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Dehmel digital,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+forTEXT,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Textrepräsentation,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Lesen,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Kanonisierung,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Sammlungen,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+environmental humanities,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+computational literary studies,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Ökologie,0.0,0.0,0.0,0.0,0.0,0.006,0.006
+Biodiversität,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Literaturarchiv,0.0,0.0,0.0,0.0,0.0,0.006,0.006
+DACH,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Künstliche Intelligenz,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+kuratorische Praxis,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Forschungswerkzeug,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Computational Literary Studies,0.0,0.0,0.0,0.0,0.0,0.025,0.019
+Data Landscape,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Research Discovery,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+FAIR principles,0.0,0.0,0.0,0.0,0.0,0.006,0.006
+Emotion analysis,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Sammlungsgeschichte,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Vokabulare,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Vestimentäre Forschung,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Peer-to-Peer,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Reflektion,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+HTR,0.0,0.0,0.0,0.0,0.0,0.025,0.006
+LDA Topic Modeling,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Hyperparameter Alpha,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Distinktivitätsmaße,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Python-Implementierung,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+pydistinto,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Interface design,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Buddhismus,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Cultural Heritage,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Analyse von Relationen,0.0,0.0,0.0,0.0,0.0,0.013,0.0
+Kontextualisieren,0.0,0.0,0.0,0.0,0.0,0.013,0.0
+Modellieren,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Publikationen,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Datensets,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Einakter,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+strukturierter Text,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+mixed methods,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Adnominale Possession,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Parallelkorpus,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Emotions- und Genderanalyse,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Kulturwissenschaften,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Forschungsprozess,0.0,0.0,0.0,0.0,0.0,0.006,0.006
+Computational Social Sciences,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Ablaufsteuerung,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+agile Methoden,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Manifest,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+FAIR Prinzipien; Projektmanagement,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Fidus Writer,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Oral-History,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Kategorientheorie,0.0,0.0,0.0,0.0,0.0,0.006,0.006
+digitale Erinnerungskultur,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Netzwerkanalysen,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Zweiter Weltkrieg,0.0,0.0,0.0,0.0,0.0,0.013,0.0
+Tutorial Finder,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Übergreifende Suche,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Lehr- und Schulungsmaterialien,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+CLARIAH-DE,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+DHd-Community,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Schreibwerkstatt,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+reference mining,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+electronic theses and dissertations,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Ästhetik,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Isländersagas,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Literarisierung,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Poetologie,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Knowledge Graphen,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Word Embeddings,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Digitales Archiv,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Kanon,0.0,0.0,0.0,0.0,0.0,0.006,0.006
+Repräsentativität,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+virtual desktop,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Remote Lehre,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Lehr- und Lernumgebung,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Aristotelesarchiv,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Mikrofilm,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Data Steward,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Datenstrategie,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Archvierung,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Veröffentlichung,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Dienstekatalog,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Literaturwissenschaften,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Interview,0.0,0.0,0.0,0.0,0.0,0.006,0.006
+MerMEId,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Schweizer Literatur,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+data cleaning,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Bloganalyse,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Inklusion,0.0,0.0,0.0,0.0,0.0,0.006,0.006
+Handschrifterkennung,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Künstliche Neuronale Netze,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+OCR4all,0.0,0.0,0.0,0.0,0.0,0.013,0.0
+PAGE-XML,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+UTF-8,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Unicode,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Sammlung,0.0,0.0,0.0,0.0,0.0,0.013,0.006
+Gedächtnisinstitutionen,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Filmwissenschaft,0.0,0.0,0.0,0.0,0.0,0.013,0.006
+Kulturvermittlung,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Forschungstransfer,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Tanzaufführung,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Theateraufführung,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+audiovisuelle Aufzeichnungen,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Mediatheken,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Zitation,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Softwarezitation,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Nachhaltige Softwareentwicklung,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Digitized Newspapers,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Digital Archive,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+digitale Vermittlung,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Online Sammlung,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Hyperlink,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+User-Interface Design,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Sowjetische Kriegsgefangene,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Biografien,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Massendigitalisierung,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Strukturbaum,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Text-Bild-Ansicht,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+ediarum,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Ästhetikvorlesungen,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Schleiermacher,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Philosophiegeschichte,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Document Layout Analysis,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Media Theory,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Virtual Working Environment,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+FAIR Data,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Digitization of Archival Material,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Social Media Analyse,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Lyrik,0.0,0.0,0.0,0.0,0.0,0.019,0.006
+Realismus,0.0,0.0,0.0,0.0,0.0,0.006,0.006
+Dekolonisation,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+CARE-Prinzipien,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Rechtsgeschichte,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Parlamentarismus,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Klassische Altertumswissenschaften,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+relationale Daten,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Docker,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Software Deployment,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Virtualization,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+OCR/HTR,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Machine Reasoning,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Alchemie,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Film,0.0,0.0,0.0,0.0,0.0,0.006,0.006
+Kohäsion,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Humboldt,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Suchfunktion,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Jupyter Notebook,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Selektion,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Informationsintermediär,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Autonomie,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+DHd-Abstracts,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Taskforce,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Storytelling,0.0,0.0,0.0,0.0,0.0,0.006,0.006
+Serien,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Geschichtsvermittlung,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+politische Bildung,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Gegenwartsliteratur,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+CATMA,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Hackathons,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+DH-Didaktik,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Kompetenzen,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+DH-Fallvignetten,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+DH-Lehre,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+kollektive Kreativität,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+DH-Teams,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Berufsklassifikation,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Entitätserkennung,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Machine-Learning,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Datenextraktion,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Datenethik,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Care-Prinzipien,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Historizität von Daten,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Awareness,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Pandemie,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+KI,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Andreas Gryphius,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+digitales kulturelles Gedächtnis,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Interaktionale Linguistik,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Arbeitsorganisation,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Mittelpersisch,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Pahlavi,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+digitale Erschließung,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Referenzierung,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+User Stories,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+HNA,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Interviewstudie,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Visualisierungsfunktionen,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+japanische visuelle Medien,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Knowledge Graph,0.0,0.0,0.0,0.0,0.0,0.006,0.006
+Gazetteer,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+GOV,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Zeit und Raum,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Ortsverzeichnis,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Identifikation Orte,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Kabbalah,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Varianten,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Visuelle Medien,0.0,0.0,0.0,0.0,0.0,0.006,0.006
+Social Tagging,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Game with a Purpose,0.0,0.0,0.0,0.0,0.0,0.006,0.006
+Machine Learning Prediction Modelle,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Anrede,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Book reviews,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Machine learning,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Sentiment analysis,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+theoretical biology,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+topic modelling,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+interactive visualization,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Reviewing,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Open Identities,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Open Peer Review,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Notensatz,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+OMR,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+statistische Analyse,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Segmentierung,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+deutschsprachiche Literatur,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+3D-models,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+3D-rendering,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+knowledge graph,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Kompakkt,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Wikibase,0.0,0.0,0.0,0.0,0.0,0.006,0.006
+annotation,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+enrichment,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+TEI/XML,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Kodierungsrichtlinien,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Digitale Geschichte,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Historische Metrologie,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Kompetenzfragen,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Videoannotation,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Domänenadaption,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Tatort,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Emotionserkennung,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Emotionsklassifikation,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Transformer-basierte Modelle,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Computerspiel,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Zugang,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+multimodales Retrieval,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Publikationsworkflow,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Textsammlungen,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Forschungsumgebungen,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Wissenschaftethik,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Datenbiographik,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+digitale Dienste,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Chronik,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+digitale Texte,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Liebesbrief,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Verbundprojekt,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Gruß &amp; Kuss,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+digitale Sammlung,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Klassifizierung,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Anzeigen,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Zeitung,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Digital/Computational History; Wandel der geschichtsschreibenden Praktiken; epistemologische Folgen des Einsatzes von Datenbanken,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Machine Learning; digital literacy,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Bibelauslegung,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+XQuery,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Neologie,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Migration,0.0,0.0,0.0,0.0,0.0,0.006,0.006
+Fehler,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+onomasiologische Suche,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+multilingual,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+reflexive Passagen,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Attribution,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Inter Annotator Agreement,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Prosopograpie,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Implementation,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+publizieren,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+literate programming,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+wissenschaftskommunikation,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Datenphysikalisierung,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Ausstellung,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Akademisches Bloggen,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Anerkennung,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+digital history,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+digital heritage,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+memory studies,0.0,0.0,0.0,0.0,0.0,0.006,0.0
+Service,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Hilfestellung,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Interviewtranskripte,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Grounded Theory,0.0,0.0,0.0,0.0,0.0,0.0,0.013
+Ferdinand Tönnies,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Randnotizen,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Listen,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Multimodale Korpuslinguistik,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Biografiedaten,0.0,0.0,0.0,0.0,0.0,0.0,0.013
+Sozialgeschichte,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Sozialtopographie,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Nachlasserschließung,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Ontology Engineering,0.0,0.0,0.0,0.0,0.0,0.0,0.013
+Frühromantik,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Flurnamenforschung,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Thüringisches Flurnamenportal,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Open Culture,0.0,0.0,0.0,0.0,0.0,0.0,0.013
+Digitalisierung Flurnamenarchiv,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Mehrsprachigkeit,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+ELTeC,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+VIAF,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Born-Digitals,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Friedrich Kittler,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+NSRL,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+NFDI4Culture,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Text+,0.0,0.0,0.0,0.0,0.0,0.0,0.013
+Graphesis,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Kartierung,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Kriegsspiel,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Diplomatik,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Google Ngram-Viewer,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Culturomics,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Deutsche Korpora,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+computational edition,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+normalisation,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+processing,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Vossianische Antonomasie,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Dimensionsreduktion,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Digitales Werkverzeichnis,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Diversität,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Korpusbildung,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Citizen Humanities,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Open Data,0.0,0.0,0.0,0.0,0.0,0.0,0.019
+Zeitverlauf,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Häufigkeit,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Korpustool,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Corona,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Presse,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Mehrworteinheiten,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+N-Gram,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Musikgeschichte,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Kunstkritik,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+aiart,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Dall-e 2,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+openai,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Analysing,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Stylistic Analysis,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Programming,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Lyrik der Romantik,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Korpusexploration,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Sprachsynthese,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Open Schiences,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Digital Literacy,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Diplomatie,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Instagram,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Bildklassifikation,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Transferlernen,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Körperbild,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Fitspiration,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Bodypositivity,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Registry,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+deutschsprachige Literatur,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Werkbeziehungen,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+unzuverlässiges Erzählen,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+video analytics,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+narrative strategies,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+disinformation,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Open Humanities,0.0,0.0,0.0,0.0,0.0,0.0,0.013
+Open Vocabularies,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Journal,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Review,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Editorik,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Repräsentation,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+research software engineering,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+softwareentwicklung,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+professionalisierung,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Beschreibung,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Telling,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Showing,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Roman,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Benutzeroberfläche,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+multilingualism,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+data feminism,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+decolonisation,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Software-Entwicklung,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+drama,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+onboarding,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Designing,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Searching,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Writing,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Content Analysis,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Research Process,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Handlung,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Erzählwürdigkeit,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Zusammenfassung,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Events,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Ereignis,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Event,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+pyramide,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+pyramid,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+n-gram,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+bleu,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+ruge,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Ereignishaftigkeit,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Pyramiden-Methode,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Pyramiden Methode,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Postkolonialismus,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+digitales museum,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+generous interface,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+open-source software,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Sprachtechnologie,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Kodierung,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Embeddings,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Datendomäne Sammlungen,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+ortsverteilt,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+derived text formats,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+authorship classification,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+evaluation,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Public Humanities,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Komposita,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Muster,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Korpusaufbereitung,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Anonymisierung,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Chatbot,0.0,0.0,0.0,0.0,0.0,0.0,0.013
+Historische Reiseberichte,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Archive,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Publikationsplattform,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Emotion,0.0,0.0,0.0,0.0,0.0,0.0,0.013
+Open Archives,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Publikationsumgebung,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Forschungsinstrument,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+ComDeG,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Wissensbasis,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Bibliographische Datensammlungen,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Religion,0.0,0.0,0.0,0.0,0.0,0.0,0.013
+Bildungsmedien,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Volltexte,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Digitalisate,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Weißbuch,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Editionswissenschaft,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Digitale Editionswissenschaft,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Nachschlagewerk,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Zotero,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Wissensressource,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Data Feminism,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Datenfeminismus,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Korpuskritik,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Intersektionalität,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Gender Data Gap,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Data augmentation,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Partizipative Forschung,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+FAIRe Lehre,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+OER,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Open Cultural Heritage Data,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Openness,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Framesemantik,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Personen,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Semi-Automatisierung,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Textauszüge,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Experimente,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Provenienzforschung,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Datenintegration,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Wissensgraph,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+sensible Sammlungen,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Naturkundemuseum,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+INCEpTION,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Imperialismus,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Kolonialismus,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Literaturrezeption,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Leser:innenforschung,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Interdisziplinär,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Digital,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+lebende Systeme,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Architekturforschung,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Vernetzungsplattform,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Graphentechnologie,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Akteursnetzwerk,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Algorithmus,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Begriffsarbeit,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Computational Thinking,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Media Sentiment,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Börse,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Zero-Shot Klassifikation,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Musiknotation,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Human Computer Interaction,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Wissensgraphen,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Briefanalyse,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Literarische Blogs,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Aufbereitung,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+WARC,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Deutscher Schriftstellerverband,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+DDR,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Digital Scholarly Edition,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+History,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+virtuelles Museum,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Skandal,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+kulturelle Bildung,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Kategoriensystem,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Formale Methoden,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Beschreibungslogik,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+plain text,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+stand-off annotations,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+automatische Annotationen,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+computational methods,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Meta: CommunityBuilding,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Meta: Lehren/Lernen,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Fanfiction,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Kulturelle Objekte,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Fallstudien,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Digitale Quellenkritik,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Open Publication,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Theorie der DH,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Algorithmenkritik,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+forschungsdatenmanagegement,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+knowledge graphs,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+datenintegration,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+infrastruktur,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Arzneimittelrezepte,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Öffnung,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Supportstrukturen,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Provenienz,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Sentence-Transformer,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Analytische Philosophie,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Kontinentale Philosophie,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+kollaboratives Annotieren,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Wissenschaftsinfrastruktur,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Research Infrastructure,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Open-Access-Transformation,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Workshop,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Blender,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+3D-Methoden,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+4D-Methoden,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+FAIR data,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+linked data,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+graph database,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+historical data,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Digitale Provenienzforschung,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Provenienzangaben,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Datenstandards,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Online-Sammlungen,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Lücken,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+digitale Philosophie,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+digitale Philosophiegeschichte,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Digital Social Reading,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Aesthetic Properties,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Indian readers,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Green DH,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+historical newspapers,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+citizen participation,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Data Management,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Fehlerkultur,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Scheitern,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Jupyter-Notebooks,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+ausführbarer Quellcode,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+scalable reading,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Poetik,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Barock,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Konfession,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Protestkulturen,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Osteuropa,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Multimodal Discourse Analysis,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+D-WISE,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+D-WISE Tool Suite,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+DWTS,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+WDA,0.0,0.0,0.0,0.0,0.0,0.0,0.006
+Wissenssoziologische Diskursanalyse,0.0,0.0,0.0,0.0,0.0,0.0,0.006

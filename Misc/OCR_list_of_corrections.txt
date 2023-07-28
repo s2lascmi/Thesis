@@ -1,0 +1,8 @@
+Wörter, die ersetzt wurden:
+
+
+lexikorgaphi - lexikographie
+korpu-korpus
+metadat-metadaten
+wörterbücher - wörterbuch
+
