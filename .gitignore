@@ -8,6 +8,8 @@ Corpus/
 venv/
 .idea/
 .tmp.driveupload/
+Models/
+Figures/
 
 # User-specific files
 *.rsuser
