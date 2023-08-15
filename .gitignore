@@ -10,6 +10,7 @@ venv/
 .tmp.driveupload/
 Models/
 Figures/
+*.svg
 
 # User-specific files
 *.rsuser

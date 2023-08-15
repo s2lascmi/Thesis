@@ -104,7 +104,7 @@
         <td class="tg-c3ow">
           <div>
             <div
-              style="float: left; height: 18px; width: 18px; margin-bottom: 10px; margin-right:5px; border: 1px solid black; clear: both; background-color:#6CEAFB">
+              style="float: left; height: 18px; width: 18px; margin-bottom: 10px; margin-right:5px; border: 1px solid black; clear: both; background-color:#1FA3B5">
             </div>One interaction between the authors
           </div>
         </td>
