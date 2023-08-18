@@ -11,6 +11,9 @@ venv/
 Models/
 Figures/
 *.svg
+*.html
+*.csv
+
 
 # User-specific files
 *.rsuser
