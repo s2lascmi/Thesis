@@ -12,4 +12,8 @@ Since some steps in the preprocessing pipeline are time-consuming, the final var
 The resulting models are stored in the folder *Models*.
 The visualizations for answering the research questions are stored in a separate folder for each question in *Figures*.
 
+The code was created and executed in Python 3.10.5.
 
+
+### Known issues:
+When executing the import of several functions from *MA_Preprocessing* into *MA_TopicModeling* in the import cell takes a considerable amount of time (> 5 minutes), it usually helps to stop the cell execution and restart. 
