@@ -15,5 +15,10 @@ The visualizations for answering the research questions are stored in a separate
 The code was created and executed in Python 3.10.5.
 
 
-### Known issues:
+### Known Issues:
 When executing the import of several functions from *MA_Preprocessing* into *MA_TopicModeling* in the import cell takes a considerable amount of time (> 5 minutes), it usually helps to stop the cell execution and restart. 
+
+
+### Licence for Further Use:
+
+[CC BY-NC-SA](https://creativecommons.org/share-your-work/cclicenses/)
