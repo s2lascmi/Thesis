@@ -19,6 +19,6 @@ The code was created and executed in Python 3.10.5.
 When executing the import of several functions from *MA_Preprocessing* into *MA_TopicModeling* in the import cell takes a considerable amount of time (> 5 minutes), it usually helps to stop the cell execution and restart. 
 
 
-### Licence for Further Use:
+### Licence for Further Use of the Created Materials and Code:
 
 [CC BY-NC-SA](https://creativecommons.org/share-your-work/cclicenses/)
