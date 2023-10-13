@@ -23,3 +23,5 @@ They have to be downloaded and stored as the original zip files in this folder i
 
 All files are available under the [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/legalcode) licence.
 
+The two books of abstracts from 2014 and 2015 only contained the pdf version of the abstracts, which is itself not computer-readable. As both books of abstracts were read in and returned as plain text documents as part of the notebook *MA_Preprocessing*, the plain text files are available in this folder as well for further use.  
+
