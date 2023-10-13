@@ -5,6 +5,7 @@
 
 # Ignore corpus and other files
 venv/
+.zip
 .idea/
 .tmp.driveupload/
 
